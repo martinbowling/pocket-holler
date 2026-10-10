@@ -1,0 +1,90 @@
+{
+  "_resourceType": "actor",
+  "id": "8629c5cf-8cf1-5228-b2f0-75561f1d22db",
+  "_index": 2,
+  "symbol": "actor_r04_warm_lantern",
+  "prefabId": "",
+  "name": "Warm Lantern",
+  "coordinateType": "tiles",
+  "x": 14,
+  "y": 8,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "1c0f8340-946c-552a-ab15-b8f3336e2e18",
+  "paletteId": "ebf171a2-c6dd-5d22-b5cc-4c08f0ce2337",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "613dc127-a62b-5e77-9585-dace0027c038",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "A FESTIVAL\nLANTERN. IT\nSMELLS LIKE WARM",
+          "WAX AND APPLE\nLEAVES."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "92d1755a-4afa-57a8-abb9-f92740433c45",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-818"
+      }
+    },
+    {
+      "id": "2e568abc-3382-5f14-81f7-86c5dfd930f1",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "a5aff725-2ff9-51ba-9d2a-db3cbc4749c1",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "6511e09d-7315-59a2-ac97-37ddd9bfe89f",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-818"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

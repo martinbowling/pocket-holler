@@ -1,0 +1,348 @@
+{
+  "_resourceType": "actor",
+  "id": "69ac4bad-3c6d-51fc-a4f8-c1307af0fae3",
+  "_index": 2,
+  "symbol": "actor_r05_windscreen",
+  "prefabId": "",
+  "name": "Windscreen",
+  "coordinateType": "tiles",
+  "x": 8,
+  "y": 10,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "e7e25bfd-b933-5a34-8b20-39d5c61fc203",
+  "paletteId": "ebf171a2-c6dd-5d22-b5cc-4c08f0ce2337",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "4efe9653-ddad-512f-b12e-6037c57b2377",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "10"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d1d21a55-8702-581b-a70c-e8f2b9d3a5a4",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE LANTERN IS\nSHELTERED. MOTH\nREMEMBERS YOUR",
+                "HELP."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "c6fad2ee-2dc0-5208-a28f-9f42cbfabfd6",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "TURN THE OPEN\nSIDE OF THE\nWINDSCREEN.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "a5eb2ad4-48c5-5ceb-9db1-a8426889209d",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "44",
+              "items": 4,
+              "layout": "menu",
+              "cancelOnB": true,
+              "cancelOnLastOption": false,
+              "option1": "NORTH",
+              "option2": "EAST",
+              "option3": "SOUTH",
+              "option4": "WEST"
+            }
+          },
+          {
+            "id": "56c1664a-a83f-5632-8e03-f5c732235919",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [],
+              "false": [
+                {
+                  "id": "caa09cca-5987-524f-9931-970c005401cf",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "36",
+                    "value": {
+                      "type": "number",
+                      "value": 0
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "f307e6fc-6af5-5bdd-9a72-981ed82cfdba",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "3449039b-759e-58e7-93bf-2c14fc9d28cb",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "36",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "95c7e9c1-b0fc-5093-80f5-e4be5d50f413",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "OPEN SIDE:\nNORTH.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "a8e6173b-f0f3-5d43-bbd9-2ef7e4afdc54",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "03d602e5-093c-57ed-b58a-c15c83bf6bcb",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "36",
+                    "value": {
+                      "type": "number",
+                      "value": 2
+                    }
+                  }
+                },
+                {
+                  "id": "e5cff543-a1a7-53dc-9ed5-15f2cd027c35",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "OPEN SIDE: EAST.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "70994356-439c-515f-90ee-f7678e9b5222",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "da657f66-36f4-517b-adc1-5f3e647281f4",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "36",
+                    "value": {
+                      "type": "number",
+                      "value": 3
+                    }
+                  }
+                },
+                {
+                  "id": "76297f6b-5ac2-576b-9313-969934d19b28",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "OPEN SIDE:\nSOUTH.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "86a985a5-3c5c-5023-be5e-7eed2ca26440",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 4
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "c909a1ab-a70b-5b11-9836-6cf44eb2d687",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "36",
+                    "value": {
+                      "type": "number",
+                      "value": 4
+                    }
+                  }
+                },
+                {
+                  "id": "504a2f18-0821-55b0-9b68-797fdb3925d3",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "OPEN SIDE: WEST.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "62fb4c2f-0157-5f59-94c3-68751a6949a1",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-845"
+      }
+    },
+    {
+      "id": "55ffe9a4-bc83-5d24-bd7c-f09ac6959efe",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "7b11afaa-de52-59f1-ac3a-dfafb8a6580a",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "a7d58c3f-a376-5aff-9b07-7739ab9d62d8",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-845"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

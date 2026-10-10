@@ -1,0 +1,124 @@
+{
+  "_resourceType": "actor",
+  "id": "58315fc0-0d86-5ffa-8bd9-0147ed0a5a1c",
+  "_index": 4,
+  "symbol": "actor_r05_bark_mark",
+  "prefabId": "",
+  "name": "Bark Mark",
+  "coordinateType": "tiles",
+  "x": 12,
+  "y": 10,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "61609cb9-d666-581f-88f7-262925392928",
+  "paletteId": "ebf171a2-c6dd-5d22-b5cc-4c08f0ce2337",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "9d603a9b-96da-5a47-9ca0-7bb8fa8204fe",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "37"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "c9d830f3-0cc5-509f-b618-c7c8f3203b38",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "TRUST LIVING\nLIGHT.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "dc917bdf-9523-535e-bc59-f29325a4f407",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "RAY MARK:\nREVEAL. FACE IT\nAND PRESS B WITH",
+                "MOTH."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "14913c24-5c54-59e8-9c5d-38a23f8260cf",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-866"
+      }
+    },
+    {
+      "id": "5a0bf9ab-c9a8-5023-bd57-9b53a70da032",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b6e4156b-208e-5cad-9219-74d318919049",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "58180d08-3edf-5449-ad3b-2b1540995a13",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-866"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

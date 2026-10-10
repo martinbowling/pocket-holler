@@ -1,0 +1,91 @@
+{
+  "_resourceType": "actor",
+  "id": "2457e4af-a014-5acc-a9a4-67bc8d55dbf7",
+  "_index": 1,
+  "symbol": "actor_r05_weather_vane",
+  "prefabId": "",
+  "name": "Weather Vane",
+  "coordinateType": "tiles",
+  "x": 14,
+  "y": 6,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "a3e97417-b329-5886-83b8-3634a20536b7",
+  "paletteId": "ebf171a2-c6dd-5d22-b5cc-4c08f0ce2337",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "f3774e12-4327-584b-8d21-da2599495e5c",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "THE VANE POINTS\nEAST. THE WIND\nFOLLOWS IT.",
+          "OPEN THE\nWINDSCREEN\nTOWARD THE",
+          "SHELTERED\nLANTERN."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "6c746982-e749-587e-991a-c93a0aac1d20",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-823"
+      }
+    },
+    {
+      "id": "ff29ee51-68fd-50e5-8ec6-82d75f8aff58",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "fa89ba61-79e8-5e00-af5d-51d1ab66c059",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "a85baf63-cb9d-5d8b-a7c1-6769a5a5aa61",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-823"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

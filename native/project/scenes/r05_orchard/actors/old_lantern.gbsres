@@ -1,0 +1,235 @@
+{
+  "_resourceType": "actor",
+  "id": "8c8d37be-bacf-5959-b089-d46fbba40a65",
+  "_index": 3,
+  "symbol": "actor_r05_old_lantern",
+  "prefabId": "",
+  "name": "Old Lantern",
+  "coordinateType": "tiles",
+  "x": 8,
+  "y": 6,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "1c0f8340-946c-552a-ab15-b8f3336e2e18",
+  "paletteId": "ebf171a2-c6dd-5d22-b5cc-4c08f0ce2337",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "5584de20-f169-547e-a293-a1b8f5dbb617",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "10"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "194ae79a-b00f-5ea0-8544-db9633220816",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "A STEADY LITTLE\nFLAME.\nLANTERNMOTH IS",
+                "ALWAYS WELCOME\nHERE."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "3beb5e67-9e85-592c-aaa3-4b8263dbd185",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "36"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "9f23cd30-78ea-5c8e-866d-1cf0ed1edacc",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "10",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "c4d72b79-1b96-54c2-9f70-9d81e2a37b33",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "7",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "dc5a587c-55e7-57cf-8a3e-c1d669699d4d",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "6",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "7bd6ba36-5586-56f9-9a40-ed3d17acafa7",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "33"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "948ddff8-3510-5985-980e-e2a3b45a4c38",
+                        "command": "EVENT_SOUND_PLAY_EFFECT",
+                        "args": {
+                          "type": "beep",
+                          "pitch": 6,
+                          "duration": 0.12,
+                          "wait": false,
+                          "priority": "low"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                },
+                {
+                  "id": "3c83ed2c-285a-5e0a-96b2-63a9235e4c52",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "THE LANTERN\nSTOPS\nFLICKERING.",
+                      "SOMETHING OPENS\nITS WINGS.",
+                      "LANTERNMOTH\nJOINS YOU. ITS\nLIVING GLOW",
+                      "NEVER LIES.",
+                      "PRACTICE: FACE\nTHE RAY MARK ON\nTHE BARK. PRESS",
+                      "B.",
+                      "THEN TRY REVEAL\nAT THE BOUNDARY\nINSCRIPTION."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "96087c3e-0c2f-5fb1-ba29-2880cd0cc8b6",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "THE FLAME\nFLICKERS IN THE\nWIND. THE VANE",
+                      "MAY HELP."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "9589c36e-2740-56f0-840f-4fa53bdb9662",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-859"
+      }
+    },
+    {
+      "id": "13db47f4-b872-55af-b791-18c4dc1332de",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "19b13313-e7e7-53f7-b82c-aecf57d969ba",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "fa05a94e-603d-554a-b379-0dc93c9eee1c",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-859"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

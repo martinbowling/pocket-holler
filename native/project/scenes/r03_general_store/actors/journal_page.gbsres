@@ -1,0 +1,140 @@
+{
+  "_resourceType": "actor",
+  "id": "b6ca4083-9aa1-5986-b989-e4d9989ce6a8",
+  "_index": 2,
+  "symbol": "actor_r03_journal_page",
+  "prefabId": "",
+  "name": "Journal Page",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 8,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "4392fd66-4f05-5fef-b928-5d3e83c11d03",
+  "paletteId": "ebf171a2-c6dd-5d22-b5cc-4c08f0ce2337",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "e1c8f237-5603-5dbf-b0ce-640c288a966d",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "22"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "9a9c27b7-2b47-5829-bd16-7f391f22050a",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "22",
+              "value": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "1d101fef-8e2e-5f32-9ecf-258f36cb3107",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "JOURNAL PAGE 1\nFOUND. THE\nLANTERN WALK.",
+                "EACH AUTUMN, THE\nTOWN ANSWERS THE\nLANTERNS WITH",
+                "ITS OWN LIGHT.",
+                "OPTIONAL PAGES\nNEVER BLOCK YOUR\nPATH."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "69a53967-c167-58bd-a038-cf5eb17cade5",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE LANTERN\nWALK. YOUR\nJOURNAL ALREADY",
+                "HAS THIS PAGE."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "7685e0e4-9e01-5d57-b2eb-f6f36c362619",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-808"
+      }
+    },
+    {
+      "id": "c3b0acd2-2309-5925-8000-91856f1deb8a",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "9287e43e-3bce-567d-95ef-cee077e50a4c",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "8f3a0862-144a-50b4-a783-adb10592a9b0",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-808"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

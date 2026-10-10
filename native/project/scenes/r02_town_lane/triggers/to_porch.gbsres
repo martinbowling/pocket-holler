@@ -1,0 +1,84 @@
+{
+  "_resourceType": "trigger",
+  "id": "3bca282c-0565-550d-8fc6-32d2f08df487",
+  "_index": 0,
+  "symbol": "trigger_r02_to_porch",
+  "prefabId": "",
+  "name": "to_porch",
+  "x": 8,
+  "y": 0,
+  "width": 4,
+  "height": 2,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "d19cec52-98f7-53ed-8944-1acc2f1febdc",
+      "command": "EVENT_SCRIPT_LOCK",
+      "args": {}
+    },
+    {
+      "id": "68d3046e-8d76-5d8e-ac5c-b4d31dbc6e7e",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-904"
+      }
+    },
+    {
+      "id": "fd36ce72-fe7d-546b-8fd8-a1b66490edf1",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "504c810a-4cd0-5cfb-8064-5c4c17202b66",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "c5577bfa-a397-5738-83e4-0d466556027f",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-904"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "5960bf2b-4785-56f2-901e-ebf58be9e6e6",
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "12f07015-0a42-504a-8d39-3f689e13ad3a",
+        "x": {
+          "type": "number",
+          "value": 8
+        },
+        "y": {
+          "type": "number",
+          "value": 14
+        },
+        "direction": "up",
+        "fadeSpeed": "2"
+      }
+    }
+  ],
+  "leaveScript": []
+}

@@ -1,0 +1,1139 @@
+
+PocketHoller
+
+Full game agent handoff
+
+Working subtitle  After Sundown
+Prepared for Marty and Roamin  •  Design version 1.0  •  9 October 2026
+
+Build a complete, small Game Boy Color adventure about a child, his dad, and the strange but dependable creatures of a mountain town. The woods repeat familiar voices after dark. Roamin restores three warning lights, learns how the imitation works, and brings the whole town through one uneasy night.
+
+The production decision
+
+Use a native editable GB Studio project through the ModRetro Chromatic plugin. Finish and review a ten-minute playable opening before building the rest. The finished game should take a new player about 60–90 minutes, have a real ending, and ship with editable source and a real ROM once the owner approves release.
+
+Item
+
+Status and direction
+
+Chosen by the owner
+
+PocketHoller; a full game; spooky-season horror; eventual open-source release; character sprites inspired by Marty and Roamin.
+
+Proposed defaults
+
+After Sundown subtitle; Roamin as the only playable character; Marty as safe-hub guide; three companions; 24 playable rooms; one ending; Color Only mode.
+
+Review before release
+
+Public names and likenesses, final title clearance, credits, licenses, repository destination, content tone, and any physical cartridge distribution.
+
+
+Definition of complete
+
+A beginning, middle, finale and playable dawn epilogue; all mandatory puzzles can be completed without collectibles.
+
+Twenty-four playable rooms, twelve mandatory puzzle contracts, three companion abilities, six optional journal pages, and a save system.
+
+Original production art and audio; clear controls and comfort settings; a tested ROM; the native project; build instructions; provenance and license records.
+
+Scope boundary
+
+No combat, random encounters, procedural maps, farming, breeding, crafting economy, link multiplayer, online services, seasonal live content, or post-game expansion. No gore, harm to companions, sanity meter, fake save corruption, or loss of a family member. This handoff defines future implementation; it is not a built or hardware-tested game.
+
+Reading order: play and story on pages 2–5; world and puzzles on 6–9; art and engineering on 10–14; production and release on 15–17; implementation kickoff and sources on 18.
+
+How the game plays
+
+PocketHoller is a top-down creature-puzzle adventure. Movement and interaction are simple; the challenge is noticing what changed, choosing a trusted companion, and carrying a learned rule into a new room.
+
+The repeating loop
+
+Explore a small connected area → notice a blocked route or contradiction → inspect its clue → choose a companion at a safe camp → use its ability on a marked target → open a permanent route → return to safety and save. Each area teaches one use, combines it with an earlier rule, then pays it off in a warning-light repair.
+
+Input
+
+Exploration
+
+Menus and dialogue
+
+D pad
+
+Walk on the native top-down grid; face a target.
+
+Move the selection. No diagonal or analog input required.
+
+A
+
+Inspect, talk, operate a switch, enter a marked camp menu.
+
+Advance text; confirm the selected choice.
+
+B
+
+Use the active companion on the tile in front of Roamin.
+
+Back or cancel. Never silently discards a save.
+
+Start
+
+Pause and open Journal, Settings, Return to Camp, or Quit.
+
+Close the pause menu. Pause suspends threats and timers.
+
+Select
+
+Show the current objective and active companion.
+
+Close the quick objective panel.
+
+
+A new button press triggers one action; holding B never repeatedly restarts an ability. Consume held inputs across dialogue and scene transitions so a closing A press cannot instantly operate the next object. Show an icon plus a short verb when a companion target is in range.
+
+Companions and inventory
+
+Only one companion follows at a time. Swap freely at the porch or a lit camp. All recruited companions remain available, healthy and friendly. Abilities have no charges, stamina, cooldown puzzle, or collectible fuel. Story objects are flags in the journal, never droppable inventory items. There is no money or equipment menu.
+
+Goals and help
+
+The journal shows one specific next objective, the three light states, companion descriptions, and six optional pages. Inspecting a blocked route states what is missing without spoiling the answer. Each camp offers a two-step hint: a nudge first, then an explicit next action on request. No hint changes rewards or the ending.
+
+Pacing and navigation
+
+Use mostly single-screen rooms at 160 × 144 pixels. Up to four rooms may scroll to at most two screen widths. Target one meaningful observation or interaction every 20–40 seconds. Previously solved routes stay solved; later visits use shortcuts. Return to Camp is always available outside a brief transition and preserves completed puzzle flags in the current session.
+
+Story and characters
+
+Beginning
+
+It is the evening of PocketHoller’s lantern walk. Marty is checking the porch signal while Roamin explores the orchard. A storm has tangled the old warning-light circuit. In a disused lantern, Roamin meets LanternMoth and learns to reveal marks hidden beneath the ordinary world. When the first light is repaired, sunset settles over the valley. From beyond the fence, a voice repeats Marty’s invitation to come home, one word too many.
+
+Middle
+
+The town gathers at the festival green while the woods begin returning people’s own phrases to them. Marty keeps the home signal lit and gives Roamin safe routes and practical help. Roamin meets MossbackTurtle beside the creek, restores the lowland light, then reaches BabyThunderbird at a silent ridge roost. The ridge light reveals that the old hollow bell has been disconnected from its spring. The forest is treating every departing footstep as a person it must keep.
+
+The truth and ending
+
+The antagonist is the Hollow Caller, an original sound-shaped presence that grew around an abandoned bell and the voices it caught. It can copy words, rearrange signs and make a wrong doorway look welcoming. It cannot invent a companion’s living glow or turn a creature against Roamin. Its idea of safety is keeping every voice in the woods forever.
+
+At the hollow, LanternMoth reveals the true bell inscription; MossbackTurtle restores water to the bell’s spring; BabyThunderbird charges its three lamps. Roamin chooses to ring the bell for everyone, rather than follow a borrowed voice. The town answers with its own signal. The Caller breaks into harmless echoes, leaving only wind in the hollow. Dawn returns. Roamin walks home, reunites with Marty, and joins the creatures for breakfast. No sacrifice, secret bad ending, or unresolved rescue is required.
+
+Character
+
+Role
+
+Writing and presentation
+
+Roamin
+
+Sole playable explorer
+
+Curious and observant; asks concrete questions. Courage is checking a clue and accepting help, not proving adulthood.
+
+Marty
+
+Dad and safe-hub guide
+
+Warm, capable and dependable. He maintains the home signal. Never kidnapped, turned hostile, or secretly replaced.
+
+June Vale
+
+Town lamplighter
+
+Explains the three-light circuit and offers the first map. An original fictional adult, not a real family acquaintance.
+
+Hollow Caller
+
+Original antagonist
+
+Shown as wrong silhouettes, delayed reflections and borrowed text. Never impersonates the game menu or a system error.
+
+
+Voice and family privacy
+
+Use plain, warm dialogue with restrained regional flavor. Do not caricature Appalachian people, spell accents phonetically, or present invented lore as an authentic cultural tradition. Marty and Roamin are working character names. Photo-referenced sprite concepts may inform stylized designs; the original family photo must stay out of the repository, ROM, credits and public assets. Public names and likenesses require owner review before release.
+
+Chapter progression and quest state
+
+Chapter
+
+Time target
+
+Mandatory progression
+
+Exit condition
+
+0  Porch and orchard
+
+0–10 min
+
+Meet Marty and June. Learn A, B and the journal. Recruit LanternMoth at R05; reveal the boundary inscription at R06; repair Light 1.
+
+P01 and P02 complete; dusk; safe return to R01.
+
+1  Creek after dusk
+
+10–30 min
+
+Reach camp R07; see the delayed reflection at R08. Recruit MossbackTurtle in R09; cross the causeway; restore the wheelhouse and creek light.
+
+P03–P06 complete; Light 2 on; ridge path open.
+
+2  Ridge at night
+
+30–50 min
+
+Use R13 camp. Reach BabyThunderbird; restore the ridge relays. Read the old noticehouse account and open the root threshold.
+
+P07–P08 complete; Light 3 on; all companions recruited.
+
+3  The hollow bell
+
+50–75 min
+
+At R19, prepare and save. Solve three spoke-room tasks with three companions. Ring the bell and reject the false homeward call.
+
+P09–P12 complete; FINALE_DONE set; dawn transition.
+
+4  Back home
+
+75–90 min
+
+Walk R23 to town and porch. Read short epilogue; see credits; optionally revisit calm rooms for remaining journal pages.
+
+ENDING_SEEN after reunion/credits. Continue returns to dawn at R01.
+
+
+These are playtime targets, not timers. Chapters advance only on explicit milestones. Night does not progress while the player is idle. A player may stop, read, or ask for hints without penalty. Review the 60–90 minute target with first-time testers; cut travel before adding content.
+
+The dependency chain
+
+P01 Moth → P02 Light 1 → P03 Turtle → P04 causeway → P05 wheelhouse → P06 Light 2 → P07 Thunderbird → P08 Light 3 → P09 true inscription → P10 spring → P11 bell charge → P12 bell and dawn.
+
+P04–P06 require Turtle selected. P07 is solved with ordinary interaction. P08 and P11 require Thunderbird. P09 requires Moth; P10 requires Turtle. R19 is a permanent camp connecting all three finale spokes, so each companion change is short and safe.
+
+State rules
+
+Use separate flags for recruited companions, completed puzzles and repaired lights. A room derives its layout and dialogue from those flags on every entry.
+
+Puzzles are idempotent: a second interaction acknowledges success, without removing items, replaying a reward, or toggling a completed route shut.
+
+The story phase starts DAY. P02 sets DUSK, P06 sets NIGHT and P12 sets DAWN. No real-time clock, calendar date or wall-clock dependency exists.
+
+Every chapter ends at a safe save opportunity. The transition tells the player whether progress has been saved. Optional journal pages never gate a chapter or change the ending.
+
+The companion system
+
+Ship exactly three companions in version 1.0. They are partners with distinctive useful behaviors, not combat units or a collection treadmill. The full cast stays below the six-creature ceiling; additional creatures are out of scope for this build.
+
+Companion
+
+Unlock
+
+Ability and valid targets
+
+Limits and feedback
+
+LanternMoth
+
+P01 at R05
+
+Reveal. A warm cone exposes false lettering, hidden marks and the real edge of a doorway. Required at R06 and R20; optional journal mark at R18.
+
+B checks the faced target. Valid marks reveal a persistent flag. The cone is a short animation, not a dynamic lighting engine.
+
+MossbackTurtle
+
+P03 at R09
+
+Steady. Reads current direction and braces designated creek or waterwheel stones. Required at R10, R11, R12 and R21.
+
+Fixed authored targets only. Completed crossings become ordinary walkable paths. Turtle is never left behind as a platform.
+
+BabyThunderbird
+
+P07 at R15
+
+Spark. Charges marked ceramic sockets and warning-light relays. Required at R16 and R22.
+
+Only safe marked fixtures accept a charge. No free aiming, electricity combat, random shocks or damage to the player.
+
+
+Interaction contract
+
+Face a target within one gameplay tile and press B. If the active companion matches its required ability, lock input briefly, play a readable response, set the puzzle state, update the visual and release input. If it does not match, show one short contextual line, then return control. An empty target produces a small companion emote with no blocking dialogue.
+
+Use three target shapes as redundant cues: rays for Reveal, a wave line for Steady, and a zigzag for Spark. Match them in the journal and camp menu. Color is additional information only. A companion never acts off-screen to solve an unseen puzzle.
+
+Follower implementation
+
+Start with a simple non-colliding follower that trails one tile behind and snaps safely to Roamin after a transition. If smooth following threatens schedule or sprite budgets, use a nearby hovering/perched presentation in the same room; keep the companion visible at ability use. It never blocks a corridor, triggers a door, consumes a pressure plate, or becomes a pathfinding dependency.
+
+Camp contract
+
+R01, R07, R13 and R19 are always safe. The camp menu offers Companion, Hint, Save and Leave. Only recruited companions appear. Swapping does not advance the chapter or reset local progress. Before entering a gated area, the nearby camp and journal make the required companion clear. After every recruitment, activate that companion and show its practice target.
+
+Trust is a mechanical rule
+
+Companion glow, emotes, silhouettes and target cues are never falsified by the Caller. A creature’s refusal can warn of a false door, but its guidance is always correct. Their idle animations can be funny or sleepy. They are never injured, possessed, traded away, or used as the cost of an ending.
+
+World map and room register
+
+There are 24 playable rooms, including the optional porch interior. Title, settings, journal and credits are UI, not extra exploration rooms. Room IDs are stable design identifiers and should map to native scene IDs in docs/room-map.csv. All listed connections are bidirectional unless explicitly gated.
+
+ID and room
+
+Connections
+
+Purpose and gate
+
+R01  Home porch
+
+R02, R24; late shortcut R19
+
+Safe camp C0. Marty, save and first objective. Shortcut opens at both ends on first legitimate R19 arrival.
+
+R02  Town lane
+
+R01, R03, R04
+
+Orientation and central route. Light states visible as three distant lamps.
+
+R03  General store
+
+R02
+
+June supplies the map verbally. Optional journal page J1; no required purchase.
+
+R04  Festival green
+
+R02, R05, R06; R23 at dawn
+
+Town safe gathering area. Day tutorial context; dawn celebration.
+
+R05  Orchard
+
+R04
+
+P01 recruits Moth. Windbreak light puzzle. No hostile encounter.
+
+R06  Boundary gate
+
+R04, R07 after P02
+
+P02 and Light 1. False lettering tutorial; gate stays open once solved.
+
+R07  Creek camp
+
+R06, R08, R12 shortcut
+
+Safe camp C1. Swap, save and creek hints. R12 return shortcut opens at P06.
+
+R08  Mirror pool
+
+R07, R09
+
+Reflection encounter H1. Accessible bank only; water blocks movement.
+
+R09  Reedbank
+
+R08, R10 after P03
+
+P03 recruits Turtle. Open a reed passage by observing flow markers.
+
+R10  Flooded causeway
+
+R09, R11 after P04
+
+P04 braces stepping stones. Solved path remains walkable with any companion.
+
+R11  Wheelhouse
+
+R10, R12 after P05
+
+P05 uses three water controls. Failed arrangement is freely resettable.
+
+R12  Creek light
+
+R11, R13 after P06; R07
+
+P06 steadies the spillway and repairs Light 2. Unlocks loop-back path.
+
+
+Spatial rules
+
+Draw the whole graph before dressing rooms. Give exits a two-tile clear landing area; entry facing points away from the exit trigger.
+
+Never spawn inside water, a shut gate, an actor or a transition trigger. A room has a recorded default spawn and an escape route.
+
+Decorative stepping stones do not imply walkable tiles. Collision is authored separately and verified after art changes.
+
+Day and night use the same base geography and collision wherever possible. Use palette and actor-state changes rather than duplicating all scenes.
+
+The ridge and hollow routes
+
+ID and room
+
+Connections
+
+Purpose and gate
+
+R13  Ridge camp
+
+R12, R14, R16 shortcut
+
+Safe camp C2. Hill objective and save. R16 shortcut opens after P08.
+
+R14  Bramble stairs
+
+R13, R15
+
+Traversal, optional J3. H3 extra footstep plays once under safe conditions.
+
+R15  Thunder roost
+
+R14, R16 after P07
+
+P07 recruits Thunderbird with a shelter puzzle. No falling or rescue damage.
+
+R16  Relay yard
+
+R15, R17 after P08; R13
+
+P08 lights three relays in the shown order and repairs Light 3.
+
+R17  Bell road
+
+R16, R18
+
+HOME becomes STAY at H2. Optional J4; the return path never vanishes.
+
+R18  Old noticehouse
+
+R17, R19 after P08
+
+Story explanation. Moth can reveal optional J5. Finale requirement sign lists all lights.
+
+R19  Root threshold
+
+R18, R20, R21, R22; R01
+
+Safe camp C3 and final hub. Both ends of the home shortcut open on first arrival.
+
+R20  Echo hall
+
+R19
+
+P09 with Moth reveals the true bell instruction. Fake exit returns locally, safely.
+
+R21  Spring chamber
+
+R19; puzzle after P09
+
+P10 with Turtle restores the bell spring. Gate blocks interaction, never the return exit.
+
+R22  Bell chamber
+
+R19; P11 after P10
+
+P11 charges bell with Thunderbird. P12 rings it; transition to R23 after explicit choice.
+
+R23  Dawn overlook
+
+R04 in DAWN
+
+Short epilogue walk. No threats; optional J6 becomes available.
+
+R24  Porch interior
+
+R01
+
+Optional calm room. J2 and family keepsakes are fictional, without private biographical details.
+
+
+Backtracking and recovery
+
+Returning along an opened edge never requires the currently active companion. A companion check gates the original solve action, not the collision of a route already opened. The final hub keeps all companion changes within one room of each spoke. The first legitimate arrival at R19 sets VISITED_R19 and opens both ends of the marked R19–R01 shortcut. This preserves the first R17/R18 story visit. The shortcut stays open after the ending.
+
+Return to Camp sends Roamin to the most recent visited safe camp. Retain recruited companions, completed puzzles, journal pages and lights in memory; discard only unfinished local switch arrangements and transient encounters. This action does not imply a disk save. Offer Save at the camp on arrival.
+
+Optional content is bounded
+
+Six journal pages: J1 town lantern tradition at R03; J2 fictional porch note at R24; J3 old trail sketch at R14; J4 bell rhyme at R17; J5 Caller origin at R18; J6 dawn drawing at R23. Each adds two or three short text panels. None supplies the only copy of a mandatory clue; all can be collected in the dawn state.
+
+Mandatory puzzle contracts
+
+Each puzzle has a visible clue, a reversible attempt and a permanent success flag. Use these contracts as implementation tickets. Exact clue text may be polished, but the answer and dependency must remain consistent.
+
+ID and location
+
+Player action and clue
+
+Success and recovery
+
+P01  R05
+
+Rotate the orchard windscreen until its open side faces the lantern; the weather vane shows the wind. Inspect the now-steady light.
+
+Recruit Moth; practice Reveal on the nearby bark mark. Unlimited rotations.
+
+P02  R06
+
+Reveal the gate inscription. Follow the ray-marked latch rather than the painted arrow; operate it with A.
+
+Light 1 and gate open. Wrong latch gives harmless text, no reset of P01.
+
+P03  R09
+
+Open two reed gates in the direction shown by floating leaves: upstream, then downstream.
+
+Recruit Turtle; it demonstrates the wave target. Wrong order resets only these gates.
+
+P04  R10
+
+Use Steady from a bank-side walkway with three safe stations, each one tile from its marked stone, in near-to-far order.
+
+All stones lock into a permanent crossing. Never step into unsafe water.
+
+P05  R11
+
+Set inlet open, bypass closed, outlet open, matching an adjacent simple flow diagram; use Steady at the wheel brace.
+
+Wheel runs and the R12 gate opens. Three toggles and reset lever remain reachable.
+
+P06  R12
+
+Use Steady on the spillway stone, then A on the mechanically powered light crank.
+
+Light 2; ridge gate; R07 shortcut. Completion survives revisiting with another creature.
+
+P07  R15
+
+Turn two shelter vanes toward the central perch, guided by fixed feather arrows, then A at the perch.
+
+Recruit Thunderbird; charge a practice socket. No reflex timing or consumable bait.
+
+P08  R16
+
+Spark three relay sockets in the symbol order shown on the board: leaf, wave, star.
+
+Light 3; R13 shortcut; finale route. Wrong order resets relays with a soft click.
+
+P09  R20
+
+Reveal three plaques. Choose the instruction that says the bell calls people home; false versions demand they stay.
+
+True inscription flag enables P10. False selection loops to R19 with no progress loss.
+
+P10  R21
+
+Steady the spring stone after setting the two channels toward the bell glyph, using the wall diagram.
+
+Spring restored; P11 enabled. Wrong channels remain adjustable; room exit stays clear.
+
+P11  R22
+
+Spark the three ceramic bell lamps. All three lights and P10 must already be complete.
+
+Bell charged; switch companion freely afterward. No simultaneous follower requirement.
+
+P12  R22
+
+Inspect bell; choose Ring for everyone; press A once to confirm. The town response follows.
+
+Set P12 as FINALE_DONE and enter DAWN. ENDING_SEEN waits for the R01 reunion/credits. Wait or Leave returns control.
+
+
+Acceptance for every row: solve from its legitimate entry state, try each wrong action, leave and re-enter mid-attempt, complete it twice, revisit with another companion, then save and reload after reaching a camp. All routes and flags must remain consistent.
+
+Horror direction and encounter rules
+
+The horror is the familiar becoming slightly wrong. Safe places are genuinely safe. A scare should invite an observation, then give control back. Design for a family to choose its comfort level; do not assume a particular age rating before review.
+
+ID
+
+Trigger and presentation
+
+Reduced scares behavior
+
+H1  Reflection
+
+R08, first DUSK or NIGHT visit after P02. Roamin stops at the bank; a reflected silhouette lingers for about one second after he moves. Moth faces the true path.
+
+Show a static wrong reflection with a caption. No sudden movement or sound.
+
+H2  The sign
+
+R17, after P08. A normal HOME sign reads STAY when revisited from the far side. Inspecting it acknowledges the change.
+
+Same clue and text. Omit surprise transition and audio sting.
+
+H3  One more step
+
+R14, before P07. At a fixed landing, music fades, Roamin stops, and one extra footstep sounds. A small footprint icon provides the same clue visually.
+
+Use the footprint icon and quiet caption without isolated footstep or abrupt silence.
+
+H4  Borrowed voice
+
+R20 during P09. A text bubble from the woods repeats a previously heard invitation with one changed word. Speaker label is A voice in the woods.
+
+Present as ordinary inspection text; skip camera movement and sting.
+
+
+Trigger discipline
+
+Each encounter has a one-shot flag. Set it before the presentation begins, so leaving or pausing cannot repeatedly retrigger the scare. Run only when no dialogue, menu, ability or transition owns input. Never stack encounters in the same room entry. Target at least 60 seconds of ordinary play between forced atmospheric beats; the four authored locations provide the main separation.
+
+A short beat may lock movement for at most two seconds, but Start must still pause. No flashing, rapid full-screen palette inversion, sudden maximum-volume burst or controller combination. Before the final sequence, show a clear confirmation so the player can save or change settings.
+
+Failure without punishment
+
+There is no health or death state. A false doorway returns Roamin to the local room entrance or R19, accompanied by a calm creature cue. A wrong switch sequence resets only its unfinished local arrangement. No completed puzzle, recruited creature, journal entry or save is removed. The Caller does not chase the player, so no speed, dexterity or reaction-time gate blocks completion.
+
+Trust and tone checks
+
+No imitation of Marty uses Marty’s portrait or his safe-hub speaker label. Real Marty stays helpful and visibly located at the porch.
+
+No fake crash, fake deletion, save tampering, pretend real-world surveillance, or use of the player’s actual date, name or files.
+
+Never punish pausing, using hints, muting audio, choosing Reduced Scares, or returning to camp.
+
+After tension, include a warm creature idle, a lit shelter or a reassuring objective. Dawn clears all remaining scare triggers.
+
+Art direction and production assets
+
+Use autumn amber, creek teal, moss green and blue-black shadows. Day feels handmade and welcoming. Night changes the palette and a few meaningful details, while paths, faces and interactable silhouettes stay readable. Horror should come from composition and timing rather than visual noise.
+
+Character art
+
+Roamin is the smaller explorer silhouette, with curly brown hair, a sage jacket and compact pack. Marty has a broader, grounded silhouette, short swept hair, rectangular glasses, close facial hair and a rust field jacket. These cues follow the photo-referenced concept sheet; keep the final sprite stylized. Develop stylized likeness from the supplied reference photo only with owner review. Do not infer age, ethnicity, health, or personal history from the image. Final 16 × 16 gameplay frames prioritize posture, hair/hat outline and clothing blocks over miniature portrait detail.
+
+Create six-frame 96 × 16 directional walk sheets for the player and any walking NPC, plus 16 × 16 idle or emote frames as needed. Simple directional sheets store down, up and right views; left may mirror right. Preserve a non-mirrored accessory if the approved design requires it through native metadata. Larger concept sheets are visual references, not ready-to-import sprite assets. [S2]
+
+Asset group
+
+Version 1 production target
+
+Acceptance
+
+Humans
+
+Roamin, Marty, June; 3 distinct sprite sets
+
+Readable at 1× and 2×. Player never confused with an NPC or false silhouette.
+
+Companions
+
+3 sets; idle, follow and short ability animation
+
+Three-color object-compatible shapes. One active follower on screen.
+
+World
+
+4 reusable tile families: town, creek, ridge, hollow
+
+24 rooms assembled from shared 8 × 8 tiles; day/night variants reuse geometry.
+
+Story effects
+
+4 scare effects; light repair; bell and dawn
+
+Prefer tiles and small palette changes to many overlapping actors.
+
+UI
+
+Original font, frame, cursor, 3 ability glyphs, 3 light icons
+
+High-contrast text; no color-only information; tested longest strings.
+
+Source files
+
+Editable pixel files plus exported PNGs and metadata
+
+Asset manifest records author, source, license and modification history.
+
+
+Import and hardware rules
+
+Screen resolution is 160 × 144; background tiles are 8 × 8. In automatic color backgrounds, each tile uses at most four colors and a scene has at most eight four-color palette families. Use the native manual source palette when choosing manual coloring: #071821, #306850, #86c06c, #e0f8cf. Sprite imports use #071821, #86c06c, #e0f8cf and the transparent marker #65ff00; #306850 is not a sprite source color. Confirm the selected project’s actual import convention. [S1, S2]
+
+A hardware object is 8 × 8 or 8 × 16; a 16 × 16 actor commonly spans two objects. Hardware allows 40 objects total and only 10 on one scanline. Count actual metasprite pieces rather than actor names. Inspect genuine moving frames for flicker. [S4]
+
+Audio text and comfort settings
+
+A small original soundtrack
+
+Use editable UGE tracks and one supported music driver, with simple pulse, wave and noise arrangements. GB Studio supports UGE or MOD per project; choose UGE for this new project so the native music editor stays usable. All music, motifs and sound effects must be original or explicitly licensed for the intended distribution. [S5]
+
+Cue
+
+Use
+
+Design target
+
+M01  Porch lanterns
+
+Town by day and safe camps
+
+Warm 30–45 second loop; room to hear interaction sounds.
+
+M02  Creek memory
+
+Creek at dusk
+
+Gentle irregular phrase, low density, no constant alarm.
+
+M03  Ridge signal
+
+Ridge at night
+
+Sparse pulse and soft wind; clear difference from safety.
+
+M04  Hollow bell
+
+Finale approach and reveal
+
+Two short states, before and after spring restoration.
+
+M05  Morning again
+
+Dawn and credits
+
+Resolves the porch motif; about 45–60 seconds.
+
+S01–S12
+
+UI, step, reveal, steady, spark, light, bell and ambience
+
+Twelve reusable effect families. Cap stings below the established loudness ceiling.
+
+
+Settings available before New Game
+
+Scares: Standard or Reduced. Reduced removes abrupt stings, extra-step timing and sudden motion; every clue, chapter and ending remains available.
+
+Audio: Music On/Off and Effects On/Off. Quiet preset turns both off. No puzzle depends on sound alone.
+
+Text: Normal, Fast or Instant reveal. A completes the current line before advancing it. Never require rapid presses.
+
+Controls: Standard or Swap A and B for action/confirm and ability/back. Show matching labels throughout; retain Start for pause and Select for objective.
+
+Visuals: No flashing or screen shake in any mode. Keep UI high contrast; the scene’s eighth background palette is reserved for UI/fonts in color mode. [S6]
+
+Text production rules
+
+Budget roughly 1,800–2,600 words for the whole game, including optional pages and hints. Prefer one idea per panel and two or three short panels per conversation. Use an original or properly licensed readable pixel font; count actual rendered glyph widths. Validate long names, settings labels, every clue, save notices and credits at the real 160 × 144 resolution. Do not rely on desktop-size mockups.
+
+Family review
+
+The owner reviews the first ten minutes with Standard and Reduced Scares before art or narrative expansion. Ask whether tension feels fun, whether companion trust is clear, and whether Roamin’s role feels right. Use this review to adjust presentation, not to add an unbounded second game. An adult should review content before deciding who it is suitable for; no formal age-rating claim is made here.
+
+Native engineering plan and budgets
+
+The source of truth is PocketHoller.gbsproj with its native project resources, assets and sidecars. Use a fresh starter copy in an authorized destination, not a bundled template edited in place. TOPDOWN is the proposed scene mode. Prefer native visual events, custom events and supported settings before considering engine ejection.
+
+Start by proving the toolchain
+
+Inspect the installed toolchain and available authoring tools. Create or explicitly select the intended project, inspect settings and resource layout, then make one room build and boot. Record editor, plugin, compiler and emulator versions. Plugin readiness metadata alone does not establish that an executable build works. Do not substitute a sample cartridge for this game.
+
+Area
+
+Production target
+
+Verification or ceiling
+
+Compatibility
+
+Color Only; GBC and Chromatic targets
+
+Verify cartridge header and actual runtime. Monochrome support is out of scope. [S6]
+
+Room art
+
+Prefer ≤200 unique background tiles per ordinary room
+
+Current Color Only engine ceiling is 384; background use affects sprite capacity. Measure compiled scenes. [S1, S3]
+
+Actors
+
+Prefer ≤8 placed actors and ≤4 visible 16 × 16 actors including follower
+
+Engine limit and hardware OAM are distinct. Leave scanline room for effects. Inspect worst-case overlaps. [S3, S4]
+
+Scripts
+
+Prefer ≤16 triggers per room and short shared custom events
+
+Current documented engine ceiling is 30 triggers and 20 actors per scene. [S3]
+
+ROM and banks
+
+Initial target ≤2 MiB ROM; save-capable MBC5 configuration
+
+Target is not a hardware limit. Inspect actual ROM/RAM header and bank allocation; change target only with evidence.
+
+Response
+
+Target native display cadence; visible action response within 100 ms
+
+Measure behavior on representative rooms. Host emulator speed is not cartridge CPU performance.
+
+Transitions
+
+Target normal room transitions under one second
+
+Measure on chosen emulator and physical device separately. Simplify first if exceeded.
+
+
+Editing safely
+
+Use semantic scene, script, transition, collision and palette tools with the latest target revision. Preserve stable resource IDs, unknown fields, collision encodings, asset metadata and project versions. Actor coordinates are gameplay coordinates; scene canvas coordinates are editor layout. A static world dependency graph helps locate references but does not prove the game runs.
+
+Build outputs
+
+Keep generated exports outside authored assets. Build the actual selected project, inspect its returned ROM and retain warnings, errors, version metadata and SHA-256. Each milestone produces a native project revision, ROM, change summary and matching test evidence. A web preview can demonstrate a build in a browser; it does not replace a standalone cartridge or physical test.
+
+Save data and softlock prevention
+
+Use one save slot. Save only at camps R01, R07, R13 or R19. Offer explicit Save and a clearly announced checkpoint save on the first camp visit after a chapter milestone. Never silently overwrite another playthrough.
+
+Logical field
+
+Allowed values
+
+Use
+
+SAVE_SCHEMA
+
+1 for this release
+
+Stable reserved native variable ID; inspect before loading.
+
+BUILD_SAVE_EPOCH
+
+1 for compatible release family
+
+Increment when engine/source changes make snapshots incompatible.
+
+CHAPTER and PHASE
+
+0–4; DAY/DUSK/NIGHT/DAWN
+
+Derived progression; validate against completed milestone flags.
+
+CAMP_ID and VISITED_R19
+
+C0–C3; one boolean
+
+Last visited valid camp and first-arrival shortcut flag. Save at a verified safe spawn.
+
+ACTIVE_COMPANION
+
+None, Moth, Turtle, Thunderbird
+
+Clamp to a recruited companion after load; default to Moth if available.
+
+RECRUITED flags
+
+3 booleans
+
+Permanent ownership; no companion can be lost.
+
+PUZZLE flags
+
+P01–P12 booleans
+
+Permanent solutions. Light states derive from P02, P06 and P08.
+
+JOURNAL and SCARE flags
+
+J1–J6; H1–H4 booleans
+
+Collectibles and one-shot presentation history.
+
+OPTIONS and ENDING_SEEN
+
+Scares, audio, text, button mode; ending seen
+
+P12 is FINALE_DONE; ENDING_SEEN follows the R01 reunion/credits. Continue then returns to R01.
+
+
+Use named native variables and freeze their IDs for released saves. This is a logical schema, not a custom serializer. Reinitialize temporary switches, input locks, follower position and menus safely on entry/load; they are not authoritative progression.
+
+Loader and compatibility
+
+GB Studio provides slot existence checks, variable reads from a save, and an On Load branch. Use reserved schema and epoch fields to reject known-incompatible saves before loading; use the On Load branch to restore a safe camp state and validate invariants. A schema match alone does not prove engine snapshot compatibility. Verify updates against archived release saves. For an incompatible save, explain the issue and offer New Game without deleting the old file automatically. [S7]
+
+Never claim untested durability
+
+Do not claim atomic or corruption-proof saving. Test empty slots, save/load, reset after completed saves, and interrupted writes on disposable copies where supported. Verify persistent storage on the selected cartridge separately from browser and emulator saves. [S7]
+
+Required invariants
+
+P02 implies Moth; P06 implies Turtle and P04–P05; P08 implies Thunderbird; P12 implies P09–P11 and all lights. No gate can close behind a player without an unconditional return edge. Camps remain reachable with every recruited companion. Return to Camp clears only unfinished local state. After P12 and until ENDING_SEEN, the journal and Return to Camp retain the Go home to Marty objective; leaving R23 cannot skip the reunion. After ENDING_SEEN, Continue uses R01 regardless of CAMP_ID. No erase or New Game overwrite happens without an explicit player confirmation.
+
+Testing and evidence requirements
+
+A compile log, an art preview and a real playthrough establish different things. Report each separately. Every behavior claim must name the exact tested ROM hash and starting state. Do not call the game finished on the strength of a static screenshot.
+
+Test layer
+
+Required checks
+
+Evidence to retain
+
+Static source
+
+24 scene IDs; transition destinations; valid landings; flags; mandatory dependency chain; legal assets; text fit
+
+Machine-readable room map and variable register; lint output; asset manifest; issue list.
+
+Native build
+
+Clean build of selected project; no unexplained warnings; valid ROM/header; expected color and save configuration
+
+Compiler log, tool versions, ROM hash, size and inspected header.
+
+Direct emulator
+
+Boot, controls, all twelve puzzles, four encounters, wrong actions, camp swaps, every exit, pause and settings
+
+Bounded input sequence and genuine framebuffer samples. Use neutral inputs between separate presses.
+
+Save regression
+
+Save at each camp; quit and cold boot; Continue; options; completed routes; post-ending state; incompatible fixtures
+
+Original save fixtures and copied test files; before/after states; exact build pairing.
+
+Human first play
+
+At least two fresh players; one Reduced Scares and audio-off run; no coaching until stuck
+
+Completion time, hint usage, confusion points, content feedback and fixed issue references.
+
+Physical device
+
+Chromatic boot, full route, display, buttons, music/effects, sleep/power behavior and persistent save as supported
+
+Device and firmware identifiers, cartridge or live-demo method, ROM hash, test notes and capture when available.
+
+
+Emulator workflow
+
+Build with rom_build and inspect that exact cartridge with rom_inspect. Use the plugin’s emulator_run, emulator_step and emulator_observe for input-driven checks. emulator_observe is inert; step calls advance the game and specify the complete held-button set. After a failed image delivery, observe rather than blindly repeating an input whose execution is unknown. Rebuild after fixes and repeat comparable input sequences on the new hash.
+
+Preview and hardware boundaries
+
+Use web_preview early for human review and open its URL only in the supported built-in browser. If that browser is blocked or unavailable, retain the limitation and continue authorized headless PyBoy checks on the actual ROM. Do not claim that this proves browser UI behavior, audio listening, cartridge timing, or physical Chromatic compatibility. Physical deployment or flashing is a separate step requiring an available device and appropriate authorization.
+
+Release blocking failures
+
+Any crash, inaccessible mandatory clue, unrecoverable gate, save-loss regression, unreadable key text, missing source asset, unlicensed content or mislabeled test evidence blocks release. Cosmetic issues may remain only in an explicit known-issues list that does not excuse a broken core path. A missing physical test means “emulator tested; physical validation pending,” never “Chromatic verified.”
+
+Milestones and implementation tickets
+
+Milestone
+
+Concrete work
+
+Exit test
+
+M0  Foundation
+
+Create/select native project; pin versions; Color Only; one room; input bindings; original placeholder player; build and boot.
+
+A clean checkout builds the same intended project. Roamin walks, interacts, pauses and changes a setting on the actual ROM.
+
+M1  First ten minutes
+
+R01–R06; Marty and June; P01–P02; Moth follower and Reveal; journal; safe camp; save/load; day-to-dusk shift.
+
+A new player reaches Light 1 in about 8–12 minutes, returns to porch, saves, cold boots and continues correctly. Owner reviews tone and character direction.
+
+M2  Complete graybox
+
+All 24 rooms; P03–P12; all companions; chapter states; hints; dawn and credits; six journal pages as text.
+
+Full legitimate route reaches credits without debug flags. Wrong companion, backtracking and Return to Camp cannot softlock.
+
+M3  Production pass
+
+Replace placeholders; final dialogue and font; five music cues; twelve effect families; comfort settings; four scares.
+
+Every production asset has provenance. Audio-off/Reduced Scares route has every necessary clue. Key scenes pass native-size visual review.
+
+M4  Release candidate
+
+Regression suite; first-time playtests; accessibility checks; save fixtures; clean build; documentation and licenses.
+
+All blocking defects closed. 60–90 minute pacing validated or documented adjustment approved. Matching ROM, source and checksums packaged.
+
+M5  Approved release
+
+Owner reviews release packet, public likeness/names and licensing; physical validation if claimed; then authorized publishing.
+
+Explicit approval for destination and content. Repository and release match reviewed artifacts; no private source photo or secrets.
+
+
+Ticket decomposition
+
+SYS01 input, menu and pause ownership; SYS02 companion selection and follower; SYS03 target dispatch; SYS04 journal and hints; SYS05 save/load and migration checks.
+
+WORLD01 room graph and transitions; WORLD02 collision audit; QUEST01 progression flags; QUEST02 twelve puzzle scripts; QUEST03 dawn reconstruction.
+
+CONTENT01 character sheets; CONTENT02 four tile families; CONTENT03 UI and font; CONTENT04 dialogue; AUDIO01 music; AUDIO02 effects.
+
+QA01 legitimate route; QA02 alternate action orders; QA03 saved-game fixtures; QA04 text and settings; QA05 physical-device matrix; RELEASE01 provenance and packaging.
+
+Order and change control
+
+Implement SYS01–SYS05 and the M1 world slice before the remaining content. Every ticket names its source revision, acceptance test and evidence. The owner’s slice review is a deliberate gate before expanding the full map. If scope or tooling slips, reduce decoration, idle frames or optional prose first. Keep the three companion abilities, complete ending, safe saves, native source and release gates intact. Any new mechanic or fourth creature replaces planned work rather than silently enlarging version 1.0.
+
+Repository and licensing plan
+
+Repository layout
+
+Path
+
+Contents
+
+PocketHoller.gbsproj; project/
+
+Native descriptor and editable .gbsres scenes, actors, triggers, variables, palettes and settings.
+
+assets/
+
+Production PNGs, native metadata, fonts, UI, UGE music and sounds. Only cleared assets used by the game.
+
+art/source/; audio/source/
+
+Editable human-authored working files and export instructions. No raw family reference photo.
+
+docs/
+
+Design brief, room-map.csv, variable-register.csv, test plan, accessibility notes, build notes, save policy and credits.
+
+tests/; tools/
+
+Regression inputs, legally distributable test fixtures, checks and documented build wrappers.
+
+licenses/; THIRD_PARTY.md
+
+Full applicable license texts and inventory of templates, engine/runtime obligations, fonts, audio, art and tools.
+
+README.md; CONTRIBUTING.md
+
+Player instructions, developer setup, tested platforms, contribution policy and release process.
+
+dist/; evidence/
+
+Generated release outputs and selected test evidence; keep routine build caches ignored. Release artifacts map to a commit.
+
+
+Proposed licensing split
+
+Propose MIT for original project code and scripts, and CC BY 4.0 for original cleared art, music and narrative assets. The owner must approve this split before publication. MIT requires preserving its notices. CC BY 4.0 allows sharing and adaptation, including commercially, with attribution, a license link and indication of changes; compliant reuse cannot simply be revoked. Creative Commons does not grant unrelated privacy, publicity or third-party rights. [S8, S9]
+
+Do not put a blanket license over files the project does not own. Preserve every dependency’s original notices and terms, including the engine/runtime, starter/template material, plugins, fonts and sound libraries. Record an explicit license per file or asset group and distinguish tool licenses from material shipped in the ROM. Remove or replace anything whose origin or redistribution rights are uncertain.
+
+Provenance gate
+
+Maintain an asset inventory with path, title, creator, creation date, source URL or generation method, original license, modifications, attribution text, permission evidence and release clearance. Record AI-assisted concepts and human cleanup honestly. Do not assume generated work has protectable copyright or promise exclusivity. Use factual credits and license only rights actually held.
+
+Original means original
+
+No ripped Pokémon sprites, sounds, creature designs, names, maps, fonts or recognizable derivative branding. Do not ship proprietary Nintendo boot ROMs or other commercial game ROMs. PocketHoller and the proposed subtitle need a reasonable title/brand conflict check before release. Family likeness approval is separate from copyright licensing; use fictionalized alternatives if public use is not approved. Keep permission records private and put only necessary attribution in the public repository.
+
+Documentation and release checklist
+
+README contents
+
+One-paragraph pitch, spoiler-light content notes and intended platforms. State whether physical Chromatic testing is complete.
+
+Verified screenshot or short capture from the released ROM; download links only after publishing is approved.
+
+Controls, comfort settings, save locations/behavior, New Game confirmation, known issues and how to report a bug.
+
+Exact editor/plugin/toolchain versions, supported development OS, setup steps, project entrypoint and reproducible build command. Do not invent a CLI command; record the one actually verified.
+
+ROM/source pairing, checksums, license split, full credits and third-party notices. Keep the ending out of the top-level player introduction.
+
+CONTRIBUTING contents
+
+Explain how to open the native project, preserve resource IDs, name scenes/assets, update the room/variable registers, run checks and submit focused changes. Require contributors to identify authorship and license compatibility, provide source files and add test evidence. No contributor should add family photographs or private biographical details. Agree on the contribution licensing process before accepting outside work; do not invent someone’s consent.
+
+Release packet
+
+Check
+
+Required evidence
+
+Playable build
+
+Final .gbc from the selected native project; SHA-256; inspected cartridge header; clean boot.
+
+Editable source
+
+Native project, assets and sidecars open in the pinned editor; clean checkout builds without missing local files.
+
+Quality
+
+Twelve puzzles; all room exits; save regressions; settings; no blocking issues; first-play notes.
+
+Device claim
+
+Exact physical test result, or an explicit pending label. Emulator evidence is kept separate.
+
+Rights and privacy
+
+Cleared asset inventory, license texts, notices, approved credits, public character-name/likeness review.
+
+Publication
+
+Owner-approved repository account, visibility, release tag, description and files. No public push before approval.
+
+
+Agent completion report
+
+Provide the native project location, ROM and hash, verified build steps, completed milestone, test results, unresolved defects and the next concrete decision. Separate “authored,” “compiled,” “observed in emulator,” “reviewed by a person,” and “tested on physical hardware.” A browser link alone is not the deliverable. If tool setup or hardware blocks a check, name that check and keep the project and evidence usable for the next person.
+
+Stop conditions
+
+Stop after the requested milestone or when a decision outside this brief is needed. Do not publish a repository, upload a ROM to public hosting, buy hardware, flash a cartridge, accept new licenses, or expand access merely because eventual release is planned. This document authorizes no such action by itself. The immediate deliverable is the handoff; the implementing agent begins only after the owner requests the build in an approved environment.
+
+Implementing agent kickoff and sources
+
+Copy and paste kickoff
+
+Build PocketHoller using the attached Full Game Agent Handoff as the design baseline. Start by confirming the authorized working environment and project destination. Use the ModRetro Chromatic plugin to create or select a genuine editable GB Studio project. Keep the native .gbsproj, .gbsres resources, original asset sources and a real buildable ROM. Do not replace the game with a web imitation or a static concept demo.
+
+Implement M0 and M1 first: Roamin is the single playable character, Marty is the safe porch guide, LanternMoth is the first trusted companion, and the opening ends with the first warning light and a working save/load loop. Use original placeholders until the photo-referenced character direction is approved. Do not include the family photo in the repository. Follow the 24-room, three-companion, twelve-puzzle plan for the full game only after the opening review gate.
+
+Before editing, inspect the actual selected project and installed tools. Preserve native metadata and revision safeguards. Build the actual project, inspect its returned ROM and playtest it with real input and framebuffer evidence. Show a supported browser preview if available; use headless emulator checks if the preview is unavailable. Do not claim audio, saving or physical Chromatic compatibility from screenshots alone.
+
+Deliver the opening’s editable project, ROM hash, build instructions, short genuine gameplay evidence, save/load results and any blocker. Ask for owner review of tone, controls and character direction before expanding. Keep every companion trustworthy, provide Reduced Scares and audio-off play, prevent softlocks, and retain the complete warm ending. Use the licensing and provenance plan as a proposal requiring release review. Do not publish, buy hardware or flash a device without separate authorization.
+
+Reference list
+
+Technical references checked 9 October 2026. Recheck against the installed versions before implementation; engine allocations and plugin capabilities can change. The production targets in this brief are deliberately below documented ceilings and must still be tested.
+
+S1  GB Studio backgrounds  https://www.gbstudio.dev/docs/assets/backgrounds/
+
+S2  GB Studio sprites  https://www.gbstudio.dev/docs/assets/sprites/
+
+S3  GB Studio scene limits  https://www.gbstudio.dev/docs/project-editor/scenes/limits/
+
+S4  Pan Docs object attribute memory  https://github.com/gbdev/pandocs/blob/master/src/OAM.md
+
+S5  GB Studio music  https://www.gbstudio.dev/docs/assets/music/
+
+S6  GB Studio settings  https://www.gbstudio.dev/docs/settings/
+
+S7  GB Studio save data  https://www.gbstudio.dev/docs/scripting/script-glossary/save-data/
+
+S8  MIT license overview and text  https://choosealicense.com/licenses/mit/
+
+S9  Creative Commons Attribution 4.0  https://creativecommons.org/licenses/by/4.0/
+

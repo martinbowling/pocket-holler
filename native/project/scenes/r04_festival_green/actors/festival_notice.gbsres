@@ -1,0 +1,92 @@
+{
+  "_resourceType": "actor",
+  "id": "fa42ef5c-1fdd-5cd8-a994-027bf2e471b5",
+  "_index": 1,
+  "symbol": "actor_r04_festival_notice",
+  "prefabId": "",
+  "name": "Festival Notice",
+  "coordinateType": "tiles",
+  "x": 8,
+  "y": 6,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "4392fd66-4f05-5fef-b928-5d3e83c11d03",
+  "paletteId": "ebf171a2-c6dd-5d22-b5cc-4c08f0ce2337",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "ec6a6cfa-e28a-53b1-b8fd-8f4630811564",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "LANTERN WALK\nTONIGHT.\nEVERYONE MEET",
+          "HERE AFTER\nSUNDOWN.",
+          "ORIGINAL VOICES.\nORIGINAL LIGHTS.\nEVERYONE",
+          "ACCOUNTED FOR."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "abdd0f67-e249-5fed-9d77-a44f1771b65c",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-813"
+      }
+    },
+    {
+      "id": "fd704a2f-556e-56ad-a59e-dc0cc62b4d1c",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "6ea80912-2c44-55a9-bd5f-9ef2c58962a4",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "bd7c3326-23c5-5c6d-870b-933a90922910",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-813"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,105 @@
+{
+  "_resourceType": "actor",
+  "id": "91b38394-a877-5e02-839c-54c400d3e4b0",
+  "_index": 1,
+  "symbol": "actor_r03_june",
+  "prefabId": "",
+  "name": "June",
+  "coordinateType": "tiles",
+  "x": 8,
+  "y": 6,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "a53b80cb-7cab-5d2f-8c76-c5cd10e9f1a1",
+  "paletteId": "e34ba9f7-6a5c-54c4-9dad-085f89005a08",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "e2b347e0-364a-5d7e-91cc-7ca1217783f2",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "41",
+        "value": {
+          "type": "number",
+          "value": 1
+        }
+      }
+    },
+    {
+      "id": "077c1e02-4e4c-56fc-91af-7f83f3b715fa",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "JUNE: THE STORM\nTANGLED OUR\nLIGHT CIRCUIT.",
+          "START AT THE\nBOUNDARY.",
+          "THE ORCHARD\nLANTERN KEPT\nFLICKERING. THE",
+          "WINDSCREEN MAY\nBE TURNED WRONG.",
+          "A CREATURE ONCE\nLIVED IN ITS\nWARM LIGHT. BE",
+          "GENTLE WITH IT."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "80f2d74a-1937-5c71-ae8d-677d0303b96b",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-800"
+      }
+    },
+    {
+      "id": "977f1a36-21f4-545a-a7f0-c8ac5b79fc83",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "6d783130-ce10-5b6d-a679-e9b276dfe5c9",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "0fc66d73-c231-5369-9689-b56133d58263",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-800"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

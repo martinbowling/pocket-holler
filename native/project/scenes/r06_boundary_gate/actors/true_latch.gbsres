@@ -1,0 +1,281 @@
+{
+  "_resourceType": "actor",
+  "id": "251a0952-917c-5082-96bc-0879d9465a25",
+  "_index": 2,
+  "symbol": "actor_r06_true_latch",
+  "prefabId": "",
+  "name": "True Latch",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 6,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "61609cb9-d666-581f-88f7-262925392928",
+  "paletteId": "ebf171a2-c6dd-5d22-b5cc-4c08f0ce2337",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "aa005b86-2347-586b-8b30-f06f02f50e37",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "11"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "709bc5c8-9c2a-5f22-9487-40dfb5a42a4a",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "THE LATCH IS\nOPEN. THE FIRST\nLIGHT STAYS LIT.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "694b0545-1895-58b9-a15e-079817448582",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "38"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "f7611605-9db4-5e15-8e12-a99c8017c7bf",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "11",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "c6559b3f-8acb-57b3-8a55-5f5c3cb11831",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "2",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "f89d2ace-b4eb-5407-a987-1196ddb4e3bb",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "3",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "b985a450-b138-51ae-9ed9-438bf1d5cad6",
+                  "command": "EVENT_ACTOR_HIDE",
+                  "args": {
+                    "actorId": "e1c02428-3884-5d94-87f0-42fd5c9fdb3a"
+                  }
+                },
+                {
+                  "id": "64b6995d-5bb6-5e34-9faa-5fdf00a3d7a1",
+                  "command": "EVENT_ACTOR_HIDE",
+                  "args": {
+                    "actorId": "9d284d1d-b618-5e4a-b813-d1e40ba89571"
+                  }
+                },
+                {
+                  "id": "70025959-55c5-5e12-8961-1f45d2bae475",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "3"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "b6f05146-244e-53a0-82f9-6a010741dcb1",
+                        "command": "EVENT_PALETTE_SET_BACKGROUND",
+                        "args": {
+                          "palette0": "a89e727c-9a41-5858-9a04-8c19faec44d1",
+                          "palette1": "96dbcdf8-2c47-567f-b77b-300e57cfe917",
+                          "palette2": "keep",
+                          "palette3": "keep",
+                          "palette4": "keep",
+                          "palette5": "keep",
+                          "palette6": "keep",
+                          "palette7": "keep"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                },
+                {
+                  "id": "f4eb925e-9415-5b71-9c16-af655178db4b",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "33"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "8627ee24-d523-54b2-b12f-fd44d8cce2cd",
+                        "command": "EVENT_SOUND_PLAY_EFFECT",
+                        "args": {
+                          "type": "beep",
+                          "pitch": 6,
+                          "duration": 0.12,
+                          "wait": false,
+                          "priority": "low"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                },
+                {
+                  "id": "b25eac19-1909-59d4-9b43-e9d396fdcc9f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "THE FIRST\nWARNING LIGHT\nWARMS THE FENCE.",
+                      "DUSK SETTLES.",
+                      "A VOICE IN THE\nWOODS: COME\nHOME, HOME.",
+                      "ONE WORD\nTOO MANY. MOTH\nPOINTS BACK",
+                      "TOWARD TOWN.",
+                      "RETURN TO THE\nPORCH. SAVE AT\nCAMP."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "afb80745-f493-5dee-88e3-44d1543c99d4",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "WHICH LATCH IS\nTRUE? REVEAL THE\nINSCRIPTION",
+                      "BEFORE CHOOSING."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ceb5e956-7bb0-513f-8583-f8ef3b8d0dfe",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-891"
+      }
+    },
+    {
+      "id": "66e24eb6-5864-578a-a5ea-2f75ca8aea33",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "abe87469-92e6-5f62-88a3-f0b4c12688f4",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "f0557d3f-7f12-5b84-b457-c594510c27d4",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-891"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}
