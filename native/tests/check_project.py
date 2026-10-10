@@ -4,6 +4,7 @@ import csv,json
 ROOT=Path(__file__).resolve().parents[1]
 resources=[(p,json.loads(p.read_text())) for p in (ROOT/'project').rglob('*.gbsres')]
 scenes={d['id']:d for p,d in resources if d.get('_resourceType')=='scene'}
+scripts={d['id'] for p,d in resources if d.get('_resourceType')=='script'}
 seen=set();symbols=set();events=set();count=0;transitions=0;pages=0
 def collisions(s):
     raw=s['collisions'];out=[];i=0
@@ -38,6 +39,8 @@ def walk(o):
                 pages+=1
         if cmd=='EVENT_MENU':
             assert all(len(a['option'+str(i)])<=16 for i in range(1,a['items']+1))
+        if cmd=='EVENT_CALL_CUSTOM_EVENT':
+            assert a['customEventId'] in scripts,('Missing banked action',a['customEventId'])
         for value in o.values():walk(value)
     elif isinstance(o,list):
         for value in o:walk(value)
@@ -49,5 +52,18 @@ for path,d in resources:
     walk(d)
 rows=list(csv.DictReader((ROOT/'docs/room-map.csv').open()))
 assert {r['native_scene_id'] for r in rows if r['status'] in ['playable','UI']}==set(scenes)
-assert len(scenes)==7
-print(json.dumps({'passed':True,'scenes':len(scenes),'events':count,'transitions':transitions,'textPages':pages,'uniqueSymbols':len(symbols),'scope':'M0/M1; static landing tiles, not full moving actor overlap or runtime exit coverage'},indent=2))
+assert len(scenes)==25
+assert {s['name'].split()[0] for s in scenes.values()}=={'TITLE'}|{f'R{i:02}' for i in range(1,25)}
+variables=json.loads((ROOT/'project/variables.gbsres').read_text())['variables']
+assert len({v['id'] for v in variables})==len(variables)
+assert len({v['name'] for v in variables})==len(variables)
+assets=[json.loads(p.read_text()) for p in (ROOT/'assets').rglob('*.gbsres')]
+asset_ids={d['id'] for d in assets if 'id' in d}
+for p,d in resources:
+    if d.get('_resourceType')=='scene':assert d['backgroundId'] in asset_ids,(p,'Missing background')
+    if d.get('_resourceType')=='actor':
+        assert d['spriteSheetId'] in asset_ids,(p,'Missing sprite')
+        assert d.get('collisionGroup','') in ['', '1','2','3'],(p,'Invalid collision group')
+        scene=next(s for sp,s in resources if sp==p.parent.parent/'scene.gbsres')
+        assert 0<=d['x']<scene['width']-1 and 0<=d['y']<scene['height']-1,(p,'Actor out of bounds')
+print(json.dumps({'passed':True,'scenes':len(scenes),'playableRooms':24,'events':count,'transitions':transitions,'textPages':pages,'uniqueSymbols':len(symbols),'variables':len(variables),'bankedActions':len(scripts),'scope':'Native source identities, asset/action references, collision landing tiles and text fit; input-driven runtime route is checked separately'},indent=2))

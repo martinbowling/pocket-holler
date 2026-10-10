@@ -1,0 +1,74 @@
+{
+  "_resourceType": "script",
+  "id": "3a8975a2-5759-5cc0-bf69-a746c1e037b1",
+  "name": "actor R19 hollow map",
+  "symbol": "script_full_actor_r19_hollow_map",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "8d737e1b-ebbe-56f8-a325-10f3394c087b",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "THREE SHORT\nPATHS: ECHO\nHALL, SPRING",
+          "CHAMBER, BELL\nCHAMBER.",
+          "MOTH, THEN\nTURTLE, THEN\nTHUNDERBIRD.",
+          "CHANGE FRIENDS\nHERE AND SAVE.",
+          "THE MARKED HOME\nSHORTCUT NOW\nOPENS BOTH WAYS."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "11c1cad0-fe6a-590b-89ae-e68fdfd24f0d",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "5d67d281-f5a9-56f2-8d3a-1d0f91e75612"
+      }
+    },
+    {
+      "id": "11f21b70-a108-5a6f-8896-db8dae862151",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b6e60727-287d-570c-9a3a-b6b3ae91f847",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "7d2e8f6d-4171-5bad-9e51-32fe29861773",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "5d67d281-f5a9-56f2-8d3a-1d0f91e75612"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

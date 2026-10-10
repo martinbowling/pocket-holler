@@ -1,0 +1,237 @@
+{
+  "_resourceType": "script",
+  "id": "bc541d49-f77b-516f-8693-67afd89667ab",
+  "name": "ability R21 spring stone",
+  "symbol": "script_full_ability_r21_spring_stone",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "404b473e-f1d6-5a16-bf6c-9b833cd0c2e3",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "19"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "2e7336a8-81a6-55d7-be88-b1907b5c6774",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "THE SPRING IS\nALREADY\nRESTORED.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "4e203fb6-e8b3-56c5-a90d-8c32768d6a2a",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "18"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "b3531189-f39b-5441-926f-45400458f9f9",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "65"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "7c9653ec-0296-54e1-ba9d-401bb08276e3",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "66"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 4
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "440a3bf5-6ad1-5562-8f30-923e0634efef",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "19",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "0f9a586c-c1ec-5978-8277-6c4032dc6741",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "33"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "64470fa7-d7bf-5333-b1c2-962f5060d2b8",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "72"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "bf875f3b-7dc2-5333-953d-39d7d499b26f",
+                                          "command": "EVENT_SOUND_PLAY_EFFECT",
+                                          "args": {
+                                            "type": "beep",
+                                            "pitch": 6,
+                                            "duration": 0.12,
+                                            "wait": false,
+                                            "priority": "low"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            },
+                            {
+                              "id": "96575c40-2543-5047-a630-fd2daedffab6",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "WATER REACHES\nTHE BELL SPRING.",
+                                  "TURTLE RETURNS\nTO YOUR SIDE.\nTHUNDERBIRD CAN",
+                                  "CHARGE THE THREE\nBELL LAMPS."
+                                ],
+                                "minHeight": 4,
+                                "maxHeight": 4,
+                                "textHeight": 3,
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "b31fadec-669b-5be8-b207-bc80fb24a9dc",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "THE RIGHT\nCHANNEL DOES NOT\nREACH THE BELL.",
+                                  "READ THE WALL\nDIAGRAM."
+                                ],
+                                "minHeight": 4,
+                                "maxHeight": 4,
+                                "textHeight": 3,
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "996581e8-0c6f-5c02-97db-4a065532be69",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "THE LEFT CHANNEL\nDOES NOT REACH\nTHE BELL. READ",
+                            "THE WALL\nDIAGRAM."
+                          ],
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "5a7847f9-58cc-5851-bf0b-4ad73411cc2f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "REVEAL AND\nCHOOSE THE TRUE\nINSCRIPTION",
+                      "BEFORE RESTORING\nTHE SPRING."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

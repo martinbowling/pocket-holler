@@ -1,0 +1,217 @@
+{
+  "_resourceType": "script",
+  "id": "78744b59-c63c-5e30-a7a2-db0984dcd612",
+  "name": "actor R11 wheel reset",
+  "symbol": "script_full_actor_r11_wheel_reset",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {
+    "0": {
+      "id": "0",
+      "name": "Actor 0"
+    },
+    "1": {
+      "id": "1",
+      "name": "Actor 1"
+    },
+    "2": {
+      "id": "2",
+      "name": "Actor 2"
+    },
+    "3": {
+      "id": "3",
+      "name": "Actor 3"
+    }
+  },
+  "script": [
+    {
+      "id": "a854a46e-b95c-57bc-87f2-fc687fb3682c",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d6178655-282b-5d15-b220-506191bb212a",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "THE WORKING FLOW\nIS PERMANENT. IT\nWILL NOT RESET.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "22b34076-1202-5d10-bdfd-cefa7b8bc064",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "55",
+              "value": {
+                "type": "number",
+                "value": 0
+              }
+            }
+          },
+          {
+            "id": "423a7186-03d0-53dd-b22d-1c74866011df",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "56",
+              "value": {
+                "type": "number",
+                "value": 0
+              }
+            }
+          },
+          {
+            "id": "6ccadef6-c556-5561-b755-86d2b42010dc",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "57",
+              "value": {
+                "type": "number",
+                "value": 0
+              }
+            }
+          },
+          {
+            "id": "1c641659-9c90-5778-b397-afbe5605894a",
+            "command": "EVENT_ACTOR_SET_POSITION",
+            "args": {
+              "actorId": "0",
+              "x": {
+                "type": "number",
+                "value": 4
+              },
+              "y": {
+                "type": "number",
+                "value": 6
+              },
+              "units": "tiles"
+            }
+          },
+          {
+            "id": "73464023-407a-540e-8533-864251fbf7ba",
+            "command": "EVENT_ACTOR_SET_POSITION",
+            "args": {
+              "actorId": "1",
+              "x": {
+                "type": "number",
+                "value": 8
+              },
+              "y": {
+                "type": "number",
+                "value": 6
+              },
+              "units": "tiles"
+            }
+          },
+          {
+            "id": "f9db75d2-dfef-56a2-abb4-6b4eae0c043c",
+            "command": "EVENT_ACTOR_SET_POSITION",
+            "args": {
+              "actorId": "2",
+              "x": {
+                "type": "number",
+                "value": 12
+              },
+              "y": {
+                "type": "number",
+                "value": 6
+              },
+              "units": "tiles"
+            }
+          },
+          {
+            "id": "7c3fdc33-9d71-55df-a25e-10b49403ca6b",
+            "command": "EVENT_ACTOR_SHOW",
+            "args": {
+              "actorId": "3"
+            }
+          },
+          {
+            "id": "d79cdd24-e532-592e-a5f9-0059879200f8",
+            "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+            "args": {
+              "actorId": "3"
+            }
+          },
+          {
+            "id": "98e8fcef-e592-5985-85c8-280b1316f59a",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "ALL THREE\nSWITCHES CLOSED.\nTRY THE FLOW",
+                "DIAGRAM AGAIN."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "32e186b8-2185-5d2b-9c01-e9bf395f82ac",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "a9fc248a-8e1a-5818-b22f-cd70bf9f4f92"
+      }
+    },
+    {
+      "id": "10b4dba1-0ae9-5883-a1a6-f6d6fd30ab7f",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "be35682f-2b4c-55b4-a6a2-b3820f55099d",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "b25f25db-4b3b-51ed-b528-bb39c8173584",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "a9fc248a-8e1a-5818-b22f-cd70bf9f4f92"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

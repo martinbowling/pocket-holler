@@ -1,0 +1,108 @@
+{
+  "_resourceType": "script",
+  "id": "9f932059-79c4-592c-8593-3ee8a44b5643",
+  "name": "actor R06 gate left",
+  "symbol": "script_full_actor_r06_gate_left",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "427c373f-ced2-52b2-8b67-f4924071d62d",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "11"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "e65e2d7e-2043-5d9b-abbb-c34712a079eb",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE BOUNDARY IS\nOPEN. CREEK CAMP\nLIES BEYOND THE",
+                "GATE."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "43d4bdf4-b5c9-579c-846e-36305b89a481",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE\nWARNING-LIGHT\nGATE IS SHUT.",
+                "CHECK THE RAY\nINSCRIPTION."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "666c1ce6-1c24-5dbc-9be0-da31269b9c42",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-903"
+      }
+    },
+    {
+      "id": "95064b00-024d-5e31-858d-5bf3a7a7961f",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "f380356e-5f24-5fd4-82df-698fc83ce6dc",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "313b3a96-cfcc-5ef1-8d8d-8464236b04c3",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-903"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

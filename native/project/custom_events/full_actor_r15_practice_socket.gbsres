@@ -1,0 +1,71 @@
+{
+  "_resourceType": "script",
+  "id": "91fb5386-eb36-50c0-a324-a12fa9d2ab81",
+  "name": "actor R15 practice socket",
+  "symbol": "script_full_actor_r15_practice_socket",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "052529ad-71a7-52c0-8cc5-80c12aec93ef",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "A SAFE CERAMIC\nSOCKET.\nTHUNDERBIRD CAN",
+          "SPARK IT WITH B."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "942e6b7b-9df4-5741-a67a-da9b07d87d20",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "8bbbe9e8-e32e-541e-9316-a2196edc4c8f"
+      }
+    },
+    {
+      "id": "cac6df02-19ee-5222-92e3-5dc5cd6a7a69",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "75d83c7a-6dbb-543e-b0b7-697cc30bff21",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "61510878-7e00-55db-aed3-beef2e797531",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "8bbbe9e8-e32e-541e-9316-a2196edc4c8f"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "_resourceType": "script",
+  "id": "d612b2a4-2b31-5dad-830e-0f7a6761757e",
+  "name": "ability R16 star relay",
+  "symbol": "script_full_ability_r16_star_relay",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "7532ba2c-6fbe-597f-ad5c-5a1de3e80103",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "17"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "18cf2e65-83f8-50c1-a2f9-0ae3fc7016ef",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE RELAYS STAY\nLIT. NO NEED TO\nCHARGE THEM",
+                "AGAIN."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "9598cc95-9238-5df3-ba4d-6aed7f15993a",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "16"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "4f08c4c0-f4e9-5cc4-aef1-3c838cd3e2ad",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "61"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "dd834369-a83e-558b-bc66-9fa7445ff5ef",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "61",
+                          "value": {
+                            "type": "number",
+                            "value": 3
+                          }
+                        }
+                      },
+                      {
+                        "id": "626d46e5-5219-5cfa-ac7b-5db81d906c10",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "17",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "a32b6ed1-ee26-5ecc-9d17-0ce34f6bbac6",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "2",
+                          "value": {
+                            "type": "number",
+                            "value": 3
+                          }
+                        }
+                      },
+                      {
+                        "id": "4a7f60c7-275a-57de-8168-1435e0367545",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "33"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "b37f13b6-cff2-5895-929b-8b341a718eb5",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "72"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "4ff72f38-7743-515f-b2ef-c267d7b6ab8c",
+                                    "command": "EVENT_SOUND_PLAY_EFFECT",
+                                    "args": {
+                                      "type": "beep",
+                                      "pitch": 6,
+                                      "duration": 0.12,
+                                      "wait": false,
+                                      "priority": "low"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      },
+                      {
+                        "id": "6b9a6f85-5459-58c7-a76c-e4f00beb4e8b",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "ALL THREE RELAYS\nGLOW. LIGHT 3 IS\nLIT.",
+                            "THE CAMP LOOP\nAND BELL ROAD\nARE OPEN.",
+                            "REST AND SAVE\nBEFORE THE\nHOLLOW. ALL",
+                            "THREE FRIENDS\nCAN HELP."
+                          ],
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "d0e6a56a-3dfd-5741-ad23-5c377e472dd2",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "61",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "01259a38-e100-5505-8e01-a30e6f5e93e4",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "33"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "353eb2ee-a7d3-5772-8541-213f28f3c7fe",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "72"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "c0a4a7c7-56b5-5bb1-8055-753cdd686093",
+                                    "command": "EVENT_SOUND_PLAY_EFFECT",
+                                    "args": {
+                                      "type": "beep",
+                                      "pitch": 2,
+                                      "duration": 0.12,
+                                      "wait": false,
+                                      "priority": "low"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      },
+                      {
+                        "id": "2ab37ea1-c8f0-5472-8823-6f3e885c03bb",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A SOFT CLICK.\nTHIS TRY RESETS.\nLEAF, WAVE,",
+                            "STAR."
+                          ],
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "76d26e57-670e-5b23-a189-498942ba35b7",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "SHELTER\nTHUNDERBIRD AT\nTHE ROOST FIRST.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

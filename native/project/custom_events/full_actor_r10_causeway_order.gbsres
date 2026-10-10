@@ -1,0 +1,73 @@
+{
+  "_resourceType": "script",
+  "id": "6ed72808-69b0-59ef-945d-e65ee7721078",
+  "name": "actor R10 causeway order",
+  "symbol": "script_full_actor_r10_causeway_order",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "f0a9db07-63b7-559e-bb24-d02a82a2ca57",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "THREE SAFE\nSTATIONS, LEFT\nTO RIGHT: NEAR,",
+          "MIDDLE, FAR.",
+          "FACE EACH WAVE\nMARK. B WITH\nTURTLE. STAY ON",
+          "THE DRY BANK."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "d4b91e99-d967-5937-a775-9ad2a5f470bf",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "ac46f115-b099-548d-b27d-884cda195725"
+      }
+    },
+    {
+      "id": "7d0175dd-b3c3-51d6-9004-c08872f8b211",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "13d83b87-a0bf-5fbc-bef2-de87c5afb7a8",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "5857db75-7bf9-523a-b87c-d961483b9f5f",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "ac46f115-b099-548d-b27d-884cda195725"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

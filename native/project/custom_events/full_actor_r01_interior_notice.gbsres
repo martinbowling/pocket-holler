@@ -1,0 +1,79 @@
+{
+  "_resourceType": "script",
+  "id": "d6c4b29a-1a26-528a-8ffb-a6cd1fa11753",
+  "name": "actor R01 interior notice",
+  "symbol": "script_full_actor_r01_interior_notice",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "859db4ec-3629-51e3-bf1e-3a6fcb788125",
+      "command": "EVENT_SCRIPT_LOCK",
+      "args": {}
+    },
+    {
+      "id": "4e4d4cc9-f34a-514b-aa35-f91f1ee92c94",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "6b4957e5-65ec-5946-9438-71d135eaab73"
+      }
+    },
+    {
+      "id": "8f29a446-a838-5399-b7c4-6a28f4bc2038",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "3dfa7392-c820-53dd-a8cf-d3a9c4040d5b",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "f39fc280-73c0-585c-a396-116acc0456ff",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "6b4957e5-65ec-5946-9438-71d135eaab73"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "7237e17b-6c17-5d39-94af-2855952eae3a",
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "8f6fb2bc-d6b0-5c5a-93f0-6b22f5ee4d22",
+        "x": {
+          "type": "number",
+          "value": 16
+        },
+        "y": {
+          "type": "number",
+          "value": 10
+        },
+        "direction": "left",
+        "fadeSpeed": "2"
+      }
+    }
+  ]
+}

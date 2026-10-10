@@ -8,4 +8,4 @@ Build, record the exact hash, retain relevant input-driven emulator evidence, in
 
 Identify asset authorship, sources, modifications and compatible licenses. Do not add family photographs, private biographical information, ripped game assets, proprietary boot ROMs or uncertain third-party content. Agree on contribution licensing with the owner before outside contributions; the proposed split is not an approved blanket grant.
 
-Expansion waits for opening review. Public names/likenesses, title clearance, final credits, licenses, publication destination and physical cartridge actions require separate decisions in the handoff.
+The owner authorized and named the full game, including playable Marty and Roam. The source and release remain in the existing private owner repository. Public visibility, a blanket content license, outside contribution licensing and physical cartridge actions require separate decisions.

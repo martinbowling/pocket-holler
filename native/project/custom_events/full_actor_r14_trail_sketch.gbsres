@@ -1,0 +1,178 @@
+{
+  "_resourceType": "script",
+  "id": "80015042-b470-55b8-8cf9-ffc2f3b46e18",
+  "name": "actor R14 trail sketch",
+  "symbol": "script_full_actor_r14_trail_sketch",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "99489f71-2742-5cdb-aed2-ea60becd58d6",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "24"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d74bc80c-f1d3-5eaf-9751-c91c60189b10",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "24",
+              "value": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "6bb67978-ee98-57e3-b36c-599dd6506e94",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "33"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "d4969202-33b3-55a9-b0ab-c668a4b9c651",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "72"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "5a7d3094-3fe2-52eb-a5a4-fced6a6b33fe",
+                        "command": "EVENT_SOUND_PLAY_EFFECT",
+                        "args": {
+                          "type": "beep",
+                          "pitch": 6,
+                          "duration": 0.12,
+                          "wait": false,
+                          "priority": "low"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "edc58978-6385-599f-8a9e-eb3697674481",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "JOURNAL 3: TRAIL\nSKETCH.",
+                "AN OLD SKETCH\nSHOWS A LOOP\nFROM THE RELAYS",
+                "BACK TO CAMP.",
+                "THE DRAWN PERCH\nHAS TWO FEATHERS\nPOINTING INWARD."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "ccf87523-ecc2-5b33-b467-01726e3ae70c",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "JOURNAL 3: TRAIL\nSKETCH.",
+                "AN OLD SKETCH\nSHOWS A LOOP\nFROM THE RELAYS",
+                "BACK TO CAMP.",
+                "THE DRAWN PERCH\nHAS TWO FEATHERS\nPOINTING INWARD."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "fad76c7e-9488-5dda-87d5-9bc78a47a0b5",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "4d0c1240-c2bd-55a6-a4fe-8a00a2a25898"
+      }
+    },
+    {
+      "id": "23b0053d-5627-5627-a4eb-94d6557bb054",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "0e01e85a-a9ce-54cf-b8b8-3fe0b0cbae4e",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "3bfd1da4-cebb-522a-8388-57a0f2681136",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "4d0c1240-c2bd-55a6-a4fe-8a00a2a25898"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "_resourceType": "script",
+  "id": "fb4d0bd3-eb30-55be-b237-718e160484b6",
+  "name": "actor R09 upstream gate",
+  "symbol": "script_full_actor_r09_upstream_gate",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {
+    "0": {
+      "id": "0",
+      "name": "Actor 0"
+    }
+  },
+  "script": [
+    {
+      "id": "40885765-e9c0-5e49-b535-4eb12ebe42a6",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "12"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "04bbb7a8-9466-5725-968f-101afd839427",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "BOTH REED GATES\nARE OPEN. TURTLE\nTRAVELS WITH",
+                "YOU."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "99b1c71a-918b-54fc-a5c6-f9be5c1b99b6",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "11"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "296977c9-e9a3-55fc-b87f-8cc20214ce9e",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "53"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "340a26f5-250a-5c0f-a3e4-289dead29d8c",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "53",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "78c1d552-dafd-5061-abbf-a6fb5d9de7f4",
+                        "command": "EVENT_ACTOR_HIDE",
+                        "args": {
+                          "actorId": "0"
+                        }
+                      },
+                      {
+                        "id": "bb9dace1-068a-5d67-866c-6eb88b18c02b",
+                        "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                        "args": {
+                          "actorId": "0"
+                        }
+                      },
+                      {
+                        "id": "57767349-4061-5065-8005-c66473bc59c4",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "33"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "57c5ee53-0847-5138-bc8e-dc451fab33fa",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "72"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "7b9c0054-1f22-5f5f-a377-fe714266902f",
+                                    "command": "EVENT_SOUND_PLAY_EFFECT",
+                                    "args": {
+                                      "type": "beep",
+                                      "pitch": 6,
+                                      "duration": 0.12,
+                                      "wait": false,
+                                      "priority": "low"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      },
+                      {
+                        "id": "0773ed4f-b368-5874-a2d4-59c03fedf565",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "UPSTREAM OPENS.\nTHE LEAVES NOW\nREACH THE LOWER",
+                            "GATE."
+                          ],
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "d6a7a841-3216-5d85-8638-68c132cd1daf",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": "UPSTREAM IS\nOPEN. DOWNSTREAM\nIS NEXT.",
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "a9de38d1-3473-5552-9ed3-362171b169f1",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "REPAIR THE\nBOUNDARY LIGHT\nFIRST.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "240565c5-d00e-54c5-9572-5058ed5312d0",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "6bdf216b-d7ee-5989-b82c-a406e9d0cfa2"
+      }
+    },
+    {
+      "id": "4896769f-259e-5a27-986d-84a5ca336d72",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d2d1c535-6c8d-5685-b9ec-5c126a7e5707",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "ec6c9675-ab29-5b0e-b072-ab45f29dbca0",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "6bdf216b-d7ee-5989-b82c-a406e9d0cfa2"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

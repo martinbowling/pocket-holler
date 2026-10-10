@@ -1,0 +1,105 @@
+{
+  "_resourceType": "script",
+  "id": "19331dd6-d7f2-5e84-85cf-dece3df347ba",
+  "name": "actor R10 middle wave",
+  "symbol": "script_full_actor_r10_middle_wave",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "fe2cc6a7-cb61-5ea0-9293-80ca6a9cec14",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "13"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "372c7fef-3edb-5f0c-87e9-ccb81ef69694",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "THE CROSSING\nSTAYS STEADY.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "835970b1-039b-59ad-a87e-86086effae04",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "MIDDLE STATION.\nUSE B WITH\nTURTLE FROM THE",
+                "DRY WALKWAY."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "73065a33-90e3-57f1-8964-416bfbcd6b46",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "a275ed06-098d-503e-af26-c7138efa3628"
+      }
+    },
+    {
+      "id": "d2ea3b3c-bd41-5179-a1df-da453b371969",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b2200034-f915-5a92-a49c-f9ba713ff94a",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "3a00b99c-be5f-5d8b-ba58-d4c9eb390ec3",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "a275ed06-098d-503e-af26-c7138efa3628"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "_resourceType": "script",
+  "id": "9facf2b7-b95f-50e1-b2ca-6d007a26ecd5",
+  "name": "actor R12 ridge notice",
+  "symbol": "script_full_actor_r12_ridge_notice",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "ccec3720-9219-5108-81c4-9670b77c9102",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "15"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "3b8b0ac1-563c-593e-871e-31892dc39b59",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "RIDGE PATH:\nOPEN. THE ROOST\nLIGHT IS NEXT.",
+                "RETURN TO THE\nCREEK CAMP TO\nSAVE AND CHOOSE",
+                "YOUR COMPANION."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "e3b62668-b347-5915-aeee-81c15e46336b",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "RIDGE GATE WAITS\nFOR THE CREEK\nLIGHT. THE ROUTE",
+                "BACK STAYS\nCLEAR."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "9a8509b5-806f-5ecf-8601-9ec16d4315a3",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "6c76981a-f2cc-5cb7-bd1d-a6c46eb1af0a"
+      }
+    },
+    {
+      "id": "50312f12-cccf-5898-857f-447915dd75d4",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "313d251c-72bd-58d9-bbf7-facf91ca443c",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "eefdd16b-09a4-57f1-998e-e1b79ecf6e5f",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "6c76981a-f2cc-5cb7-bd1d-a6c46eb1af0a"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

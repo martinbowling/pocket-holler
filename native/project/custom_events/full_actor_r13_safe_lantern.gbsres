@@ -1,0 +1,71 @@
+{
+  "_resourceType": "script",
+  "id": "79648e1b-cb8b-5bc1-98c1-8f4bac724dfc",
+  "name": "actor R13 safe lantern",
+  "symbol": "script_full_actor_r13_safe_lantern",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "56a501cc-bcae-5f5a-a87f-1840b1c7ba2d",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "THE CAMP LANTERN\nIS REAL. YOUR\nCOMPANIONS REST",
+          "SAFELY HERE."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "bf372bd0-471f-5f70-a585-93f0f7d8353f",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "819f3bda-d8a2-579c-adb7-6647651301f8"
+      }
+    },
+    {
+      "id": "26bc8e92-6edb-5dea-808d-346bab1eaf9a",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "05f57cce-6486-50a8-bf79-89fb19b5de74",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "f96e395c-e6b5-5a5d-8828-6d3f45ff047f",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "819f3bda-d8a2-579c-adb7-6647651301f8"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

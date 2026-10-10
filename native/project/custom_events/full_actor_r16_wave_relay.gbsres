@@ -1,0 +1,102 @@
+{
+  "_resourceType": "script",
+  "id": "c7fba319-294f-559b-9a22-66bb418770c0",
+  "name": "actor R16 wave relay",
+  "symbol": "script_full_actor_r16_wave_relay",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "e4af18eb-e55e-5cb0-93b0-d6c5a68292e5",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "17"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "1a337f5c-a87f-585b-9636-749e8318cd7f",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "WAVE RELAY: LIT.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "b28c0457-8ffc-55dd-81da-7b564b05c2c7",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "WAVE RELAY. FACE\nTHE SOCKET AND\nPRESS B.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "beed38a4-6af1-5de1-8e40-893f529c0c68",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "e43c35e6-e236-5acd-b7b1-7e1ade33f803"
+      }
+    },
+    {
+      "id": "5cf711bf-1662-5dec-8e38-b769db101bba",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "1615d0a5-041f-5bf4-82ae-09949421b814",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "da9f4543-994b-55b1-af4e-fa08955f4d25",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "e43c35e6-e236-5acd-b7b1-7e1ade33f803"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

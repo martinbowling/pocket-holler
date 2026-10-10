@@ -1,0 +1,108 @@
+{
+  "_resourceType": "script",
+  "id": "b0664660-0251-5765-ace3-4c74a1a0bf92",
+  "name": "actor R21 spring stone",
+  "symbol": "script_full_actor_r21_spring_stone",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "5534a7a6-f15f-54a9-9ea6-ef58ded0de58",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "19"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "8db079bf-d449-5c8e-ad13-b5daf1f035f0",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE SPRING RUNS\nSTEADY. TURTLE\nTRAVELS WITH",
+                "YOU."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "1d731fb1-72a3-55cd-a553-d04c9f59a6cf",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "WAVE STONE: SET\nBOTH CHANNELS.\nTHEN USE",
+                "TURTLE'S STEADY\nWITH B."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "19bdcf1c-640f-5e05-a25d-1a173d7c32a5",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "587d6029-fb72-5be6-9219-2e9506ff2937"
+      }
+    },
+    {
+      "id": "38a0c609-67ca-5c3f-bc06-8eb31c7107eb",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "ca9ed554-dd80-50c7-bb80-492acaad6f0d",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "b2a1a127-707d-5e47-8038-d3d583d18e8c",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "587d6029-fb72-5be6-9219-2e9506ff2937"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

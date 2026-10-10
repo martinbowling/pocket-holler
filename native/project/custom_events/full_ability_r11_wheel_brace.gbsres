@@ -1,0 +1,402 @@
+{
+  "_resourceType": "script",
+  "id": "b96f6bcf-c422-5a2b-afc7-6f8fc54e99b7",
+  "name": "ability R11 wheel brace",
+  "symbol": "script_full_ability_r11_wheel_brace",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {
+    "0": {
+      "id": "0",
+      "name": "Actor 0"
+    },
+    "1": {
+      "id": "1",
+      "name": "Actor 1"
+    },
+    "2": {
+      "id": "2",
+      "name": "Actor 2"
+    },
+    "3": {
+      "id": "3",
+      "name": "Actor 3"
+    }
+  },
+  "script": [
+    {
+      "id": "9a07b14f-eed2-533d-a95e-643997b7f539",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "88ef1d76-3bc3-57a7-b922-b6603d6ff0f2",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE WHEEL IS\nRUNNING. THE\nLIGHT ROUTE",
+                "REMAINS OPEN."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "e51bfd08-2e48-51ed-8e8c-ff0a6cd82a83",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "13"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "b0300f4a-a239-5644-938d-95c967d5da7c",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "55"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "33255ba4-5247-58b3-8993-49eff4450af5",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "56"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "f7693c64-b14f-5b32-89b1-bca93c4aaa5d",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "57"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "4117f37d-a7a0-53f3-9381-d2ef82d7e6ab",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "14",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "cc47fd5c-be54-5989-be5b-a869d572756f",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "55",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "f16e7e13-7b07-5bf9-9fa0-d7b1a79ea2b0",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "56",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 0
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "888fbf2d-eea2-5a4c-931f-12e32f8fa8af",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "57",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "ba8b3ec0-75b8-5bb7-875b-3611e92d7ce7",
+                                    "command": "EVENT_ACTOR_SET_POSITION",
+                                    "args": {
+                                      "actorId": "0",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 4
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 7
+                                      },
+                                      "units": "tiles"
+                                    }
+                                  },
+                                  {
+                                    "id": "c6a1bebb-485c-5964-a73b-f9135f0e7a03",
+                                    "command": "EVENT_ACTOR_SET_POSITION",
+                                    "args": {
+                                      "actorId": "1",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 8
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 6
+                                      },
+                                      "units": "tiles"
+                                    }
+                                  },
+                                  {
+                                    "id": "b323f4fb-24a3-5f0c-95be-9b28070d093f",
+                                    "command": "EVENT_ACTOR_SET_POSITION",
+                                    "args": {
+                                      "actorId": "2",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 12
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 7
+                                      },
+                                      "units": "tiles"
+                                    }
+                                  },
+                                  {
+                                    "id": "684154bc-4917-55d1-8f07-c708f24b1e0c",
+                                    "command": "EVENT_GROUP",
+                                    "args": {},
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "e1a5bcc6-d143-550c-85a6-b69f2567e16f",
+                                          "command": "EVENT_ACTOR_HIDE",
+                                          "args": {
+                                            "actorId": "3"
+                                          }
+                                        },
+                                        {
+                                          "id": "4a9537bb-b0b7-5acf-856a-701b0b27523c",
+                                          "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                                          "args": {
+                                            "actorId": "3"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "ad3e07fc-a459-5c7a-b25e-385d060ecf6f",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "33"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "b4b6dff1-513d-5bb1-b677-2b8a5c0c52ab",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "72"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "e8164462-d1c8-5b40-b305-b3c7bb70045a",
+                                                "command": "EVENT_SOUND_PLAY_EFFECT",
+                                                "args": {
+                                                  "type": "beep",
+                                                  "pitch": 6,
+                                                  "duration": 0.12,
+                                                  "wait": false,
+                                                  "priority": "low"
+                                                }
+                                              }
+                                            ],
+                                            "false": []
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  },
+                                  {
+                                    "id": "86137b53-4d4f-5ea1-9381-39eeca8e8dbd",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "TURTLE BRACES\nTHE WHEEL. WATER\nFOLLOWS THE",
+                                        "DIAGRAM.",
+                                        "THE WHEEL TURNS.\nTHE CREEK LIGHT\nROUTE STAYS",
+                                        "OPEN."
+                                      ],
+                                      "minHeight": 4,
+                                      "maxHeight": 4,
+                                      "textHeight": 3,
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "fddaf0b0-3754-5f36-a96f-16193a8ae42c",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "THE WHEEL CANNOT\nTURN WITH THIS\nFLOW.",
+                                        "SET INLET OPEN,\nBYPASS CLOSED,\nOUTLET OPEN.",
+                                        "THEN B AT THE\nBRACE."
+                                      ],
+                                      "minHeight": 4,
+                                      "maxHeight": 4,
+                                      "textHeight": 3,
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "3e9151d6-6263-5304-89e2-5269be766cb2",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "THE WHEEL CANNOT\nTURN WITH THIS\nFLOW.",
+                                  "SET INLET OPEN,\nBYPASS CLOSED,\nOUTLET OPEN.",
+                                  "THEN B AT THE\nBRACE."
+                                ],
+                                "minHeight": 4,
+                                "maxHeight": 4,
+                                "textHeight": 3,
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "43351046-f223-5647-89a6-40d1a7bc8d3e",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "THE WHEEL CANNOT\nTURN WITH THIS\nFLOW.",
+                            "SET INLET OPEN,\nBYPASS CLOSED,\nOUTLET OPEN.",
+                            "THEN B AT THE\nBRACE."
+                          ],
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "abfaa25d-ff15-50ce-b5a2-cdf45e61193a",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "STEADY THE\nCAUSEWAY STONES\nBEFORE STARTING",
+                      "THE WHEEL."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

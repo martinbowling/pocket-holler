@@ -1,26 +1,22 @@
-# Verified development setup
+# Native build workflow
 
-Verified on macOS, 9 October 2026: ModRetro Chromatic plugin 1.0.33; official bundled GB Studio CLI 4.3.2; Node 26.5.0; Python 3.13; PyBoy 2.7.0; Pillow 12.3.0. The native descriptor retains schema 4.2.0/release 10. No desktop editor was installed at the configured plugin path; desktop editor opening is still a human check.
+The full project has 24 playable rooms and a title scene. Open `native/project.gbsproj` in GB Studio with its adjacent `project/`, `assets/` and `plugins/` directories intact. Those native resources are authoritative; historical operation batches and `release-work/` proposals are development records, not installers.
 
-The current project is `/Users/martinbowling/Projects/pocket-holler/src/native/project.gbsproj`. Before relocation, ModRetro `rom_build` with `captureDebugArtifacts: true` and `outputPath: "dist/PocketHoller-opening.gbc"` was verified. It returns matching source-debug symbols and cartridge identity. The current plugin session rejects selection at the relocated path with `PATH_OUTSIDE_PROJECT`; source relocation has not been verified through that session. Existing build receipts retain their original paths as historical evidence.
+Development environment: macOS, ModRetro Chromatic plugin 1.0.33, official bundled GB Studio CLI 4.3.2, Node 26.5.0, PyBoy 2.7.0, Pillow 12.3.0. The native descriptor retains schema 4.2.0/release 10. Tool binaries and proprietary boot ROMs are not distributed.
 
-The underlying build command, with paths updated for the current source location, is:
+From the repository root:
 
 ```sh
-'/opt/homebrew/Cellar/node/26.5.0/bin/node' \
-  '/Users/martinbowling/Library/Application Support/modretro-chromatic/toolchain/.local/vendor/gb-studio/out/cli/gb-studio-cli.js' \
-  make:rom '/Users/martinbowling/Projects/pocket-holler/src/native/project.gbsproj' \
-  '/Users/martinbowling/Projects/pocket-holler/src/native/dist/PocketHoller-opening.gbc' --verbose
+sh native/tools/build.sh
+python3 native/tests/check_project.py
 ```
 
-`sh native/tools/build.sh` resolves project paths relative to itself. Override `POCKETHOLLER_NODE` and `POCKETHOLLER_CLI` for other installations. Use the plugin setup/doctor workflow for missing dependencies. No compiler binaries are shipped in the review package.
+The wrapper writes `native/dist/PocketHoller-full.gbc`, preserving the historical opening cartridge. On another installation set `POCKETHOLLER_NODE` and `POCKETHOLLER_CLI` to your Node executable and official CLI. It does not capture debug symbols; source debugging and runtime tests require ModRetro `rom_build` with `captureDebugArtifacts: true`, color mode `gbc-only`, and output `dist/PocketHoller-full.gbc`.
 
-The cartridge is 128 KiB, GBC-only, MBC5 with 32 KiB battery RAM. Its mapper header advertises rumble; no rumble is authored. No proprietary boot ROM is included. `evidence/build-final.json` retains compiler output, source identity, header validation and ROM hash. The only final warning is upstream Node DEP0190. No missing-resource or authored-event warning remains.
+In Martin's workspace, the Git repository is `/Users/martinbowling/Projects/pocket-holler/src`; the authorized ModRetro working copy is `/Users/martinbowling/Projects/pocket-holler/native`. Edit and test in that working copy, then run `python3 native/tools/sync_source_repo.py` from the parent workspace for a dry run and append `--apply` after review. The utility verifies repository files against the original baseline before overwriting and preserves recordings, saves, and preview exports. In a normal clone, build the native folder directly; the local synchronization helper requires the sibling layout and its baseline file.
 
-A separate copy of descriptor, project, assets, and plugins was built with the official CLI. See the workspace's retained `../native/evidence/clean-build-report.json` and `clean-build.log` (relative to the repository root) for the result and exact binary comparison. Cross-build fixtures are not interchangeable merely because gameplay content is identical.
+Run `native/tests/full_game.py` with the pinned PyBoy Python after obtaining the exact paired `evidence/full-build.json` and `.gbc.debug` directory. It refuses mismatched ROM/debug hashes and creates disposable QA files. Progression uses ordinary controller inputs, including confirmed camp saves and actual cold Continue. Old opening fixtures and tests remain paired only with `PocketHoller-opening.gbc`; they do not validate the full cartridge.
 
-Run `python3 native/tests/check_project.py` for identities, destinations and text fit. Run `native/tests/persistent_save.py` with the installed PyBoy Python to replay the controlled opening, collect genuine frames, save, cold boot, Continue, change options and cold boot again. It needs matching `.gbc.debug` files from the plugin build; the plain wrapper does not generate them. The test refuses a ROM that differs from the build receipt, creates fresh QA-only files, and never touches user saves.
+The full build receipt and QA report identify tested cartridge hashes and limitations. A clean source build is a separate reproducibility check. GB Studio embeds a project-data save signature, so identical visible gameplay does not establish compatibility between different builds. Preserve your original ROM and battery RAM when changing versions.
 
-Art exports are reproducible from `art/source/draw_opening.py` with Pillow. Generated creation batches must not be replayed over this project: the native resources include later event-ID, symbol, visibility and placement corrections. Native resources are the source of truth.
-
-The intro art is hand-authored at 160×144 in `art/source/intro_v3.py`, using the character cell rows and native four-shade PNG. `title-v3-palettes.json` records seven palettes and the 20×18 tile palette map. Regenerating pixels does not register assets or change palette bindings: native resource files remain authoritative. `tests/intro_screen.py` checks genuine boot/motion/menu behavior. Run the persistent save test, copy its reported evidence to `evidence/opening-final/` without temporary cartridges or live RAM, then run character and exit tests against that paired fixture.
+Editable art and original music generators are under `art/source/`, including `full_game/`. Regenerating exports does not update native registration or palette bindings automatically. Preserve resource IDs when editing. Physical Chromatic checks, desktop editor opening and fresh-player pacing require separate evidence.

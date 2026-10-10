@@ -10,7 +10,7 @@
   "y": 2,
   "frame": 0,
   "animate": false,
-  "spriteSheetId": "e7e25bfd-b933-5a34-8b20-39d5c61fc203",
+  "spriteSheetId": "ec2f0b92-7477-569a-8b2b-d008e9d7c2ec",
   "paletteId": "ebf171a2-c6dd-5d22-b5cc-4c08f0ce2337",
   "direction": "down",
   "moveSpeed": 1,
@@ -22,100 +22,10 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "8c8305e2-e859-511c-ad26-37d98fd5824c",
-      "command": "EVENT_IF",
+      "id": "8bd7ec53-4f08-530b-8d61-8e8fb6940375",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
-        "condition": {
-          "type": "eq",
-          "valueA": {
-            "type": "variable",
-            "value": "11"
-          },
-          "valueB": {
-            "type": "number",
-            "value": 1
-          }
-        }
-      },
-      "children": {
-        "true": [
-          {
-            "id": "1999148d-ade5-5437-879c-37777de50d7c",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "THE BOUNDARY IS\nOPEN. THE CREEK\nROUTE FOLLOWS IN",
-                "THE FULL GAME."
-              ],
-              "minHeight": 4,
-              "maxHeight": 4,
-              "textHeight": 3,
-              "closeButton": "a"
-            }
-          }
-        ],
-        "false": [
-          {
-            "id": "1706b52a-c186-5c6e-8837-41f4502d6bf2",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "THE\nWARNING-LIGHT\nGATE IS SHUT.",
-                "CHECK THE RAY\nINSCRIPTION."
-              ],
-              "minHeight": 4,
-              "maxHeight": 4,
-              "textHeight": 3,
-              "closeButton": "a"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "3827d180-ae36-56c4-9278-68e7da8befe2",
-      "command": "EVENT_DEFINE_LABEL",
-      "args": {
-        "label": "release-903"
-      }
-    },
-    {
-      "id": "7f26ee35-1776-59c7-a9bf-023a970ed424",
-      "command": "EVENT_IF_INPUT",
-      "args": {
-        "input": [
-          "a",
-          "b",
-          "start",
-          "select",
-          "up",
-          "down",
-          "left",
-          "right"
-        ]
-      },
-      "children": {
-        "true": [
-          {
-            "id": "94a8742f-4183-5e05-9783-21a3b767d220",
-            "command": "EVENT_WAIT",
-            "args": {
-              "units": "frames",
-              "frames": {
-                "type": "number",
-                "value": 1
-              }
-            }
-          },
-          {
-            "id": "3006ab5d-0384-5dc5-af48-1f9477a0d12d",
-            "command": "EVENT_GOTO_LABEL",
-            "args": {
-              "label": "release-903"
-            }
-          }
-        ],
-        "false": []
+        "customEventId": "9f932059-79c4-592c-8593-3ee8a44b5643"
       }
     }
   ],

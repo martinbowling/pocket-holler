@@ -1,0 +1,142 @@
+{
+  "_resourceType": "script",
+  "id": "72d2da01-f09f-5139-a38f-25f006fc4ac1",
+  "name": "actor R20 plaque a",
+  "symbol": "script_full_actor_r20_plaque_a",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "574e2ba5-c73e-5049-94e1-10f99fddc1b3",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "21"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "13155081-73b5-5321-860c-fc741bf3e198",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "MORNING LIGHT\nREVEALS THE\nWEATHERED",
+                "LETTERS. THE\nTRUE BELL CALLS\nEVERYONE HOME."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "5e1c4f69-8071-5362-ba07-94ae361ae50f",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "62"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "b44c9f95-becd-5812-adbf-a3d0553ece80",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "KEEP EVERY VOICE\nHERE. NEVER LET\nTHEM GO.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "2777736d-b631-5f09-a2c2-ab32fcd2bf81",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A RAY PLAQUE.\nFACE IT AND USE\nMOTH'S REVEAL",
+                      "WITH B."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "44993082-ccd3-571b-aaf4-b148ac1537ef",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "d44b37d1-9dc1-5fa1-8640-8bec0c72a851"
+      }
+    },
+    {
+      "id": "8bfad83d-ca7e-5655-9d72-bedfa07c2839",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "bfcb19e2-9e5d-5f7a-a503-731730400819",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "f1a34db8-2c8d-584f-af34-392af5ae402e",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "d44b37d1-9dc1-5fa1-8640-8bec0c72a851"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

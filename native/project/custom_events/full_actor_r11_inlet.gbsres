@@ -1,0 +1,235 @@
+{
+  "_resourceType": "script",
+  "id": "46aac8b7-c9aa-5b22-9d04-3459f83c0497",
+  "name": "actor R11 inlet",
+  "symbol": "script_full_actor_r11_inlet",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {
+    "0": {
+      "id": "0",
+      "name": "Actor 0"
+    }
+  },
+  "script": [
+    {
+      "id": "a7da26d2-3ef9-56bf-b64f-b28459f5006c",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "985e07ea-be93-50a4-bd6d-5481caa113dc",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "INLET: FIXED IN\nTHE WORKING\nFLOW. THE WHEEL",
+                "KEEPS TURNING."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "ab0547ff-53f1-5845-b3c3-db6d2ad5836b",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "13"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "dd57fd42-94f6-5e6a-8bae-1ca49b285102",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "55"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "ce4efd6c-9146-5769-be27-d8073355df32",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "55",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "72a10f23-a615-50a4-b1d0-ca378f8d6535",
+                        "command": "EVENT_ACTOR_SET_POSITION",
+                        "args": {
+                          "actorId": "0",
+                          "x": {
+                            "type": "number",
+                            "value": 4
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 7
+                          },
+                          "units": "tiles"
+                        }
+                      },
+                      {
+                        "id": "9a447f89-6631-5f29-b5c0-e4ac966c4799",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": "INLET: OPEN. THE\nSWITCH MOVES\nDOWN.",
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "c992907f-bd44-53ea-bddd-4c283cf2b097",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "55",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "780df3f5-b62e-5c84-b774-8eb909812574",
+                        "command": "EVENT_ACTOR_SET_POSITION",
+                        "args": {
+                          "actorId": "0",
+                          "x": {
+                            "type": "number",
+                            "value": 4
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 6
+                          },
+                          "units": "tiles"
+                        }
+                      },
+                      {
+                        "id": "4353941f-eb86-5f55-8cb2-d166c2f0650c",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": "INLET: CLOSED.\nTHE SWITCH MOVES\nUP.",
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "6d6ee94b-e9dd-5758-831f-fc029a2db766",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "CROSS THE\nFINISHED\nCAUSEWAY BEFORE",
+                      "ADJUSTING THE\nWHEEL."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "94c6e6f2-165d-5cce-8826-83a816dd61ae",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "6890c369-083c-549a-95d5-24d648848604"
+      }
+    },
+    {
+      "id": "9de83ad0-5904-53f6-9278-ca80e287271b",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "37aa40e9-8be7-527c-b0a0-416bba4c8e86",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "fa5b4aec-6ef1-5e5c-bf95-d9fa7e18087a",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "6890c369-083c-549a-95d5-24d648848604"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

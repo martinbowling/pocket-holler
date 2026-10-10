@@ -1,29 +1,39 @@
-# PocketHoller opening review build
+# PocketHoller: After Sundown
 
-Editable native source: `project.gbsproj` plus `project/` and `assets/`. Play `dist/PocketHoller-opening.gbc` in a GBC emulator; this is Color Only. Physical Chromatic testing is pending. See [QA report](docs/qa-report.md) for the exact tested hash and evidence.
+A native Game Boy Color adventure with **Marty and Roam**, 24 playable rooms, twelve lantern puzzles, three companions, four safe camps, six optional journal pages, a dawn reunion and credits. Editable GB Studio source is `project.gbsproj` with its adjacent `project/` and `assets/` folders. The full cartridge is `dist/PocketHoller-full.gbc`; the historical six-room opening is preserved separately.
 
-The title opens on a moonlit mountain scene with Marty, Roam, Lantern Moth, lit cabins, and copper lettering. The lantern light breathes gently. Press **Start** or **A** for New Game, Continue, and Settings; **B** returns to the title artwork. Browser Start is **Enter**. Editable pixels and palette cells are in `art/source/intro_v3.py` and `title-v3-palettes.json`; `evidence/intro-final/` contains genuine cartridge frames and a four-second motion capture.
+The moonlit intro features both characters beneath Lantern Moth, copper lettering, lit cabins and a gently breathing lantern. Press **Start** or **A** for New Game, Continue and Settings; **B** returns to the artwork.
 
-Marty and Roam are both playable. At the porch, talk to the other character and choose **Character**, then **Roam** or **Marty**. Roam wears green and has curly hair; Marty wears orange and has glasses. The other character stays as porch guide. Switching preserves quests and companions; Save/Continue retains the selected character.
-
-Visit the porch, lane, store, festival green, orchard, and boundary gate. Talk to the porch guide and June, watch the wind, find LanternMoth, use Reveal, repair the first light, return home, and save. The optional store journal page is not required. The future creek chapter stops at the review boundary.
+## Play
 
 | Input | Action |
 | --- | --- |
-| D-pad | Walk; move menu selection |
+| D-pad | Walk; select a menu row |
 | A | Talk, inspect, advance text, confirm |
-| B | Moth Reveal on a faced marked target; cancel menus |
-| Start | Open pause menu |
-| Select | Show current objective and companion |
+| B | Use the selected companion's ability; cancel menus |
+| Start | Open Journal, Settings, Return to Camp, Quit and Resume |
+| Select | Show the next objective |
 
-Browser keys: arrows, Z for A, X for B, Enter for Start, P for Select. In this candidate, A closes the objective and B cancels pause menus. Start/Select do not yet close their own panels as specified in the handoff. This opening has no threats or timers.
+Browser controls are arrows, Z, X, Enter and P respectively. Choose Resume or B to close pause. Select objective pages accept any button, including Select; several pages can require several presses. **Swap Actions** exchanges A/B in exploration; menus retain A confirmation and B cancellation, as shown by the settings text.
 
-Pause offers Journal, Settings, Return to Camp, Quit, and Resume. Porch camp offers Companion, Hint, Save, Leave, and Character. Moth can rest while Roam travels alone. Reveal has no charges. Wrong puzzle choices are freely correctable. Face the ray-marked tile before pressing B.
+Roam wears green and has curly hair; Marty wears orange and glasses. At a safe camp choose **Character** to switch freely. Both share quests and companion abilities. The other character is your porch guide. New Game begins as Roam; camp Save/Continue retains the selected character.
 
-Settings provide Audio Off, Reduced Scares, and Fast Text. The opening has text-only unease and simple original effects; production music and scare variants remain pending. All mandatory clues have text or shape cues.
+Lantern Moth reveals ray marks, Mossback Turtle steadies wave stones, and Thunderbird sparks zigzag fixtures. Face a marked actor from an adjacent tile, then use the ability button. Companions have no fuel, charges or health. Swap recruited companions at camps or choose Travel alone. They remain dependable and cannot block doors. Wrong actions are correctable; completed puzzles stay complete.
 
-Save at the porch and confirm. Return to Camp preserves completed puzzles in the session but does not save. Quit warns about unsaved loss. New Game confirms when a slot exists and leaves it untouched until a later confirmed Save. Continue restores a safe porch checkpoint and deliberately activates recruited Moth, including after a save while traveling alone. There is one slot. Preserve the emulator's battery RAM alongside its ROM.
+The route follows the porch and orchard to the boundary light, then the creek reeds, causeway and wheelhouse, ridge roost and relays, and hollow bell. Each chapter has a camp and hints. The bell asks for confirmation before dawn. Return home for breakfast and credits, then revisit the peaceful town. Journal pages are optional, including the porch interior page.
 
-Fixtures are paired with this exact build. Cross-build migration, browser battery persistence, incompatible-save runtime fixtures and hardware power cycles remain pending. The stepped plugin emulator has transient RAM; persistence was verified separately using file-backed PyBoy. See [save policy](docs/save-policy.md).
+## Saves and comfort
 
-The native resources are authoritative. Generated operation batches are development records, not an installer: replaying them can duplicate actors. Preserve resource IDs when editing. Report bugs with ROM hash, emulator/version, starting state, room, inputs and screenshot. Keep family photos and private details out of reports.
+Save explicitly at R01 porch, R07 creek camp, R13 ridge camp or R19 root threshold. Confirming Save replaces the one slot. **Return to Camp** preserves session progress but does not save. Quit warns about unsaved progress. New Game leaves an existing slot intact until you explicitly save the new session.
+
+Continue restores the saved character, recruited companion choice, completed puzzles, pages and settings at a safe camp. Unfinished room attempts reset. After the bell, returning to camp leads home for the reunion. Preserve the emulator battery RAM with its cartridge. Full-game epoch 2 and historical opening epoch 1 are distinct; cross-build save migration is not promised.
+
+Music and Effects can be turned off separately. Quiet preset silences both. Reduced Scares keeps clues in ordinary text; Normal, Fast and Instant text speeds are available. No combat, death, companion harm, timers, flashing or screen shake is authored. Atmospheric encounters use restrained inspection text and visible symbols.
+
+## Source and verification
+
+See `docs/build.md`, `docs/qa-report.md`, `docs/save-policy.md` and `docs/known-issues.md` for build steps, exact cartridge evidence and remaining limitations. Native resources are authoritative; historical proposal/operation batches should not be replayed as installers. Original editable art/music recipes are under `art/source/`.
+
+The full source check is `python3 native/tests/check_project.py` from a repository root. The receipt-paired input regression is `native/tests/full_game.py`; `native/tests/full_playthrough.py` records one continuous ordinary-input journey for `tools/render_full_playthrough.py`. Each uses private emulator files and retains exact controller/frame evidence. Physical hardware, audio listening and first-time human pacing are separate checks.
+
+An overall public license for new game content has not been chosen. Upstream MIT notices remain in `licenses/` and `LICENSE`; they do not grant a blanket license for all PocketHoller content. See `THIRD_PARTY.md` and the asset inventory. The owner-supplied concept sheet and family photos are excluded from the cartridge and repository.

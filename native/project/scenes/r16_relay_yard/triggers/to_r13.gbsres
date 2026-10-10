@@ -1,0 +1,151 @@
+{
+  "_resourceType": "trigger",
+  "id": "8ef9bc99-668b-543b-b93c-df1a5f5f6860",
+  "_index": 2,
+  "name": "To R13",
+  "symbol": "trigger_r16_to_r13",
+  "x": 0,
+  "y": 10,
+  "width": 2,
+  "height": 4,
+  "script": [
+    {
+      "id": "e47a8adb-2e03-5f08-ab33-1a2a3c8edbf7",
+      "command": "EVENT_SCRIPT_LOCK",
+      "args": {}
+    },
+    {
+      "id": "01bfde95-2858-50bc-a5a4-3301506b187e",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "dabebd41-3b27-58e5-9ff2-1b9afa6244e4"
+      }
+    },
+    {
+      "id": "2b2d2d2a-ea6a-590b-99e9-749c60c65486",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "99cee4e7-e3ca-5fc9-818d-994c16480aa7",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "16a0bc6f-f23b-5956-9027-41f4f6811a47",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "dabebd41-3b27-58e5-9ff2-1b9afa6244e4"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "287bffa7-4bcd-59cc-9b96-74459bcf465b",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "17"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "676c340f-616a-5024-a4be-2765ed30d297",
+            "command": "EVENT_SWITCH_SCENE",
+            "args": {
+              "sceneId": "82b527a1-fbb9-51a8-8b8d-27e77eb2793b",
+              "x": {
+                "type": "number",
+                "value": 16
+              },
+              "y": {
+                "type": "number",
+                "value": 10
+              },
+              "direction": "left",
+              "fadeSpeed": "2"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "5187fa65-564c-5abc-8796-239ff49beead",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "SPARK THE LEAF,\nWAVE AND STAR\nRELAYS TO LIGHT",
+                "THE RIDGE."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "064f5d05-dead-5df6-b821-20101f20d669",
+            "command": "EVENT_ACTOR_SET_POSITION",
+            "args": {
+              "actorId": "player",
+              "x": {
+                "type": "number",
+                "value": 2
+              },
+              "y": {
+                "type": "number",
+                "value": 10
+              },
+              "units": "tiles"
+            }
+          },
+          {
+            "id": "cf5014ec-0080-5a71-831c-bdf5a9808509",
+            "command": "EVENT_ACTOR_SET_DIRECTION",
+            "args": {
+              "actorId": "player",
+              "direction": {
+                "type": "direction",
+                "value": "right"
+              }
+            }
+          },
+          {
+            "id": "a134748e-5500-526a-b3fe-45045c81ef91",
+            "command": "EVENT_SCRIPT_UNLOCK",
+            "args": {}
+          }
+        ]
+      }
+    }
+  ],
+  "leaveScript": []
+}

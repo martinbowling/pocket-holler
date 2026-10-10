@@ -1,0 +1,72 @@
+{
+  "_resourceType": "script",
+  "id": "fe02ded4-14ca-5ae5-9113-44a3e0c476c5",
+  "name": "actor R09 practice wave",
+  "symbol": "script_full_actor_r09_practice_wave",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "32132390-2507-544d-a58e-1a15105138d9",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "PRACTICE WAVE:\nFACE IT AND\nPRESS B WITH",
+          "TURTLE.",
+          "STEADY WORKS\nONLY AT SAFE\nMARKED STONES."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "eb277b97-e830-5446-996c-992e2963207f",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "b482d3e3-a396-5191-a221-b43f577ad1fa"
+      }
+    },
+    {
+      "id": "5a8763f8-3e22-5696-a1c0-a63be7ad791a",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "44af1302-295f-5de0-9641-9eb798c9078e",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "7d921f19-3fdb-5461-ae28-e8a7ec8be3e6",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "b482d3e3-a396-5191-a221-b43f577ad1fa"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

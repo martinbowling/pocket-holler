@@ -1,0 +1,171 @@
+{
+  "_resourceType": "script",
+  "id": "8bd0265a-5a43-584e-89e0-98cf3fb4fe7d",
+  "name": "actor R10 causeway reset",
+  "symbol": "script_full_actor_r10_causeway_reset",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {
+    "0": {
+      "id": "0",
+      "name": "Actor 0"
+    },
+    "1": {
+      "id": "1",
+      "name": "Actor 1"
+    },
+    "2": {
+      "id": "2",
+      "name": "Actor 2"
+    }
+  },
+  "script": [
+    {
+      "id": "19b89fbb-e6e5-5cd3-9a59-f9ad8db916d4",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "13"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "6976a93f-d551-5949-abe8-adc694d2f59d",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "ALL STONES ARE\nFIXED. NO RESET\nIS NEEDED.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "383847bd-f158-5531-aeae-8816eae08a20",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "54",
+              "value": {
+                "type": "number",
+                "value": 0
+              }
+            }
+          },
+          {
+            "id": "8291c820-e899-5239-bef5-48a90933e9b6",
+            "command": "EVENT_ACTOR_SHOW",
+            "args": {
+              "actorId": "0"
+            }
+          },
+          {
+            "id": "3e882bc7-0ca4-5822-bafa-4a7c387db5cc",
+            "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+            "args": {
+              "actorId": "0"
+            }
+          },
+          {
+            "id": "938cdd45-ae1a-5967-acaa-7613122334f0",
+            "command": "EVENT_ACTOR_SHOW",
+            "args": {
+              "actorId": "1"
+            }
+          },
+          {
+            "id": "6e5312f5-5684-50b6-9ea7-539eb3c791cf",
+            "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+            "args": {
+              "actorId": "1"
+            }
+          },
+          {
+            "id": "07fef792-06b5-554d-a658-c82bc15ea10f",
+            "command": "EVENT_ACTOR_SHOW",
+            "args": {
+              "actorId": "2"
+            }
+          },
+          {
+            "id": "8310cef3-c423-50b4-bf64-21302b753b9f",
+            "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+            "args": {
+              "actorId": "2"
+            }
+          },
+          {
+            "id": "7617387c-a9f5-5297-b2fc-3f33b51b2826",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "UNFINISHED\nSTONES RESET.\nNEAR, MIDDLE,",
+                "FAR."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "1781e99f-7957-511d-8b8b-e2338b3d2dd0",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "f04db5ec-16b1-54cf-8cd4-4e0d8498cadc"
+      }
+    },
+    {
+      "id": "fb11c763-8217-5a5c-9f1a-16c045a7215c",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "6bdc2214-a8d8-5bb4-90b2-19b9a2cf15fb",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "86e9b094-e6b9-5268-959e-2998be641dc3",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "f04db5ec-16b1-54cf-8cd4-4e0d8498cadc"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

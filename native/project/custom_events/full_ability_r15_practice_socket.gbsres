@@ -1,0 +1,77 @@
+{
+  "_resourceType": "script",
+  "id": "8bd63ee3-3ecd-527b-ab55-d387cf46b719",
+  "name": "ability R15 practice socket",
+  "symbol": "script_full_ability_r15_practice_socket",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "2237b608-f47c-5972-a0a6-6b3ab6454af4",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "33"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "1eb9e0ca-b9ac-58a7-bc72-60ffc1627e75",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "72"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "736d4006-2b35-5fde-900d-fe19a6839a65",
+                  "command": "EVENT_SOUND_PLAY_EFFECT",
+                  "args": {
+                    "type": "beep",
+                    "pitch": 6,
+                    "duration": 0.12,
+                    "wait": false,
+                    "priority": "low"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "30104f98-5a0f-558f-bf8b-2392232f079a",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": "A TINY WARM\nSPARK. NO CHARGE\nOR FUEL NEEDED.",
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    }
+  ]
+}

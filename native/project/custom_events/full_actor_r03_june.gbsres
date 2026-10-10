@@ -1,0 +1,86 @@
+{
+  "_resourceType": "script",
+  "id": "4b1d4067-618a-5183-a146-b670a4492369",
+  "name": "actor R03 june",
+  "symbol": "script_full_actor_r03_june",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "13a32cc1-d17f-5a92-b800-abac7804ece5",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "41",
+        "value": {
+          "type": "number",
+          "value": 1
+        }
+      }
+    },
+    {
+      "id": "a71e4979-2849-516f-929a-58ec4c2f1928",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "JUNE: THE STORM\nTANGLED OUR\nLIGHT CIRCUIT.",
+          "START AT THE\nBOUNDARY.",
+          "THE ORCHARD\nLANTERN KEPT\nFLICKERING. THE",
+          "WINDSCREEN MAY\nBE TURNED WRONG.",
+          "A CREATURE ONCE\nLIVED IN ITS\nWARM LIGHT. BE",
+          "GENTLE WITH IT."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "ed03f0d8-a1d8-5993-bc85-63069e5071b8",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-800"
+      }
+    },
+    {
+      "id": "c9839b1a-8068-5ff7-9985-d74791b773eb",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "1e7c5249-cb4f-5f9f-bb47-6d7296086f16",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "052e1450-b411-5a87-a329-45f98ff64d00",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-800"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

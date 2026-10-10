@@ -1,0 +1,307 @@
+{
+  "_resourceType": "script",
+  "id": "92f07bd0-02a3-5b05-99c4-81401c8e454d",
+  "name": "actor R06 true latch",
+  "symbol": "script_full_actor_r06_true_latch",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {
+    "0": {
+      "id": "0",
+      "name": "Actor 0"
+    },
+    "1": {
+      "id": "1",
+      "name": "Actor 1"
+    }
+  },
+  "script": [
+    {
+      "id": "a6b07db8-a13e-5c0e-a9d6-658a85da1963",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "11"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "31c1a0d6-739a-5659-a31b-64eb7a0fe645",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "THE LATCH IS\nOPEN. THE FIRST\nLIGHT STAYS LIT.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "9828036d-0481-5ea7-a4fe-16ee3d787b5d",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "38"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "b7771894-a228-5a4c-8af0-3d05cf0c4658",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "11",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "5a0d6bec-b632-59d9-bedc-2f41d616ce60",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "2",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "f6751a99-fc00-5398-8f44-b9af2bc7d2a8",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "3",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "19391881-4cbf-5dbc-81e0-45f6c0a3a287",
+                  "command": "EVENT_ACTOR_HIDE",
+                  "args": {
+                    "actorId": "0"
+                  }
+                },
+                {
+                  "id": "53d5d35a-498b-5449-afbc-fde33a180939",
+                  "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                  "args": {
+                    "actorId": "0"
+                  }
+                },
+                {
+                  "id": "a1ac20bb-fa70-5c8c-83ff-a94904c1d578",
+                  "command": "EVENT_ACTOR_HIDE",
+                  "args": {
+                    "actorId": "1"
+                  }
+                },
+                {
+                  "id": "133dabb9-f9ab-5233-b6f7-870baff881c5",
+                  "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                  "args": {
+                    "actorId": "1"
+                  }
+                },
+                {
+                  "id": "c41afa2c-79a0-56a3-9127-a6eff39efa91",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "3"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "325bf1ab-7d6c-50f6-91ac-417c10db876e",
+                        "command": "EVENT_PALETTE_SET_BACKGROUND",
+                        "args": {
+                          "palette0": "a89e727c-9a41-5858-9a04-8c19faec44d1",
+                          "palette1": "96dbcdf8-2c47-567f-b77b-300e57cfe917",
+                          "palette2": "keep",
+                          "palette3": "keep",
+                          "palette4": "keep",
+                          "palette5": "keep",
+                          "palette6": "keep",
+                          "palette7": "keep"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                },
+                {
+                  "id": "d346f2aa-0a3f-5735-bd00-8d6e81076bc6",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "33"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "17e588d9-004b-56e3-bb2e-8bd241f6c1bd",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "72"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "60064535-19c9-5f3f-a194-921c6a9e2ea8",
+                              "command": "EVENT_SOUND_PLAY_EFFECT",
+                              "args": {
+                                "type": "beep",
+                                "pitch": 6,
+                                "duration": 0.12,
+                                "wait": false,
+                                "priority": "low"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                },
+                {
+                  "id": "b76e4f7a-c65f-539f-8491-68dd0c156ed3",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "THE FIRST\nWARNING LIGHT\nWARMS THE FENCE.",
+                      "DUSK SETTLES.",
+                      "A VOICE IN THE\nWOODS: COME\nHOME, HOME.",
+                      "ONE WORD\nTOO MANY. MOTH\nPOINTS BACK",
+                      "TOWARD TOWN.",
+                      "RETURN TO THE\nPORCH. SAVE AT\nCAMP."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "47b2b464-5e63-5e7d-b7ca-9d56f8d3584d",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "WHICH LATCH IS\nTRUE? REVEAL THE\nINSCRIPTION",
+                      "BEFORE CHOOSING."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "fd7ab1a7-b63f-563c-a793-3469b3220c26",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-891"
+      }
+    },
+    {
+      "id": "1c9f380a-527f-5f40-9f57-2c4cb1811b2d",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "9d4d6793-72e1-5c66-9218-f87685a73a67",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "89d72c22-502f-5811-895e-5f3967da9201",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-891"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

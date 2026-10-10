@@ -1,0 +1,108 @@
+{
+  "_resourceType": "script",
+  "id": "6c90e939-afdb-5087-9b8b-a8215c81727f",
+  "name": "actor R11 flow diagram",
+  "symbol": "script_full_actor_r11_flow_diagram",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "477ff898-ef34-5d01-b0bf-7e8bd4939902",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "64b2333d-21b2-526d-b24c-57f3ab192b10",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "THE WHEEL RUNS\nSTEADILY. LIGHT\nROUTE: OPEN.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "4fddab7e-b683-55a6-9bd5-3b18040c097e",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "FLOW DIAGRAM:\nINLET OPEN,\nBYPASS CLOSED,",
+                "OUTLET OPEN.",
+                "SWITCH DOWN =\nOPEN. SWITCH UP\n= CLOSED.",
+                "A CHANGES EACH\nSWITCH. THEN\nTURTLE USES B AT",
+                "THE WAVE BRACE."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "a33d1f97-d7e7-5acf-a1af-937c5cb36cfa",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "606773b4-4805-54df-99e2-fc4243b6bdec"
+      }
+    },
+    {
+      "id": "bf72d42b-9724-51b3-ab40-dbd6d823810d",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "53d1397e-6aca-5856-8cc0-8332291f5b10",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "1a409cf8-2db7-5fdd-85c8-112554208e3c",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "606773b4-4805-54df-99e2-fc4243b6bdec"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

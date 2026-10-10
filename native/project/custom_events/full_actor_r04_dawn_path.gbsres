@@ -1,0 +1,167 @@
+{
+  "_resourceType": "script",
+  "id": "5bdd37f8-0c63-54e1-bceb-718146450171",
+  "name": "actor R04 dawn path",
+  "symbol": "script_full_actor_r04_dawn_path",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "cbd50134-18c7-50dd-a76d-0f07a48d70f1",
+      "command": "EVENT_SCRIPT_LOCK",
+      "args": {}
+    },
+    {
+      "id": "b15edd74-7ee7-5f5f-9ed3-e336c525a99b",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "59bdcd3c-2ba2-573c-96e3-95c9d1fae85c"
+      }
+    },
+    {
+      "id": "c281970b-38cd-5c46-afd6-82872df5ddc0",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "2911482b-65f8-5291-bb0f-cf116e072054",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "4981bda9-3878-5a86-a0e0-1f89e11459df",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "59bdcd3c-2ba2-573c-96e3-95c9d1fae85c"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "e99a8cfe-574c-5b76-a565-775fb23944e3",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "21"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "42c59c8d-3cc3-501b-8517-eb13fb7db640",
+            "command": "EVENT_SWITCH_SCENE",
+            "args": {
+              "sceneId": "c9fcf821-4937-5d78-a937-6e4bac875ddf",
+              "x": {
+                "type": "number",
+                "value": 8
+              },
+              "y": {
+                "type": "number",
+                "value": 12
+              },
+              "direction": "up",
+              "fadeSpeed": "2"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "cb260e2b-54fc-579a-bee7-5cb4bb76d7ba",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE DAWN TRAIL\nOPENS AFTER THE\nHOLLOW BELL HAS",
+                "RUNG."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "d0ff0c5a-dc8a-5c27-8965-2eaad8fc7ee7",
+            "command": "EVENT_DEFINE_LABEL",
+            "args": {
+              "label": "a95305a6-487c-5640-8ff9-bef72ce10de5"
+            }
+          },
+          {
+            "id": "1858d14a-8671-5ef5-b141-cd153dc9bd1c",
+            "command": "EVENT_IF_INPUT",
+            "args": {
+              "input": [
+                "a",
+                "b",
+                "start",
+                "select",
+                "up",
+                "down",
+                "left",
+                "right"
+              ]
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "89265aa8-1756-52a0-94d0-6deb469d6251",
+                  "command": "EVENT_WAIT",
+                  "args": {
+                    "units": "frames",
+                    "frames": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "1ada2567-970d-514b-9c98-209976bae3c6",
+                  "command": "EVENT_GOTO_LABEL",
+                  "args": {
+                    "label": "a95305a6-487c-5640-8ff9-bef72ce10de5"
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "3cce9a31-f3bc-5610-895d-fe4487be34a5",
+            "command": "EVENT_SCRIPT_UNLOCK",
+            "args": {}
+          }
+        ]
+      }
+    }
+  ]
+}

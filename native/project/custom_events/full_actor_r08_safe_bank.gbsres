@@ -1,0 +1,73 @@
+{
+  "_resourceType": "script",
+  "id": "e9aab47d-3238-5191-8379-f5f924d07696",
+  "name": "actor R08 safe bank",
+  "symbol": "script_full_actor_r08_safe_bank",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "98a7934b-d639-559c-83bd-1e08438d6a6a",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "DRY BANK:\nCONTINUE TO THE\nREEDS. WATER IS",
+          "NOT A PATH.",
+          "IF ANYTHING\nFEELS STRANGE,\nRETURN TO CAMP",
+          "IS ALWAYS\nAVAILABLE."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "cf56a01c-46ac-5c63-9391-f5dd20b420c4",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "203f4247-e808-59a1-b403-82fa8bbe0ed1"
+      }
+    },
+    {
+      "id": "7b44856b-bb25-5ee3-98bd-c516aeb5d4d3",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "989a0ede-2a03-5c99-afbf-125b86b0a861",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "fc169fa4-7f0d-581d-9f72-48ebefd3ff9b",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "203f4247-e808-59a1-b403-82fa8bbe0ed1"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

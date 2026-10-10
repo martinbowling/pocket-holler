@@ -1,0 +1,77 @@
+{
+  "_resourceType": "script",
+  "id": "e6791e64-739a-5aa4-bf58-0f46c6e305a1",
+  "name": "actor R18 old notice",
+  "symbol": "script_full_actor_r18_old_notice",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "9071701e-5a17-535a-bdbd-1a098d6be9fd",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "THE BELL USED TO\nCALL EVERYONE\nHOME. ITS SPRING",
+          "STOPPED AFTER A\nSTORM.",
+          "THE HOLLOW KEPT\nTHE VOICES THAT\nTHE BELL COULD",
+          "NO LONGER CARRY.",
+          "IT MISTOOK\nKEEPING EVERYONE\nHERE FOR KEEPING",
+          "THEM SAFE.",
+          "IT CAN BORROW\nWORDS. IT CANNOT\nCOPY A FRIEND'S",
+          "LIVING GLOW."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "dea127a0-7122-5004-a0ef-33faf63d7dfd",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "ed37f0c4-3b79-5039-bedc-3a9212078e02"
+      }
+    },
+    {
+      "id": "9e0cb1ef-3468-599e-ac0e-9d5bf2d94423",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "7b64fcbf-f921-5574-8b8c-3731d26555d7",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "7df8ef3e-a1df-5c36-917d-53c6ab0efa05",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "ed37f0c4-3b79-5039-bedc-3a9212078e02"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

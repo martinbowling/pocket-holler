@@ -1,0 +1,147 @@
+{
+  "_resourceType": "script",
+  "id": "70eb86dd-11f1-5899-93e6-315efa1004e3",
+  "name": "actor R13 ridge notice",
+  "symbol": "script_full_actor_r13_ridge_notice",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "c5fb281a-d3ba-581b-86e3-6543a5ab23a3",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "17"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "47a50793-8664-5e58-a5de-efdc9a466ac5",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THREE LIGHTS\nLIT. THE BELL\nROAD IS OPEN.",
+                "THE RIDGE LOOP\nRETURNS HERE.\nREST AND SAVE",
+                "WHEN YOU LIKE."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "b6d25bb1-3e6a-52c1-bfb6-383344a8c7ce",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "16"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "adc119a0-ec5d-575f-b4db-0da0ce9d924a",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "THUNDERBIRD\nSPARKS ZIGZAG\nSOCKETS.",
+                      "THE RELAY BOARD\nSHOWS LEAF,\nWAVE, STAR."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "b975189d-ed26-50e9-bd9c-4e71bf052849",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "FOLLOW THE\nBRAMBLE STAIRS\nTO THE ROOST.",
+                      "FIXED FEATHER\nARROWS POINT\nBOTH VANES TO",
+                      "THE PERCH."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "9a459166-8986-584f-af1d-d3cb70dce8cb",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "a74a6929-7a5a-5daf-a110-a75fb1d02983"
+      }
+    },
+    {
+      "id": "3647e87c-0f5f-5710-9383-e2eef047cb66",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "823e00d6-ea98-5846-a956-b2526a2fd2cc",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "e4cbdf0b-6126-5708-b60f-4a17d7e8705c",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "a74a6929-7a5a-5daf-a110-a75fb1d02983"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

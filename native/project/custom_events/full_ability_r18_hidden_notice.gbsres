@@ -1,0 +1,128 @@
+{
+  "_resourceType": "script",
+  "id": "94fa0066-32c8-5dc6-954f-a03641283e90",
+  "name": "ability R18 hidden notice",
+  "symbol": "script_full_ability_r18_hidden_notice",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "7a0e44e6-cee1-5a1a-a3d5-14b6553abec6",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "26"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "4b940025-5d76-509c-abc0-e6b3d8aa766e",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "26",
+              "value": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "071d4311-d712-5619-93f3-ab29a40965b0",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "33"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "55f51a37-4451-50e2-81c1-7645125fdf7a",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "72"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "8da9d898-2f4f-5c9d-8cbf-3121790ebb74",
+                        "command": "EVENT_SOUND_PLAY_EFFECT",
+                        "args": {
+                          "type": "beep",
+                          "pitch": 6,
+                          "duration": 0.12,
+                          "wait": false,
+                          "priority": "low"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "91c07083-a427-5f2c-9469-efe3d4e8229b",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "JOURNAL 5: THE\nQUIET BELL.",
+                "THE CALLER GREW\nAROUND THE\nVOICES CAUGHT",
+                "HERE.",
+                "A NOTE SAYS: DO\nNOT KEEP A\nVOICE. HELP IT",
+                "FIND ITS WAY\nHOME."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "8669ddd9-47be-5906-9ba0-d58746d5d8e3",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "THE QUIET BELL\nNOTE IS ALREADY\nIN YOUR JOURNAL.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

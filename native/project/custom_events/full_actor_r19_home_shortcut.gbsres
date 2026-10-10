@@ -1,0 +1,167 @@
+{
+  "_resourceType": "script",
+  "id": "f4e25828-32d5-5130-a774-6eec5459a66d",
+  "name": "actor R19 home shortcut",
+  "symbol": "script_full_actor_r19_home_shortcut",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "0b11d399-65bf-5ede-bc07-0598d4dae023",
+      "command": "EVENT_SCRIPT_LOCK",
+      "args": {}
+    },
+    {
+      "id": "4b1280b9-9f8d-5795-a13b-8585c850d50a",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "bd7f69e0-f7ee-55fc-abf6-7aae31ea0f56"
+      }
+    },
+    {
+      "id": "bcb70273-c7d2-5f2c-a097-12315e42cb48",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "8fee38fa-00b1-5ff9-8d56-8c379a3bf7b4",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "00d3cbec-d439-5739-8136-e606bf97b3e5",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "bd7f69e0-f7ee-55fc-abf6-7aae31ea0f56"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "72b3bf86-a1e5-53f8-b8c7-1df745526cbe",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "5"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "76ec0899-1754-5858-831c-f4692439e007",
+            "command": "EVENT_SWITCH_SCENE",
+            "args": {
+              "sceneId": "12f07015-0a42-504a-8d39-3f689e13ad3a",
+              "x": {
+                "type": "number",
+                "value": 8
+              },
+              "y": {
+                "type": "number",
+                "value": 12
+              },
+              "direction": "up",
+              "fadeSpeed": "2"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "fcd51def-e3e2-5654-9e37-4864b869b018",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE HOME\nSHORTCUT OPENS\nFROM THE ROOT",
+                "THRESHOLD.\nFOLLOW THE BELL\nROAD FIRST."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "592126bd-ab26-5e1f-b016-db58beeb204b",
+            "command": "EVENT_DEFINE_LABEL",
+            "args": {
+              "label": "3e07b92c-da27-5836-9f83-e6212766772d"
+            }
+          },
+          {
+            "id": "aa9056a6-9557-5613-9207-fac7d866c9fc",
+            "command": "EVENT_IF_INPUT",
+            "args": {
+              "input": [
+                "a",
+                "b",
+                "start",
+                "select",
+                "up",
+                "down",
+                "left",
+                "right"
+              ]
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "42d71c2f-3980-5d0b-81a7-d6e64a7b5ede",
+                  "command": "EVENT_WAIT",
+                  "args": {
+                    "units": "frames",
+                    "frames": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "a8e60e1f-348f-5593-9bfa-6db69c786110",
+                  "command": "EVENT_GOTO_LABEL",
+                  "args": {
+                    "label": "3e07b92c-da27-5836-9f83-e6212766772d"
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "48b0cef7-690e-522a-a2b9-b4ba01d9494b",
+            "command": "EVENT_SCRIPT_UNLOCK",
+            "args": {}
+          }
+        ]
+      }
+    }
+  ]
+}

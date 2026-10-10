@@ -1,0 +1,119 @@
+{
+  "_resourceType": "script",
+  "id": "878eb17d-4ab0-575d-819a-7890050453a1",
+  "name": "ability R09 practice wave",
+  "symbol": "script_full_ability_r09_practice_wave",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "d25031ee-fec1-5403-96aa-cb339f578e22",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "12"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "2d636ac1-4a1f-54da-aeeb-8140260b6e16",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "33"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "b4821ea4-56e1-5508-9082-ff719324744b",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "72"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "7b4e992a-f7ac-569f-93aa-5126a7af08a5",
+                        "command": "EVENT_SOUND_PLAY_EFFECT",
+                        "args": {
+                          "type": "beep",
+                          "pitch": 6,
+                          "duration": 0.12,
+                          "wait": false,
+                          "priority": "low"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "43d00a35-8a39-51af-b4d7-2ec465f1f556",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "TURTLE BRACES\nTHE PRACTICE\nSTONE. THE WAVE",
+                "STAYS STEADY.",
+                "ON THE CAUSEWAY:\nNEAR, MIDDLE,\nFAR. USE B FROM",
+                "THE SAFE BANK."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "8ac21e51-1b1e-5d76-ab57-79415eaf00e4",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "MEET TURTLE BY\nOPENING THE TWO\nREED GATES",
+                "FIRST."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

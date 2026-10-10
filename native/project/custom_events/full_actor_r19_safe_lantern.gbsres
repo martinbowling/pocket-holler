@@ -1,0 +1,71 @@
+{
+  "_resourceType": "script",
+  "id": "e9eb7066-8a5a-5ec2-b8ab-061868e4f474",
+  "name": "actor R19 safe lantern",
+  "symbol": "script_full_actor_r19_safe_lantern",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "b5b79b65-2f08-52e4-9d59-c28c1a4e441c",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "REAL WARM LIGHT.\nNO BORROWED\nVOICE ENTERS",
+          "THIS CAMP."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "2c2a045c-fc4b-59be-b02e-16201a6d4909",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "7938a6d8-8607-506a-b447-7a1708d73297"
+      }
+    },
+    {
+      "id": "71d247fa-7f4d-5654-9cfd-2f7eec6a83d5",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "080bd51e-527f-5320-8b99-24e4a653a309",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "eec8a7ba-6270-5276-aef0-de4e8a5b0b76",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "7938a6d8-8607-506a-b447-7a1708d73297"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

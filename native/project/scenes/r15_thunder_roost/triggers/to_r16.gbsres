@@ -1,0 +1,151 @@
+{
+  "_resourceType": "trigger",
+  "id": "bdb1b3d5-5f36-5e29-b5ae-f0368c72eb97",
+  "_index": 1,
+  "name": "To R16",
+  "symbol": "trigger_r15_to_r16",
+  "x": 8,
+  "y": 0,
+  "width": 4,
+  "height": 2,
+  "script": [
+    {
+      "id": "fa8b3c3e-952e-546f-924e-f139798b8d3c",
+      "command": "EVENT_SCRIPT_LOCK",
+      "args": {}
+    },
+    {
+      "id": "17b35e8a-c320-5bc0-9125-a0b35da4bd30",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "fb962119-a97a-5d0f-8f7f-315fbc330f3a"
+      }
+    },
+    {
+      "id": "f71b55c7-e473-579b-8ac4-612d6d56ea3b",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d04388c8-7a28-54e3-bee8-34a7453182d7",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "302f5a79-0316-5068-9fd1-ac67cedd54c6",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "fb962119-a97a-5d0f-8f7f-315fbc330f3a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "55f03323-cb7d-5708-bc30-e6a179f10589",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "16"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "c1330c71-ac17-5e72-9d9e-3abbe4b19af9",
+            "command": "EVENT_SWITCH_SCENE",
+            "args": {
+              "sceneId": "9b5f64ac-ba4d-59c1-88c6-aa3a838c9282",
+              "x": {
+                "type": "number",
+                "value": 8
+              },
+              "y": {
+                "type": "number",
+                "value": 14
+              },
+              "direction": "up",
+              "fadeSpeed": "2"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "39e4af8f-f874-558b-8139-d0f5498d7bc8",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "SHELTER THE\nROOST AND MEET\nTHUNDERBIRD",
+                "BEFORE THIS\nTRAIL."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "82ae0f42-198c-5e44-a175-07433ed9c2a2",
+            "command": "EVENT_ACTOR_SET_POSITION",
+            "args": {
+              "actorId": "player",
+              "x": {
+                "type": "number",
+                "value": 8
+              },
+              "y": {
+                "type": "number",
+                "value": 3
+              },
+              "units": "tiles"
+            }
+          },
+          {
+            "id": "36095203-2fe0-5aa8-8b63-6c6fa4bfc5f0",
+            "command": "EVENT_ACTOR_SET_DIRECTION",
+            "args": {
+              "actorId": "player",
+              "direction": {
+                "type": "direction",
+                "value": "down"
+              }
+            }
+          },
+          {
+            "id": "d242fda0-ddb8-5b7f-be63-134a8a19ad28",
+            "command": "EVENT_SCRIPT_UNLOCK",
+            "args": {}
+          }
+        ]
+      }
+    }
+  ],
+  "leaveScript": []
+}

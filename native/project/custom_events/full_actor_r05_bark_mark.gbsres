@@ -1,0 +1,105 @@
+{
+  "_resourceType": "script",
+  "id": "c3fe4650-19e4-5c10-a827-6571cb4436c0",
+  "name": "actor R05 bark mark",
+  "symbol": "script_full_actor_r05_bark_mark",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "c074cc09-5a03-5332-84a9-037a22b4156a",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "37"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "943a2df5-cd06-5d00-ab55-6866a34ca120",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "TRUST LIVING\nLIGHT.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "d8e4687c-c1fb-5d2a-b230-260e797588e9",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "RAY MARK:\nREVEAL. FACE IT\nAND PRESS B WITH",
+                "MOTH."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "5f2c3841-a096-5106-b297-1c4a07e1ac39",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-866"
+      }
+    },
+    {
+      "id": "29cfc03e-1332-548b-927e-b48e5074d4ff",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d502761c-73b5-5eb7-ba98-eec00943feaf",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "22630e8d-8b14-5689-81e5-4289abc908ac",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-866"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

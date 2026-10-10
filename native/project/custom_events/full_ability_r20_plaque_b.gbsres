@@ -1,0 +1,313 @@
+{
+  "_resourceType": "script",
+  "id": "cbd04008-18fa-558d-ab1c-f75427a84636",
+  "name": "ability R20 plaque b",
+  "symbol": "script_full_ability_r20_plaque_b",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "2c741704-9f02-5a39-a000-1d7cc320d5bc",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "21"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "5f484974-23ce-5bef-a4fe-42da58ea3139",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE BELL HAS\nCALLED EVERYONE\nHOME. ONLY",
+                "ORDINARY LETTERS\nREMAIN IN\nMORNING LIGHT."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "5b558c82-17ef-57bc-92ad-9684055efa0f",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "63"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "1f4c1a8a-793b-5b92-a629-f53510f91aa3",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "THE BELL CALLS\nPEOPLE HOME.\nRING FOR",
+                      "EVERYONE."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "5a7390ec-3132-5aad-a6b2-eb85a13dd7e9",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "3"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 3
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [],
+                    "false": [
+                      {
+                        "id": "605ed950-5b32-5fdf-a3b5-f1ea23bdc732",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "31"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "2e304638-5e77-5d2f-a45f-3774e46c6e0f",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "31",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "320ba94a-1cc6-5180-af1b-1de4aaf9f9a3",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "32"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "af59b59c-c77a-5bc1-9b1b-da83839a84ce",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "33"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "0985ba0d-17bf-5385-a048-745d22b665ab",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "72"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "13f8780d-6810-50c6-bc9f-f12b171f1b8f",
+                                                "command": "EVENT_SOUND_PLAY_EFFECT",
+                                                "args": {
+                                                  "type": "beep",
+                                                  "pitch": 2,
+                                                  "duration": 0.12,
+                                                  "wait": false,
+                                                  "priority": "low"
+                                                }
+                                              }
+                                            ],
+                                            "false": []
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            },
+                            {
+                              "id": "066c67bc-0e09-52d2-b963-760dd58f2911",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A VOICE IN THE\nWOODS: COME\nSTAY. THE LIGHT",
+                                  "IS WAITING.",
+                                  "ONE WORD IS\nWRONG. MOTH'S\nLIVING GLOW",
+                                  "STAYS TRUE."
+                                ],
+                                "minHeight": 4,
+                                "maxHeight": 4,
+                                "textHeight": 3,
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "ed7b16af-5385-54b6-abac-e268a3ad2552",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "63",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "605c7ffa-e156-5d4b-a9ba-be6acc4817ea",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "33"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "f0fa240e-ccc4-5bdb-9697-ef90be0ef750",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "72"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "462bc1ac-2fcc-56a4-9e5d-44a6f13adea7",
+                              "command": "EVENT_SOUND_PLAY_EFFECT",
+                              "args": {
+                                "type": "beep",
+                                "pitch": 6,
+                                "duration": 0.12,
+                                "wait": false,
+                                "priority": "low"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                },
+                {
+                  "id": "4d41daea-7687-5ed6-97f8-bc71eaea9e82",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "THE BELL CALLS\nPEOPLE HOME.\nRING FOR",
+                      "EVERYONE."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

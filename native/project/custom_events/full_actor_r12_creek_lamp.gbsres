@@ -1,0 +1,71 @@
+{
+  "_resourceType": "script",
+  "id": "5022caec-3ef5-5719-b493-5005756ab04b",
+  "name": "actor R12 creek lamp",
+  "symbol": "script_full_actor_r12_creek_lamp",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "547c8a7a-dd36-5acb-b741-b384e2a7dee9",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "THE CREEK LAMP\nSHINES WITH A\nREAL, STEADY",
+          "LIGHT."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "141585f7-05b1-509a-96f5-4df43de9f2af",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "3fa42241-c49d-5c8f-8e09-de0a941a507c"
+      }
+    },
+    {
+      "id": "79728c76-4445-586d-977e-80c9698ca730",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "8f26ab7d-5260-5c6e-94a1-8b2f29e70b4b",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "7aa15e48-d6a6-5a4c-8517-63cd96e2239d",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "3fa42241-c49d-5c8f-8e09-de0a941a507c"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

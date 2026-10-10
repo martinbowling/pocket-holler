@@ -1,0 +1,226 @@
+{
+  "_resourceType": "script",
+  "id": "1afa60f4-f92a-53cf-a929-b5f7f1b6b8d5",
+  "name": "ability R12 spillway wave",
+  "symbol": "script_full_ability_r12_spillway_wave",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {
+    "0": {
+      "id": "0",
+      "name": "Actor 0"
+    }
+  },
+  "script": [
+    {
+      "id": "4275470f-ca33-5760-8920-e79661ca314c",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "15"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "38de46eb-0f30-53e7-a63e-93a710916ca3",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "THE SPILLWAY AND\nCREEK LIGHT STAY\nSTEADY.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "b867e7ff-3f7c-504a-a4d8-2f2c8ac677a2",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "2bd338fa-a524-5341-b025-e21726f1a22b",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "58"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "d378e795-be3d-5a27-ae12-bb099188b2f5",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": "THE SPILLWAY IS\nBRACED. USE A AT\nTHE LIGHT CRANK.",
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "f188902f-3434-5841-bd55-d819d4c13eaf",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "58",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "21a3ee1c-33d5-5aa9-9c20-d616bbf2ef9d",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "77a40329-bf17-5e03-84b0-3994a12f00ab",
+                              "command": "EVENT_ACTOR_HIDE",
+                              "args": {
+                                "actorId": "0"
+                              }
+                            },
+                            {
+                              "id": "02ba68b7-38d9-5913-b288-3318b24717bf",
+                              "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                              "args": {
+                                "actorId": "0"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "e03c53cc-3504-5e1b-b784-f4dcdb7fae18",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "33"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "a6b05d92-445a-5612-8149-4f9202ac45f4",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "72"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "41aa0e34-41d7-567e-8771-353b36227b0f",
+                                    "command": "EVENT_SOUND_PLAY_EFFECT",
+                                    "args": {
+                                      "type": "beep",
+                                      "pitch": 6,
+                                      "duration": 0.12,
+                                      "wait": false,
+                                      "priority": "low"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      },
+                      {
+                        "id": "57f77930-4bf5-5ed1-9161-09ccc19d2c61",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "TURTLE STEADIES\nTHE SPILLWAY.\nTHE CRANK",
+                            "CATCHES THE\nWATER POWER.",
+                            "USE A AT THE\nLIGHT CRANK.\nTURTLE CAN",
+                            "TRAVEL WITH YOU."
+                          ],
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "7faad361-05e0-55ca-bdd4-91809bce7ae4",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "START THE\nWHEELHOUSE WITH\nTHE RIGHT FLOW",
+                      "FIRST."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

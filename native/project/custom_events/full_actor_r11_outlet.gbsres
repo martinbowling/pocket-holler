@@ -1,0 +1,235 @@
+{
+  "_resourceType": "script",
+  "id": "eec17b1a-492a-56fb-bcb7-e9ae9e882856",
+  "name": "actor R11 outlet",
+  "symbol": "script_full_actor_r11_outlet",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {
+    "0": {
+      "id": "0",
+      "name": "Actor 0"
+    }
+  },
+  "script": [
+    {
+      "id": "dac575db-77ce-550b-b01b-6fc96f0a4095",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "f1f29e3b-4eb2-5383-9c87-30686e760caa",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "OUTLET: FIXED IN\nTHE WORKING\nFLOW. THE WHEEL",
+                "KEEPS TURNING."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "a8315985-eaa4-53e0-a4fd-0412b6845910",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "13"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "75e0f5da-fe71-548a-af60-02f88025c6a2",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "57"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "a08afed6-48e9-5d9c-a41c-4f8bf6985308",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "57",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "b316e76d-23a6-559f-9eb1-82af8632973b",
+                        "command": "EVENT_ACTOR_SET_POSITION",
+                        "args": {
+                          "actorId": "0",
+                          "x": {
+                            "type": "number",
+                            "value": 12
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 7
+                          },
+                          "units": "tiles"
+                        }
+                      },
+                      {
+                        "id": "31d5f69d-0535-5fcb-8113-2191deab61e0",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": "OUTLET: OPEN.\nTHE SWITCH MOVES\nDOWN.",
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "cf7ec46c-fa0e-5ba1-a581-73bddc5654a8",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "57",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "b6bd86fa-24b5-566f-aea1-4b89bdfdd815",
+                        "command": "EVENT_ACTOR_SET_POSITION",
+                        "args": {
+                          "actorId": "0",
+                          "x": {
+                            "type": "number",
+                            "value": 12
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 6
+                          },
+                          "units": "tiles"
+                        }
+                      },
+                      {
+                        "id": "98aba1ef-2657-5ee0-a0c0-8c1b7d173f02",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": "OUTLET: CLOSED.\nTHE SWITCH MOVES\nUP.",
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "df45ef85-3688-5eb2-99c4-6cf964e258b3",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "CROSS THE\nFINISHED\nCAUSEWAY BEFORE",
+                      "ADJUSTING THE\nWHEEL."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "f71d031e-29d3-5b9d-a5cf-fb6e1908add5",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "12c7817e-a092-5369-906c-80ede7f6c16b"
+      }
+    },
+    {
+      "id": "68d2cac7-4153-530e-b63d-eec0c5804ed2",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "5d339f84-08a9-52ab-9bab-1ed0b10d7d92",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "6275a5a2-afad-585f-964f-73a05e53e0f0",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "12c7817e-a092-5369-906c-80ede7f6c16b"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

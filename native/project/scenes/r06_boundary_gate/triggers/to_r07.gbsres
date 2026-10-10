@@ -1,0 +1,151 @@
+{
+  "_resourceType": "trigger",
+  "id": "fb72b76d-f956-5cbd-b4d5-86cdb33497cd",
+  "_index": 1,
+  "name": "To R07",
+  "symbol": "trigger_r06_to_r07",
+  "x": 8,
+  "y": 0,
+  "width": 4,
+  "height": 2,
+  "script": [
+    {
+      "id": "85f2ef41-c08c-55e9-88db-ab1c854f6c0f",
+      "command": "EVENT_SCRIPT_LOCK",
+      "args": {}
+    },
+    {
+      "id": "05710dc6-4c25-5e6d-835e-91018ffeef7f",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "92a0a89e-8aab-5db6-9d90-5bed714c850d"
+      }
+    },
+    {
+      "id": "db422aed-85fe-5a6f-b493-4306a905c4bb",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "2f98bc60-4b10-57af-a05d-d87b860f3fc2",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "2d747aa4-6960-5a8f-aa6e-34d248245dc6",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "92a0a89e-8aab-5db6-9d90-5bed714c850d"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "0606de2f-a20e-50ab-8a95-87f1fb4aa0d4",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "11"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "3a154785-a85f-5e0e-82a9-806e64c9c194",
+            "command": "EVENT_SWITCH_SCENE",
+            "args": {
+              "sceneId": "903cdf33-0367-5c89-8460-f2351a65e4f7",
+              "x": {
+                "type": "number",
+                "value": 8
+              },
+              "y": {
+                "type": "number",
+                "value": 14
+              },
+              "direction": "up",
+              "fadeSpeed": "2"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "fe6d9864-bae2-59a6-b7fd-9b35b9af1496",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "REPAIR THE\nBOUNDARY LIGHT.\nREVEAL ITS",
+                "PLAQUE, THEN USE\nTHE RAY LATCH."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "c4ee73e6-aecd-53f8-af61-9d35838408bb",
+            "command": "EVENT_ACTOR_SET_POSITION",
+            "args": {
+              "actorId": "player",
+              "x": {
+                "type": "number",
+                "value": 8
+              },
+              "y": {
+                "type": "number",
+                "value": 3
+              },
+              "units": "tiles"
+            }
+          },
+          {
+            "id": "d4f9fdba-1a12-5f3e-9340-0fde9775b7b3",
+            "command": "EVENT_ACTOR_SET_DIRECTION",
+            "args": {
+              "actorId": "player",
+              "direction": {
+                "type": "direction",
+                "value": "down"
+              }
+            }
+          },
+          {
+            "id": "38e3f466-97ce-59ef-b8e3-34c15a952cc2",
+            "command": "EVENT_SCRIPT_UNLOCK",
+            "args": {}
+          }
+        ]
+      }
+    }
+  ],
+  "leaveScript": []
+}

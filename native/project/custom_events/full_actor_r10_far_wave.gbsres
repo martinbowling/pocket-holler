@@ -1,0 +1,105 @@
+{
+  "_resourceType": "script",
+  "id": "601fad98-0279-5db1-9710-712acdb7f5df",
+  "name": "actor R10 far wave",
+  "symbol": "script_full_actor_r10_far_wave",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "8ca62234-2ca7-591f-acbf-15e6b8cd81e9",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "13"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "686e1e0c-580e-576b-bcc1-6cdf01000a00",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "THE CROSSING\nSTAYS STEADY.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "a6ff69e4-d15a-571e-84a3-ffaca5f60124",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "FAR STATION. USE\nB WITH TURTLE\nFROM THE DRY",
+                "WALKWAY."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "5327fd8e-5be3-5b0d-b0ca-a8e0b0bc72d8",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "26d28fe4-7ec7-5d4c-9932-2bbc071df4e6"
+      }
+    },
+    {
+      "id": "34b62c70-f212-590b-9214-e4aa245ab697",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "39484460-d679-5a9c-b18f-1ac20b5df7af",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "0fdaa20b-4835-5afe-a84d-5954f2dae6f4",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "26d28fe4-7ec7-5d4c-9932-2bbc071df4e6"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

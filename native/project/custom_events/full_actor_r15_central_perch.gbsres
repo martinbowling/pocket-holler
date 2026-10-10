@@ -1,0 +1,329 @@
+{
+  "_resourceType": "script",
+  "id": "2d79d002-2375-5633-afb5-60ed3215a3da",
+  "name": "actor R15 central perch",
+  "symbol": "script_full_actor_r15_central_perch",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {
+    "0": {
+      "id": "0",
+      "name": "Actor 0"
+    }
+  },
+  "script": [
+    {
+      "id": "a4cbd64c-3d1f-54af-8070-fb80e7aa5cfa",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "16"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "2c3d0556-6116-5327-9bbc-5596bd029f89",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE ROOST IS\nSHELTERED.\nTHUNDERBIRD IS",
+                "ALWAYS WELCOME."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "44ab4cc3-2057-5f92-8607-fe4fe0bb0ace",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "15"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "4305ef88-0f90-5b41-8c2e-b4692315e67c",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "59"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "450a5e31-8360-5797-b4b7-d8b6a64cb4ee",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "60"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 4
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "7f34ad6c-8872-52ae-bd11-745ec3d3c557",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "16",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "7b582daa-44e0-530b-943e-cba53b03d55c",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "9",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "16dd3e5f-ffb2-58f0-bb34-4f4ad60bfb50",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "6",
+                                "value": {
+                                  "type": "number",
+                                  "value": 3
+                                }
+                              }
+                            },
+                            {
+                              "id": "2ce59ea8-820b-5a7a-bcc4-fa726847ee70",
+                              "command": "EVENT_ACTOR_HIDE",
+                              "args": {
+                                "actorId": "0"
+                              }
+                            },
+                            {
+                              "id": "65b97875-0c1c-58d1-9df9-9cdd501a3527",
+                              "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                              "args": {
+                                "actorId": "0"
+                              }
+                            },
+                            {
+                              "id": "e47fa62b-d1cb-5a44-b52c-9738fc05e713",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "33"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "5ea363aa-733d-5d5e-85a1-e8b9c5a7352a",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "72"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "8c6082fb-7ecc-5e8a-a78f-39c82cfd88d6",
+                                          "command": "EVENT_SOUND_PLAY_EFFECT",
+                                          "args": {
+                                            "type": "beep",
+                                            "pitch": 6,
+                                            "duration": 0.12,
+                                            "wait": false,
+                                            "priority": "low"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            },
+                            {
+                              "id": "3829ee82-36ba-54d7-b262-16166d417295",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "THE WIND PASSES\nAROUND THE\nSHELTER.",
+                                  "BABYTHUNDERBIRD\nJOINS YOU. B:\nSPARK ZIGZAG",
+                                  "SOCKETS.",
+                                  "TRY THE PRACTICE\nSOCKET. THEN\nVISIT THE RELAY",
+                                  "YARD."
+                                ],
+                                "minHeight": 4,
+                                "maxHeight": 4,
+                                "textHeight": 3,
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "7e10d9c1-5aac-5638-828f-fe82f79153c3",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "THE EAST VANE\nSTILL LETS WIND\nIN. READ ITS",
+                                  "FEATHER ARROW."
+                                ],
+                                "minHeight": 4,
+                                "maxHeight": 4,
+                                "textHeight": 3,
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "91336fe6-acaf-5301-9e08-ca2f35fb1a60",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "THE WEST VANE\nSTILL LETS WIND\nIN. READ ITS",
+                            "FEATHER ARROW."
+                          ],
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "57edc1e1-ed6a-51a4-b70b-35a5c8f18d3a",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "REPAIR THE CREEK\nLIGHT BEFORE\nPREPARING THIS",
+                      "ROOST."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ddbeb90a-844c-58d1-8a7e-6912018dce3d",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "f528d8ee-c4c4-5199-903e-33652cdb357e"
+      }
+    },
+    {
+      "id": "6a2c815c-8b08-5c8a-ae3d-aef040b98167",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "bb69504e-95ce-5ee6-a1b3-5dfc79108eed",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "4f539d4c-e867-5fe1-85ed-aa6502acf24c",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "f528d8ee-c4c4-5199-903e-33652cdb357e"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

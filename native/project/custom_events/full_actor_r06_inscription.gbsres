@@ -1,0 +1,107 @@
+{
+  "_resourceType": "script",
+  "id": "1780f5cf-f8ae-5a6d-8fe9-30e6065fc680",
+  "name": "actor R06 inscription",
+  "symbol": "script_full_actor_r06_inscription",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "ffa4803d-7343-5b6f-9823-af4f09afcc02",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "38"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "afd308dd-415e-59e3-9c40-0341749f9b20",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "FOLLOW THE RAYS.\nTURN THE LATCH\nTO THE LEFT.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "2ded9d31-0f71-5ef1-b185-e4bb23638183",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE WORDS LOOK\nFRESHLY PAINTED.\nA RAY MARK WAITS",
+                "BENEATH THEM.",
+                "FACE THIS\nPLAQUE. MOTH CAN\nREVEAL IT WITH",
+                "B."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "2cbe4973-77ab-55ce-bb5b-a21139c501ed",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-873"
+      }
+    },
+    {
+      "id": "255e81b6-4ee7-52c7-92e4-ba613b5af9ae",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "231b9621-835a-5a6b-83e5-d617297551fc",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "57a83915-e495-5c82-b378-6a6d8d171a17",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-873"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

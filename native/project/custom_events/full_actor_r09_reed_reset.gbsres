@@ -1,0 +1,153 @@
+{
+  "_resourceType": "script",
+  "id": "376d6feb-de22-534d-833b-0f8ac2013f50",
+  "name": "actor R09 reed reset",
+  "symbol": "script_full_actor_r09_reed_reset",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {
+    "0": {
+      "id": "0",
+      "name": "Actor 0"
+    },
+    "1": {
+      "id": "1",
+      "name": "Actor 1"
+    }
+  },
+  "script": [
+    {
+      "id": "09519e98-78f8-5007-b41f-ebb265bb6cd9",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "12"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "7148b5ff-acc9-5804-b3dc-fcf5ca6cd892",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE PASSAGE IS\nFINISHED. IT\nWILL NOT CLOSE",
+                "AGAIN."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "4582a503-4c30-51c3-860b-124b64c504d7",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "53",
+              "value": {
+                "type": "number",
+                "value": 0
+              }
+            }
+          },
+          {
+            "id": "c68352d8-6f82-5ce3-96fa-adbd75b66052",
+            "command": "EVENT_ACTOR_SHOW",
+            "args": {
+              "actorId": "0"
+            }
+          },
+          {
+            "id": "e634a06e-1be6-59ee-8d44-1119f67c903b",
+            "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+            "args": {
+              "actorId": "0"
+            }
+          },
+          {
+            "id": "3649c6fe-4f36-5ce9-9eaf-f25aacad3d89",
+            "command": "EVENT_ACTOR_SHOW",
+            "args": {
+              "actorId": "1"
+            }
+          },
+          {
+            "id": "e5afe106-db55-5f2e-8f80-19e249eae31c",
+            "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+            "args": {
+              "actorId": "1"
+            }
+          },
+          {
+            "id": "a7a3eb27-e7e2-55d1-bf27-399dad6d0ec2",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "REED GATES\nRESET. UPSTREAM,\nTHEN DOWNSTREAM.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ff652cde-f1f5-5abf-b60b-1601a9a39257",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "0212826e-a08d-57f0-aae8-2203936aa320"
+      }
+    },
+    {
+      "id": "1a555f71-87d9-5ac4-a67b-4248b53db2cf",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "1e35ba26-2ca6-5b22-934c-b9a1d95c023e",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "5724e269-49d6-5714-8fd4-cc9a7a7332a5",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "0212826e-a08d-57f0-aae8-2203936aa320"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

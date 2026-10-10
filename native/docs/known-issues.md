@@ -1,13 +1,13 @@
-# Opening review issues
+# Full-game limits and review checks
 
-1. Start opens pause but does not close it; choose Resume or B. Select opens the objective but A closes it. These differ from the handoff and need refinement.
-2. Reveal dispatch checks exact adjacent positions and facing around the bark mark and inscription. Alignment needs a fresh-player usability pass. Ray art is present; a separate dynamic in-range verb icon is not yet implemented.
-3. Continue activates recruited Moth even after saving with Travel Alone. Completed puzzles and comfort options persist. Decide whether to preserve the exact companion choice.
-4. Character art now uses the supplied sheet direction at native 16×16 scale; environment art remains placeholder work. Production character approval, title treatment, music, richer idle animation, scare variants and alternative button mode are pending. Unused starter workshop/player assets remain inventoried.
-5. All ten ordinary doorway directions have been traversed at runtime; static landing checks pass. Repeated P02 acknowledgement, broader wrong-action ordering, title settings carried into New Game, cancel/overwrite permutations and incompatible-save fixtures still need broader regression.
-6. Browser preview is visually checked, but browser audio and persistent saves are unverified. Physical boot, controls, sound and persistence are pending.
-7. Two fresh-player tests are needed to validate the 8–12 minute target. Model-controlled frame counts do not establish human completion time.
+The 24-room source includes P01–P12, all three companions, dawn, reunion and credits. Exact emulator results and cartridge hashes belong in `qa-report.md`; the old six-room results do not establish full-game correctness.
 
-R07–R24, P03–P12, Turtle, Thunderbird, full encounters, finale, dawn epilogue and credits remain planned. M1 is a review candidate, not accepted or production complete.
+1. Start opens pause; close it with B or Resume. Select opens objective pages and accepts any button for dismissal; multipage objectives require repeated presses. Menus retain A confirm/B back when exploration actions are swapped. Settings explicitly show that distinction.
+2. A dynamic in-range verb badge is not implemented. Ray, wave and zigzag target sprites and inspection text identify the required ability. Stand beside the marked actor and face it. First-time target alignment and readability still need human review.
+3. Atmospheric encounters use brief, one-shot inspection text and visible symbols. The standard reflection is a static silhouette and caption, rather than the handoff's delayed moving reflection; the sign change is described on inspection, and the extra-step beat uses an icon and restrained effect. Reduced Scares retains the clues and removes isolated effects. No forced camera move, flashing or screen shake is authored.
+4. Both protagonists share the same adventure and quest state. Roam is the New Game default; switching at camps changes the player and porch guide. The brief's opening family introduction remains shared story text, rather than two separate narratives.
+5. Night now has a distinct background palette. Art is original native pixel work with deliberately simple repeated tiles. A fresh-player art, tone and readability review can guide further cosmetic polish.
+6. Save files are paired to their exact cartridge. The full-game epoch differs from the old opening; no cross-build migration is promised. Browser battery persistence, browser audio listening and physical power-cycle checks require separate evidence. Keep the original ROM and RAM together when updating.
+7. Human audio listening, desktop GB Studio opening, physical Chromatic boot/controls/sound/saves, and two first-time human playthroughs remain unverified. Model-driven frame counts and video duration do not establish the handoff's 60–90 minute first-player target.
 
-Both players share puzzle state and companion abilities. The opening story remains based on the supplied Roam-centered outline; a full dual-character narrative pass is pending owner review. Legacy `roamin.png` is unused retained v1 art; active player resource names are Roam and Marty.
+This owner delivery stays in the existing private repository. New content has no chosen blanket public license. Upstream notices, provenance and original editable recipes are included; public names/likeness and overall licensing decisions remain the owner's.

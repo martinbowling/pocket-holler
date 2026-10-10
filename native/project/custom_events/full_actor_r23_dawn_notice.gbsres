@@ -1,0 +1,74 @@
+{
+  "_resourceType": "script",
+  "id": "b6e52aeb-36ac-5809-9593-1ca4cfc4831c",
+  "name": "actor R23 dawn notice",
+  "symbol": "script_full_actor_r23_dawn_notice",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "5c28b472-9c19-5b29-87eb-1294470f18d6",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "MORNING LIGHT\nRESTS ON THE\nROOFS. EVERY",
+          "HOME SIGNAL\nANSWERED.",
+          "FOLLOW THE PATH\nTO THE FESTIVAL\nGREEN, THEN HOME",
+          "TO THE PORCH.",
+          "YOUR FRIENDS ARE\nREADY FOR\nBREAKFAST TOO."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "6f1f0d7a-e044-589a-9b6b-1e5f04f14ac2",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "d88deb1d-aa5f-5d92-a7b5-b1f7670f4b6c"
+      }
+    },
+    {
+      "id": "aebdb902-d06a-588d-8882-32686c8fb0da",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "238ac01c-b787-55d5-9e0c-1d55767fb0e8",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "e8723349-e62d-5500-99bf-e2955742ea74",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "d88deb1d-aa5f-5d92-a7b5-b1f7670f4b6c"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

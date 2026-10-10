@@ -1,0 +1,73 @@
+{
+  "_resourceType": "script",
+  "id": "106feafd-5ff4-5587-beca-0adf8de4bb4c",
+  "name": "actor R04 festival notice",
+  "symbol": "script_full_actor_r04_festival_notice",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "ff501da7-89f9-5085-97a1-ef216289fef9",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "LANTERN WALK\nTONIGHT.\nEVERYONE MEET",
+          "HERE AFTER\nSUNDOWN.",
+          "ORIGINAL VOICES.\nORIGINAL LIGHTS.\nEVERYONE",
+          "ACCOUNTED FOR."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "c07b1250-d048-5304-ab3d-09246cca3d37",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-813"
+      }
+    },
+    {
+      "id": "13a3c542-53a4-5184-902f-ab2a7a320b6a",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "f062d372-9999-54ea-86b6-86ab03a4f287",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "0e4a0db9-1e0f-54d2-92e3-1a7f24b9bb31",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-813"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

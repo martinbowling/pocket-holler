@@ -1,0 +1,105 @@
+{
+  "_resourceType": "script",
+  "id": "9dfd4b14-cfe4-5228-8216-d6c39a53cd74",
+  "name": "actor R12 spillway wave",
+  "symbol": "script_full_actor_r12_spillway_wave",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "1eb0d946-aa0e-5b06-8ff5-918bbce45bbb",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "15"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d0437d06-1ae1-5222-803c-5fff7bd1c787",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "THE SPILLWAY\nSTAYS STEADY.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "f12615a0-7214-5a85-9870-0b4fba586ece",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "STEADY THE\nSPILLWAY WITH B\nAND TURTLE. THEN",
+                "A AT THE CRANK."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "82aa5b2a-966d-5788-a6be-b7c6bb897a9b",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "7e821a05-e17c-5651-8cf5-a731a231ed8b"
+      }
+    },
+    {
+      "id": "a13a3ebd-ab94-5c15-bdb3-df6357552162",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "8647ea88-10b2-5d47-aada-561aa532ae55",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "b936f961-083d-5ed1-8bd0-01991a0abaea",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "7e821a05-e17c-5651-8cf5-a731a231ed8b"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

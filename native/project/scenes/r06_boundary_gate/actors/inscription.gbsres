@@ -10,7 +10,7 @@
   "y": 8,
   "frame": 0,
   "animate": false,
-  "spriteSheetId": "61609cb9-d666-581f-88f7-262925392928",
+  "spriteSheetId": "54a5ae44-a0e5-5fe3-be2f-c843a548e9e2",
   "paletteId": "ebf171a2-c6dd-5d22-b5cc-4c08f0ce2337",
   "direction": "down",
   "moveSpeed": 1,
@@ -22,99 +22,10 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "890ca271-6734-5b6e-b2d3-1d3b09f95273",
-      "command": "EVENT_IF",
+      "id": "6a7f6ee7-3594-5a2c-b28e-0bcc92755720",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
-        "condition": {
-          "type": "eq",
-          "valueA": {
-            "type": "variable",
-            "value": "38"
-          },
-          "valueB": {
-            "type": "number",
-            "value": 1
-          }
-        }
-      },
-      "children": {
-        "true": [
-          {
-            "id": "5358a621-73fb-5ced-b84e-8d9dfec61891",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": "FOLLOW THE RAYS.\nTURN THE LATCH\nTO THE LEFT.",
-              "minHeight": 4,
-              "maxHeight": 4,
-              "textHeight": 3,
-              "closeButton": "a"
-            }
-          }
-        ],
-        "false": [
-          {
-            "id": "88ae1165-5dbc-5d5c-8f5f-9dd503236b94",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "THE WORDS LOOK\nFRESHLY PAINTED.\nA RAY MARK WAITS",
-                "BENEATH THEM.",
-                "FACE THIS\nPLAQUE. MOTH CAN\nREVEAL IT WITH",
-                "B."
-              ],
-              "minHeight": 4,
-              "maxHeight": 4,
-              "textHeight": 3,
-              "closeButton": "a"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "e0be42c9-4746-5048-a222-2cf88566c259",
-      "command": "EVENT_DEFINE_LABEL",
-      "args": {
-        "label": "release-873"
-      }
-    },
-    {
-      "id": "87ab6272-6a0a-5f45-9eea-1fe6050c71c0",
-      "command": "EVENT_IF_INPUT",
-      "args": {
-        "input": [
-          "a",
-          "b",
-          "start",
-          "select",
-          "up",
-          "down",
-          "left",
-          "right"
-        ]
-      },
-      "children": {
-        "true": [
-          {
-            "id": "eac00c1a-e002-5c35-8c47-f1dc19b0437b",
-            "command": "EVENT_WAIT",
-            "args": {
-              "units": "frames",
-              "frames": {
-                "type": "number",
-                "value": 1
-              }
-            }
-          },
-          {
-            "id": "5ecb6229-bf82-51dd-8272-519b6bee491d",
-            "command": "EVENT_GOTO_LABEL",
-            "args": {
-              "label": "release-873"
-            }
-          }
-        ],
-        "false": []
+        "customEventId": "1780f5cf-f8ae-5a6d-8fe9-30e6065fc680"
       }
     }
   ],

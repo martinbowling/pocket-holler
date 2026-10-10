@@ -1,0 +1,307 @@
+{
+  "_resourceType": "script",
+  "id": "40faae67-4ff4-5929-af0b-00cced6faf6b",
+  "name": "ability R20 plaque a",
+  "symbol": "script_full_ability_r20_plaque_a",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "d897e8b1-25dc-5928-9961-9f316a2c521f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "21"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "2722c2de-42ee-5ac5-ad12-b8ebbf774e7e",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE BELL HAS\nCALLED EVERYONE\nHOME. ONLY",
+                "ORDINARY LETTERS\nREMAIN IN\nMORNING LIGHT."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "a1191849-386c-5564-9425-68faab25b333",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "62"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "4c9ae3b5-8483-5e1d-b0bf-18319da8c59d",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "KEEP EVERY VOICE\nHERE. NEVER LET\nTHEM GO.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "3b4ee74e-6385-523d-a790-f324edafeae4",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "3"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 3
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [],
+                    "false": [
+                      {
+                        "id": "9e7e1132-d726-5957-a05c-55d8a89069b2",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "31"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "90b7147f-b965-59bc-b60d-55649e34560b",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "31",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "e2b87edb-aa48-5f64-bec9-780cb3d35100",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "32"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "d7a45a9a-1844-5a7a-97b6-37e53a842f0e",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "33"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "8724ce52-3eb4-53e7-94a9-650b7a0185d3",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "72"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "1a65cbca-2f92-58e8-8ee4-ef05fa819fe0",
+                                                "command": "EVENT_SOUND_PLAY_EFFECT",
+                                                "args": {
+                                                  "type": "beep",
+                                                  "pitch": 2,
+                                                  "duration": 0.12,
+                                                  "wait": false,
+                                                  "priority": "low"
+                                                }
+                                              }
+                                            ],
+                                            "false": []
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            },
+                            {
+                              "id": "a307d885-114f-590c-8edd-0dc5c1360ee4",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A VOICE IN THE\nWOODS: COME\nSTAY. THE LIGHT",
+                                  "IS WAITING.",
+                                  "ONE WORD IS\nWRONG. MOTH'S\nLIVING GLOW",
+                                  "STAYS TRUE."
+                                ],
+                                "minHeight": 4,
+                                "maxHeight": 4,
+                                "textHeight": 3,
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "843fc7db-3f0e-56a2-a261-cf8516421319",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "62",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "0401c1fa-481a-5eb9-abfd-d76c36f86882",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "33"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "1f88aa96-b8e8-5424-a490-017112c82a9d",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "72"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "a30b11fa-7ff7-59f2-a264-60e6429d3a6c",
+                              "command": "EVENT_SOUND_PLAY_EFFECT",
+                              "args": {
+                                "type": "beep",
+                                "pitch": 6,
+                                "duration": 0.12,
+                                "wait": false,
+                                "priority": "low"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                },
+                {
+                  "id": "40e2c3e1-cad8-5d8b-af33-b06fea019005",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "KEEP EVERY VOICE\nHERE. NEVER LET\nTHEM GO.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

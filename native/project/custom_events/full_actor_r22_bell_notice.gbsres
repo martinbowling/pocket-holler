@@ -1,0 +1,75 @@
+{
+  "_resourceType": "script",
+  "id": "c7555a76-055f-5417-b4e2-ba1f0281e4c3",
+  "name": "actor R22 bell notice",
+  "symbol": "script_full_actor_r22_bell_notice",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "8497d362-ebff-50d5-9ed1-12ce43d00c67",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "THREE CERAMIC\nLAMPS. SPARK\nEACH WITH",
+          "THUNDERBIRD.",
+          "ALL WARNING\nLIGHTS AND THE\nRESTORED SPRING",
+          "MUST BE READY.",
+          "BEFORE RINGING,\nYOU CAN RETURN\nTO CAMP, CHANGE",
+          "SETTINGS AND\nSAVE."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "36526e9f-2017-5734-afa1-c703bd5e420f",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "c40009c5-e18a-5a03-876b-ba5e13c4b813"
+      }
+    },
+    {
+      "id": "6eda795e-d611-52e6-b792-ebd8b8a11105",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "5df5941f-c7a6-5f81-90fd-b8055123ea3b",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "9d6a26f7-aaf0-5eac-919c-d0e6e534c7e2",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "c40009c5-e18a-5a03-876b-ba5e13c4b813"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

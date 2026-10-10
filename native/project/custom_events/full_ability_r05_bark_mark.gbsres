@@ -1,0 +1,125 @@
+{
+  "_resourceType": "script",
+  "id": "fbae133d-2008-50e7-9313-789004c3f94b",
+  "name": "ability R05 bark mark",
+  "symbol": "script_full_ability_r05_bark_mark",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "68714e9e-6b71-55f5-88f8-34d2b42d6338",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "37"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "462f657c-070d-5434-8c54-98c48aaf96dd",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "37",
+              "value": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "520d15ad-bfc1-5702-9102-a67b72afdb03",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "33"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "3661d084-2c75-5d1f-a026-1f78dbcddbfc",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "72"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "d9430ab5-ff81-58f4-8e7f-7334ced318e4",
+                        "command": "EVENT_SOUND_PLAY_EFFECT",
+                        "args": {
+                          "type": "beep",
+                          "pitch": 5,
+                          "duration": 0.12,
+                          "wait": false,
+                          "priority": "low"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "d38d23f2-b882-5159-8f90-55d16731fcf3",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "MOTH REVEALS:\nTRUST LIVING\nLIGHT. TRY THIS",
+                "AT THE BOUNDARY."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "241e3ef3-9abe-5286-8830-9da3756097ee",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "THE BARK MARK\nSTAYS CLEAR.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

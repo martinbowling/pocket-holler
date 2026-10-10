@@ -1,0 +1,72 @@
+{
+  "_resourceType": "script",
+  "id": "29b0a8e7-d48e-5f74-b600-c4c5a01cb08e",
+  "name": "actor R16 relay board",
+  "symbol": "script_full_actor_r16_relay_board",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "de17b8d8-0387-5b2d-b37d-f696bc8040dc",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "RELAY ORDER:\nLEAF, WAVE,\nSTAR.",
+          "SPARK EACH SAFE\nSOCKET WITH\nTHUNDERBIRD. A",
+          "WRONG STEP\nRESETS ONLY THIS\nTRY."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "3ffcd68e-711d-5751-adf7-cd8394639b03",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "53f4675c-8780-5c00-88d7-158768be8dd6"
+      }
+    },
+    {
+      "id": "134e4702-5386-5f6a-bc7a-d8bb5e4c1e50",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "017db2c6-54be-5ceb-acbe-0ca39cc24a99",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "60df3f81-aa28-58ae-b91a-d6210e654b6f",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "53f4675c-8780-5c00-88d7-158768be8dd6"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

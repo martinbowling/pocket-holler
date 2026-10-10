@@ -1,0 +1,610 @@
+{
+  "_resourceType": "script",
+  "id": "f5e4bb74-0cd2-5f08-a475-a9cb17069153",
+  "name": "actor R22 hollow bell",
+  "symbol": "script_full_actor_r22_hollow_bell",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "b110b803-2e78-5ec2-ac9c-ee6262eb7f12",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "21"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "61b9fdc9-7257-5f74-90c1-de97c979b2c0",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE BELL HAS\nCALLED EVERYONE\nHOME. THE HOLLOW",
+                "IS QUIET."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "f34419af-6e50-5757-bb7e-b31fca8b9471",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "11"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "b5ba0f66-3aa1-55a3-8dfc-dca7b6874a61",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "15"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "8d43b313-920c-5272-9051-639c1bee92a2",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "17"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "408ae904-58f5-5914-9d37-cedf4304ce03",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "18"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "c0d2955a-ada9-502c-8875-0d5930c05c24",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "19"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 1
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "41f22b62-16c8-54af-9b97-0fa6cf1d9480",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "20"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 1
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "81b69708-5810-5ab2-9b7a-4926029e23e8",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "THE TRUE BELL\nCALLS PEOPLE\nHOME. RING FOR",
+                                                    "EVERYONE?",
+                                                    "YOU CAN WAIT,\nRETURN TO CAMP\nOR SAVE BEFORE",
+                                                    "DECIDING."
+                                                  ],
+                                                  "minHeight": 4,
+                                                  "maxHeight": 4,
+                                                  "textHeight": 3,
+                                                  "closeButton": "a"
+                                                }
+                                              },
+                                              {
+                                                "id": "ab25382b-16a0-5220-b279-2e0eb52b9059",
+                                                "command": "EVENT_MENU",
+                                                "args": {
+                                                  "variable": "44",
+                                                  "items": 3,
+                                                  "layout": "menu",
+                                                  "cancelOnB": true,
+                                                  "cancelOnLastOption": false,
+                                                  "option1": "RING FOR ALL",
+                                                  "option2": "WAIT",
+                                                  "option3": "LEAVE"
+                                                }
+                                              },
+                                              {
+                                                "id": "dadde930-2aa5-5014-b14c-6e4f7ec78f44",
+                                                "command": "EVENT_IF",
+                                                "args": {
+                                                  "condition": {
+                                                    "type": "eq",
+                                                    "valueA": {
+                                                      "type": "variable",
+                                                      "value": "44"
+                                                    },
+                                                    "valueB": {
+                                                      "type": "number",
+                                                      "value": 1
+                                                    }
+                                                  }
+                                                },
+                                                "children": {
+                                                  "true": [
+                                                    {
+                                                      "id": "6db63294-19f4-5417-bae5-cfb16553fb4d",
+                                                      "command": "EVENT_TEXT",
+                                                      "args": {
+                                                        "text": [
+                                                          "RING FOR\nEVERYONE. PRESS\nA ON RING NOW TO",
+                                                          "CONFIRM."
+                                                        ],
+                                                        "minHeight": 4,
+                                                        "maxHeight": 4,
+                                                        "textHeight": 3,
+                                                        "closeButton": "a"
+                                                      }
+                                                    },
+                                                    {
+                                                      "id": "62f0c564-b6ad-537f-953c-fec7a9bb4c5b",
+                                                      "command": "EVENT_DEFINE_LABEL",
+                                                      "args": {
+                                                        "label": "8ff0dc8e-efd6-5f93-bcd3-6d9bb43f7abc"
+                                                      }
+                                                    },
+                                                    {
+                                                      "id": "765a5200-3c4b-51d0-b15e-83bb5080cd52",
+                                                      "command": "EVENT_IF_INPUT",
+                                                      "args": {
+                                                        "input": [
+                                                          "a"
+                                                        ]
+                                                      },
+                                                      "children": {
+                                                        "true": [
+                                                          {
+                                                            "id": "5852222b-ed65-5e06-bf9e-ccc6d40dd4d7",
+                                                            "command": "EVENT_WAIT",
+                                                            "args": {
+                                                              "units": "frames",
+                                                              "frames": {
+                                                                "type": "number",
+                                                                "value": 1
+                                                              }
+                                                            }
+                                                          },
+                                                          {
+                                                            "id": "2ecaaf8e-4f3d-53e5-87f7-62ebe7fe42ce",
+                                                            "command": "EVENT_GOTO_LABEL",
+                                                            "args": {
+                                                              "label": "8ff0dc8e-efd6-5f93-bcd3-6d9bb43f7abc"
+                                                            }
+                                                          }
+                                                        ],
+                                                        "false": []
+                                                      }
+                                                    },
+                                                    {
+                                                      "id": "ed7448d4-9408-57a6-972d-35539fb23504",
+                                                      "command": "EVENT_MENU",
+                                                      "args": {
+                                                        "variable": "44",
+                                                        "items": 2,
+                                                        "layout": "menu",
+                                                        "cancelOnB": true,
+                                                        "cancelOnLastOption": false,
+                                                        "option1": "RING NOW",
+                                                        "option2": "NOT YET"
+                                                      }
+                                                    },
+                                                    {
+                                                      "id": "e324230b-23e4-547a-84ee-f5267cc5ebbb",
+                                                      "command": "EVENT_IF",
+                                                      "args": {
+                                                        "condition": {
+                                                          "type": "eq",
+                                                          "valueA": {
+                                                            "type": "variable",
+                                                            "value": "44"
+                                                          },
+                                                          "valueB": {
+                                                            "type": "number",
+                                                            "value": 1
+                                                          }
+                                                        }
+                                                      },
+                                                      "children": {
+                                                        "true": [
+                                                          {
+                                                            "id": "74fbdb00-545b-5208-85dd-1a1b454fb7dc",
+                                                            "command": "EVENT_SET_VALUE",
+                                                            "args": {
+                                                              "variable": "21",
+                                                              "value": {
+                                                                "type": "number",
+                                                                "value": 1
+                                                              }
+                                                            }
+                                                          },
+                                                          {
+                                                            "id": "6d807a5e-2d9b-57fa-8318-a9eca9b53c59",
+                                                            "command": "EVENT_SET_VALUE",
+                                                            "args": {
+                                                              "variable": "2",
+                                                              "value": {
+                                                                "type": "number",
+                                                                "value": 4
+                                                              }
+                                                            }
+                                                          },
+                                                          {
+                                                            "id": "1f4367e0-9c66-526f-b402-29886e2294ae",
+                                                            "command": "EVENT_SET_VALUE",
+                                                            "args": {
+                                                              "variable": "3",
+                                                              "value": {
+                                                                "type": "number",
+                                                                "value": 3
+                                                              }
+                                                            }
+                                                          },
+                                                          {
+                                                            "id": "77e229f9-3b19-522c-bd41-bd29f1f13224",
+                                                            "command": "EVENT_IF",
+                                                            "args": {
+                                                              "condition": {
+                                                                "type": "eq",
+                                                                "valueA": {
+                                                                  "type": "variable",
+                                                                  "value": "33"
+                                                                },
+                                                                "valueB": {
+                                                                  "type": "number",
+                                                                  "value": 0
+                                                                }
+                                                              }
+                                                            },
+                                                            "children": {
+                                                              "true": [
+                                                                {
+                                                                  "id": "8dd45445-cd4b-559d-bf75-0530841ffdc4",
+                                                                  "command": "EVENT_IF",
+                                                                  "args": {
+                                                                    "condition": {
+                                                                      "type": "eq",
+                                                                      "valueA": {
+                                                                        "type": "variable",
+                                                                        "value": "72"
+                                                                      },
+                                                                      "valueB": {
+                                                                        "type": "number",
+                                                                        "value": 0
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "children": {
+                                                                    "true": [
+                                                                      {
+                                                                        "id": "72f7fef7-02d6-5ecc-b831-eebeee1aad25",
+                                                                        "command": "EVENT_SOUND_PLAY_EFFECT",
+                                                                        "args": {
+                                                                          "type": "beep",
+                                                                          "pitch": 6,
+                                                                          "duration": 0.12,
+                                                                          "wait": false,
+                                                                          "priority": "low"
+                                                                        }
+                                                                      }
+                                                                    ],
+                                                                    "false": []
+                                                                  }
+                                                                }
+                                                              ],
+                                                              "false": []
+                                                            }
+                                                          },
+                                                          {
+                                                            "id": "a31db18a-b6c1-5f81-a977-b5b8ba41f01a",
+                                                            "command": "EVENT_TEXT",
+                                                            "args": {
+                                                              "text": [
+                                                                "THE BELL RINGS\nFOR EVERYONE.\nTHE TOWN ANSWERS",
+                                                                "WITH ITS OWN\nLIGHT.",
+                                                                "THE BORROWED\nWORDS LOOSEN\nINTO HARMLESS",
+                                                                "ECHOES. ONLY\nWIND REMAINS.",
+                                                                "ALL THREE\nFRIENDS ARE\nSAFE. DAWN",
+                                                                "RETURNS TO\nPOCKETHOLLER.",
+                                                                "GO HOME FOR\nBREAKFAST. YOUR\nFINISHED PUZZLES",
+                                                                "STAY FINISHED.",
+                                                                "THIS DOES NOT\nWRITE A SAVE.\nSAVE AT THE",
+                                                                "PORCH AFTER THE\nREUNION."
+                                                              ],
+                                                              "minHeight": 4,
+                                                              "maxHeight": 4,
+                                                              "textHeight": 3,
+                                                              "closeButton": "a"
+                                                            }
+                                                          },
+                                                          {
+                                                            "id": "bcc00c74-e5f4-5779-8ae1-aa16afe23d85",
+                                                            "command": "EVENT_SWITCH_SCENE",
+                                                            "args": {
+                                                              "sceneId": "c9fcf821-4937-5d78-a937-6e4bac875ddf",
+                                                              "x": {
+                                                                "type": "number",
+                                                                "value": 8
+                                                              },
+                                                              "y": {
+                                                                "type": "number",
+                                                                "value": 12
+                                                              },
+                                                              "direction": "up",
+                                                              "fadeSpeed": "2"
+                                                            }
+                                                          }
+                                                        ],
+                                                        "false": [
+                                                          {
+                                                            "id": "1ddef1e6-c363-59b3-bf73-cd6a000f3571",
+                                                            "command": "EVENT_TEXT",
+                                                            "args": {
+                                                              "text": "THE BELL WAITS.\nNO PROGRESS HAS\nCHANGED.",
+                                                              "minHeight": 4,
+                                                              "maxHeight": 4,
+                                                              "textHeight": 3,
+                                                              "closeButton": "a"
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ],
+                                                  "false": [
+                                                    {
+                                                      "id": "37ea8202-18f9-5655-b35b-29d72c58bac2",
+                                                      "command": "EVENT_TEXT",
+                                                      "args": {
+                                                        "text": [
+                                                          "THE BELL WAITS.\nYOU MAY SAVE OR\nCHANGE SETTINGS",
+                                                          "AT CAMP."
+                                                        ],
+                                                        "minHeight": 4,
+                                                        "maxHeight": 4,
+                                                        "textHeight": 3,
+                                                        "closeButton": "a"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "bd8818c2-00d5-5881-8e6b-0ef1add06468",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "REVEAL THE TRUE\nWORDS, RESTORE\nTHE SPRING AND",
+                                                    "CHARGE EVERY\nBELL LAMP FIRST."
+                                                  ],
+                                                  "minHeight": 4,
+                                                  "maxHeight": 4,
+                                                  "textHeight": 3,
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "ae753a0d-4b89-5bf1-8b3d-5372f444c5f9",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "REVEAL THE TRUE\nWORDS, RESTORE\nTHE SPRING AND",
+                                              "CHARGE EVERY\nBELL LAMP FIRST."
+                                            ],
+                                            "minHeight": 4,
+                                            "maxHeight": 4,
+                                            "textHeight": 3,
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "9598274e-4fdc-55ef-b89e-69920030e165",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "REVEAL THE TRUE\nWORDS, RESTORE\nTHE SPRING AND",
+                                        "CHARGE EVERY\nBELL LAMP FIRST."
+                                      ],
+                                      "minHeight": 4,
+                                      "maxHeight": 4,
+                                      "textHeight": 3,
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "98a2d92f-4d18-5eaf-9a11-79db298d62aa",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "REVEAL THE TRUE\nWORDS, RESTORE\nTHE SPRING AND",
+                                  "CHARGE EVERY\nBELL LAMP FIRST."
+                                ],
+                                "minHeight": 4,
+                                "maxHeight": 4,
+                                "textHeight": 3,
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "88064751-36d2-5b51-ae7e-6bc69aa10d21",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "REVEAL THE TRUE\nWORDS, RESTORE\nTHE SPRING AND",
+                            "CHARGE EVERY\nBELL LAMP FIRST."
+                          ],
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "7b6ae015-f34b-5bce-af6a-0ea2e7c4f45b",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "REVEAL THE TRUE\nWORDS, RESTORE\nTHE SPRING AND",
+                      "CHARGE EVERY\nBELL LAMP FIRST."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b92bb701-f220-5284-9968-beaf84f9d9e0",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "e2c02c9b-0520-5de1-a224-b805a42d15eb"
+      }
+    },
+    {
+      "id": "dab17a6b-95c5-5607-b4c2-2b63320a5d26",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d222f93c-9c3a-5b6d-a199-dc7345b5758e",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "6587a5c4-2804-576f-b799-1440ac8a6b33",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "e2c02c9b-0520-5de1-a224-b805a42d15eb"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

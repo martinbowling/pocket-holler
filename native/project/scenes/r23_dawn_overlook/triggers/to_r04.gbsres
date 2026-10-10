@@ -1,0 +1,151 @@
+{
+  "_resourceType": "trigger",
+  "id": "b92a60ef-ea7b-5fbc-a059-ab35ff1d97b5",
+  "_index": 0,
+  "name": "To R04",
+  "symbol": "trigger_r23_to_r04",
+  "x": 8,
+  "y": 16,
+  "width": 4,
+  "height": 2,
+  "script": [
+    {
+      "id": "955af6fe-b08f-55fb-83c4-6f64686945a6",
+      "command": "EVENT_SCRIPT_LOCK",
+      "args": {}
+    },
+    {
+      "id": "9bfe4743-4164-5a1e-bf8f-5e534438c5d4",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "2a58c07f-4c2a-5a86-a0e1-a31a5c6188bf"
+      }
+    },
+    {
+      "id": "6be22efd-219d-54bb-9edd-785ce7ebdc44",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "28adc731-300f-5fb0-9b4a-8e325e8ca3a6",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "2efa0155-d291-5731-9d8c-81d4ba2742ce",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "2a58c07f-4c2a-5a86-a0e1-a31a5c6188bf"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "5f8e8b9c-f6fa-5e8c-bf03-ffd9e574d9c2",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "21"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "1e57a522-faff-5bab-84e1-826c5e76759d",
+            "command": "EVENT_SWITCH_SCENE",
+            "args": {
+              "sceneId": "884336c2-731b-5e64-9df5-416ba45da317",
+              "x": {
+                "type": "number",
+                "value": 12
+              },
+              "y": {
+                "type": "number",
+                "value": 12
+              },
+              "direction": "right",
+              "fadeSpeed": "2"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "2cbc87f5-6dba-5735-8a7e-b3bef5e0e9e1",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE DAWN TRAIL\nOPENS AFTER THE\nHOLLOW BELL HAS",
+                "RUNG."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "d76e4c96-6bbb-505d-b489-b8a5f55ecf0a",
+            "command": "EVENT_ACTOR_SET_POSITION",
+            "args": {
+              "actorId": "player",
+              "x": {
+                "type": "number",
+                "value": 8
+              },
+              "y": {
+                "type": "number",
+                "value": 14
+              },
+              "units": "tiles"
+            }
+          },
+          {
+            "id": "07af1b2e-1d63-50e2-9ae1-486cd473cd32",
+            "command": "EVENT_ACTOR_SET_DIRECTION",
+            "args": {
+              "actorId": "player",
+              "direction": {
+                "type": "direction",
+                "value": "up"
+              }
+            }
+          },
+          {
+            "id": "b4549103-ede1-5f80-adc5-63429c1f3eb1",
+            "command": "EVENT_SCRIPT_UNLOCK",
+            "args": {}
+          }
+        ]
+      }
+    }
+  ],
+  "leaveScript": []
+}

@@ -1,0 +1,380 @@
+{
+  "_resourceType": "script",
+  "id": "fbc4f6fb-45dc-5d3c-8960-f773501e6133",
+  "name": "actor R20 bell instruction",
+  "symbol": "script_full_actor_r20_bell_instruction",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "c2d18e0a-1bc7-5a5c-9e93-8c94fe01578d",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "18"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "e70e9473-40a4-5bd4-9dd3-48d73333d177",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE TRUE BELL\nCALLS PEOPLE\nHOME. THE SPRING",
+                "CAN BE RESTORED."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "5dcfdc31-fdd2-5350-ab7b-e02b1d54a819",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "62"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "09d5bfa9-0b6b-54ac-9715-d8609db3bb85",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "63"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "f3fda0d1-053a-5c4b-babf-012fbd266305",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "64"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "115b91b4-5975-5c88-abfe-993548c192db",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "WHICH\nINSCRIPTION\nMATCHES THE",
+                                  "BELL'S PURPOSE?"
+                                ],
+                                "minHeight": 4,
+                                "maxHeight": 4,
+                                "textHeight": 3,
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "442f7e76-a52c-5f77-9411-ca23a85179c9",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "44",
+                                "items": 3,
+                                "layout": "menu",
+                                "cancelOnB": true,
+                                "cancelOnLastOption": false,
+                                "option1": "CALL PEOPLE HOME",
+                                "option2": "KEEP THEM HERE",
+                                "option3": "WAIT"
+                              }
+                            },
+                            {
+                              "id": "a2377e8a-25ff-586a-99fe-8cbb813ba0f3",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "a1053773-798b-59bb-92d6-ed5aaedeb023",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "18",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "f05ba048-b471-503c-a9e2-2a92afa77397",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "33"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "3891ad43-5519-5aff-99bd-7476326ce654",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "72"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "ca99d36d-232d-53c1-abad-bc4983148497",
+                                                "command": "EVENT_SOUND_PLAY_EFFECT",
+                                                "args": {
+                                                  "type": "beep",
+                                                  "pitch": 6,
+                                                  "duration": 0.12,
+                                                  "wait": false,
+                                                  "priority": "low"
+                                                }
+                                              }
+                                            ],
+                                            "false": []
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  },
+                                  {
+                                    "id": "747d18f0-77b6-5658-997e-b06424f3cc3b",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "TRUE: THE BELL\nCALLS PEOPLE\nHOME.",
+                                        "TAKE TURTLE TO\nTHE SPRING. THE\nCHANNEL DIAGRAM",
+                                        "WILL HELP."
+                                      ],
+                                      "minHeight": 4,
+                                      "maxHeight": 4,
+                                      "textHeight": 3,
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            },
+                            {
+                              "id": "b8b70e60-0d2b-55e6-ae42-2b97b3739275",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "6017d2fc-8453-5752-aa57-b8f22e794011",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "MOTH TURNS BACK\nTO THE REAL\nCAMP. NOTHING",
+                                        "YOU FINISHED IS\nLOST."
+                                      ],
+                                      "minHeight": 4,
+                                      "maxHeight": 4,
+                                      "textHeight": 3,
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "d4369ff2-dcd7-56a8-b805-374fa5e744a6",
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "6bfc1c20-41ce-5c1a-abf2-cd350d53d278",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 8
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 12
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "e36e00a5-c3ae-519a-99e5-76a762ffb177",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": "REVEAL ALL THREE\nRAY PLAQUES\nBEFORE CHOOSING.",
+                                "minHeight": 4,
+                                "maxHeight": 4,
+                                "textHeight": 3,
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "5162ff7f-aa6e-5660-84e7-0b71b4526314",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": "REVEAL ALL THREE\nRAY PLAQUES\nBEFORE CHOOSING.",
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "8ecff07b-380b-53bf-8125-de5b71b67903",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "REVEAL ALL THREE\nRAY PLAQUES\nBEFORE CHOOSING.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "cff885ce-a0ac-5d5e-90c9-ba878696d88c",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "6cbbf1ad-215e-551c-a331-ce0afdc04009"
+      }
+    },
+    {
+      "id": "b64a9aa5-3479-5738-a86c-a030a49d61f1",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "bd72352e-6a7c-5086-b996-65eb17615af0",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "dc826464-b640-5d51-b08c-4e55a559bb9a",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "6cbbf1ad-215e-551c-a331-ce0afdc04009"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

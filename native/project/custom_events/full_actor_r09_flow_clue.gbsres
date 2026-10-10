@@ -1,0 +1,72 @@
+{
+  "_resourceType": "script",
+  "id": "76ef43c5-d84b-5e9d-8125-790fca882b15",
+  "name": "actor R09 flow clue",
+  "symbol": "script_full_actor_r09_flow_clue",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "738a5708-fa7d-57be-b4c0-341452c507a2",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "LEAVES MOVE FROM\nTHE HIGH BANK TO\nTHE LOW BANK.",
+          "OPEN UPSTREAM\nFIRST. THEN OPEN\nDOWNSTREAM. A",
+          "WORKS EACH REED\nGATE."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "e8bb487d-ca76-500d-aecf-cd6266d88890",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "0dfe0793-8723-593a-800f-cf944b6da5fe"
+      }
+    },
+    {
+      "id": "87084f86-d8ac-5e36-aae2-40c126f7be75",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d1d2bc88-f60b-5879-b508-f499fb176d8a",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "577026a6-fd3a-50e3-b55b-b2ba18537d67",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "0dfe0793-8723-593a-800f-cf944b6da5fe"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

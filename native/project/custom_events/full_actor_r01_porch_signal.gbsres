@@ -1,0 +1,71 @@
+{
+  "_resourceType": "script",
+  "id": "b09c9f53-56fe-57cc-b4e8-656ac4666550",
+  "name": "actor R01 porch signal",
+  "symbol": "script_full_actor_r01_porch_signal",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "a4d1b6b2-1480-5d5c-b83b-51abbdb92d5a",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "THE PORCH SIGNAL\nBURNS STEADY.\nTHIS IS A SAFE",
+          "PLACE."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "80851851-32cc-522c-8162-9e579251e450",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-777"
+      }
+    },
+    {
+      "id": "7c97faf7-9134-5298-9487-c11d358636a0",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b603614b-ef38-5282-9e61-6436e5068e7f",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "8aa1d70e-8d7c-5359-8c5a-81b8e3c41716",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-777"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

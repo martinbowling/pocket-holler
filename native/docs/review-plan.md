@@ -1,11 +1,9 @@
-# Owner opening review
+# Full-game owner and fresh-player review
 
-Play the six-room opening without the walkthrough if possible. Press A through title pages, then choose New Game. Reach the first warning light, return to Marty and save. The local preview is convenient for tone and controls; the packaged cartridge is the exact emulator-tested artifact.
+The full native game has passed controller-driven emulator regression and a continuous journey through all 24 rooms and twelve puzzles to dawn and reunion. Those results are in `qa-report.md`. The earlier opening-review plan is historical; the owner subsequently authorized full integration and release.
 
-Record whether Marty feels warm and dependable, whether the repeated homeward phrase is the intended level of unease, and whether the placeholder Roam/Marty/Moth direction is appropriate. The final character art and public names are separate release decisions.
+Play the full cartridge without the walkthrough. Review the moonlit intro, readable dialogue, dependable companions, both playable characters, room clues, camp hints and the warmth of the reunion. Record confusion, hints used, missed cues and time without coaching. Both characters share the adventure and quest state.
 
-Check movement, actor interaction, companion target alignment, menu cancellation, readable text, journal and hints. Start/Select panel closing and companion choice on Continue are known differences needing a decision or revision.
+Two fresh players should measure the handoff's 60–90 minute first-player target. The automated route and video duration are not a pacing measurement. Include a Quiet preset/Reduced Scares session. Listen to native music and effects on the exact cartridge and test the browser's audio and battery saves separately.
 
-Two new players must validate the 8–12 minute target. Include an Audio Off/Reduced Scares run. Record time, hints, missed cues and confusion rather than coaching through the solution. Listen to the exact cartridge's effects separately. Physical Chromatic validation is a later check, not established by this preview.
-
-The supplied handoff explicitly gates full-map expansion on owner review. After tone, controls and character direction are accepted, M2 expands the native project through R24, all three companions, P12 and the warm dawn ending. This package does not authorize publication, licensing approval, hardware purchases or flashing.
+Physical Chromatic boot, controls, sprite visibility, sound, battery saves and power cycling remain untested. The source and release are in the existing private owner repository; public visibility, a blanket license and hardware flashing are separate decisions.

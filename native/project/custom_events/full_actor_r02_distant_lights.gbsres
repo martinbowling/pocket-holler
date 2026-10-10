@@ -1,0 +1,105 @@
+{
+  "_resourceType": "script",
+  "id": "2990491e-b907-5c29-845a-69e2d048a8de",
+  "name": "actor R02 distant lights",
+  "symbol": "script_full_actor_r02_distant_lights",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "3b82f136-1948-5aca-98a6-2d85718e6d11",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "11"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "f26b890c-31ed-5203-9ffe-d3b2173dc19a",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "ONE WARM LIGHT\nON THE FENCE.\nTWO DISTANT",
+                "LAMPS WAIT."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "61a5bb1b-0f1b-5be2-be68-35dda75cd2ca",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "THREE WARNING\nLIGHTS. ALL\nQUIET FOR NOW.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "09458da8-2ac9-50ba-8b36-1a81dbd4cc5f",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-794"
+      }
+    },
+    {
+      "id": "49a44cee-4af7-5dc4-857d-a5b9d5effe99",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "58de62d2-9fb2-546e-b52e-72be40666963",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "d9c87dd1-6b34-55a1-b431-634d21bf7b5a",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-794"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

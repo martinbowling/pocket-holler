@@ -1,0 +1,105 @@
+{
+  "_resourceType": "script",
+  "id": "8b5bd297-b01f-5119-ae50-950137cc622f",
+  "name": "actor R22 bell lamp c",
+  "symbol": "script_full_actor_r22_bell_lamp_c",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "91005580-d55d-523e-add2-fc721f8378e0",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "20"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "0e60f692-ebe7-5451-a8e3-30bae54a56dc",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "RIGHT BELL LAMP:\nCHARGED.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "d0460913-08fd-5feb-a23b-5d35d3b31e87",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "RIGHT CERAMIC\nLAMP. PRESS B\nWITH",
+                "THUNDERBIRD."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "26dcefa3-c4be-58d0-a5ac-5c588aac5953",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "b5cdf1b9-48ef-5e71-8130-52ad0aa6bd2a"
+      }
+    },
+    {
+      "id": "720d64cd-e7f8-5e84-a31c-20b3aceb6519",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "85d946a0-8f81-5555-941f-635d6a997c6a",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "168c3ccb-bc89-51c2-8078-05a98c08f6ff",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "b5cdf1b9-48ef-5e71-8130-52ad0aa6bd2a"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

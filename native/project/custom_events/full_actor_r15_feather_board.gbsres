@@ -1,0 +1,71 @@
+{
+  "_resourceType": "script",
+  "id": "a3b8887a-dc33-57e6-9da0-78c0596efd8c",
+  "name": "actor R15 feather board",
+  "symbol": "script_full_actor_r15_feather_board",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "6222411d-d05a-591d-a92c-f245f9115a73",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "WEST FEATHER:\nEAST. EAST\nFEATHER: WEST.",
+          "BOTH OPEN SIDES\nFACE THE CENTRAL\nPERCH."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "72f92948-7240-5271-a605-cf33b8862da9",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "9f050d51-bfe2-57f4-b047-8f5b6dc03f80"
+      }
+    },
+    {
+      "id": "253b2f72-e2ac-596c-be2a-8ba4e5f67085",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b88b8019-e64a-5d60-953f-c8a26e392392",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "6e7d9a2f-2194-540d-b945-283e7b57f3de",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "9f050d51-bfe2-57f4-b047-8f5b6dc03f80"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "_resourceType": "trigger",
+  "id": "8dd099d8-da3f-59ca-849e-4bf7b1373df2",
+  "_index": 2,
+  "name": "To R07",
+  "symbol": "trigger_r12_to_r07",
+  "x": 0,
+  "y": 10,
+  "width": 2,
+  "height": 4,
+  "script": [
+    {
+      "id": "93c0d2fe-9908-52ca-a8a9-9fbbe1c02837",
+      "command": "EVENT_SCRIPT_LOCK",
+      "args": {}
+    },
+    {
+      "id": "2f07ac41-0c23-5c92-8964-3acb80b6cf79",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "82f9996b-7752-5a4d-8dbf-3577f40047ba"
+      }
+    },
+    {
+      "id": "a6274211-423e-5dbe-9d2b-ce740ddf0bae",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d96d5988-8b9a-501c-95c0-45e4be68b702",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "324aef45-5a75-5bc0-90f9-f80b1e2426a2",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "82f9996b-7752-5a4d-8dbf-3577f40047ba"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "e91ba23c-ad5e-540a-b735-503c494ef760",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "15"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "6324d1b8-c7a1-5c60-9ad3-317642ba7317",
+            "command": "EVENT_SWITCH_SCENE",
+            "args": {
+              "sceneId": "903cdf33-0367-5c89-8460-f2351a65e4f7",
+              "x": {
+                "type": "number",
+                "value": 16
+              },
+              "y": {
+                "type": "number",
+                "value": 10
+              },
+              "direction": "left",
+              "fadeSpeed": "2"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "5856dbdb-bbf6-5551-9b24-28673dde56c4",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "STEADY THE\nSPILLWAY, THEN\nTURN THE CREEK",
+                "LIGHT CRANK."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "1aa6ba2e-2b03-56f0-bcb9-ce350509e08c",
+            "command": "EVENT_ACTOR_SET_POSITION",
+            "args": {
+              "actorId": "player",
+              "x": {
+                "type": "number",
+                "value": 2
+              },
+              "y": {
+                "type": "number",
+                "value": 10
+              },
+              "units": "tiles"
+            }
+          },
+          {
+            "id": "8092707d-f2ca-5b16-9e42-0cc7d91d5447",
+            "command": "EVENT_ACTOR_SET_DIRECTION",
+            "args": {
+              "actorId": "player",
+              "direction": {
+                "type": "direction",
+                "value": "right"
+              }
+            }
+          },
+          {
+            "id": "6c05e0cc-95a9-54b1-b7de-ca58d84fe1b7",
+            "command": "EVENT_SCRIPT_UNLOCK",
+            "args": {}
+          }
+        ]
+      }
+    }
+  ],
+  "leaveScript": []
+}

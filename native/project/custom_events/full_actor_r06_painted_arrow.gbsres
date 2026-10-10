@@ -1,0 +1,72 @@
+{
+  "_resourceType": "script",
+  "id": "057bb180-9dd9-5eed-83c0-cdc9068f33fa",
+  "name": "actor R06 painted arrow",
+  "symbol": "script_full_actor_r06_painted_arrow",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "d1d1fe81-98b1-5854-8f23-1a8eff63468d",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "THE PAINTED\nARROW POINTS\nINTO DARK WATER.",
+          "MOTH WAITS BY\nTHE DRY PATH.\nYOU DO NOT HAVE",
+          "TO FOLLOW A\nSIGN."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "3970476b-4d5e-5173-a374-8f72f436f6a3",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-896"
+      }
+    },
+    {
+      "id": "ae6748b0-38fd-527a-b286-6fb58a516864",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "cf8167fe-99e3-5c8a-b005-46649025ccf4",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "d90563a6-e5f1-50f4-87dd-d0017f6a2532",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-896"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

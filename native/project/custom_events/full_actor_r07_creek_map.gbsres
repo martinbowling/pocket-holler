@@ -1,0 +1,150 @@
+{
+  "_resourceType": "script",
+  "id": "8e445c2a-b5d6-55cc-9dfc-458c826b69ee",
+  "name": "actor R07 creek map",
+  "symbol": "script_full_actor_r07_creek_map",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "f9e39ad0-518f-537c-a0cc-47e8cfef811f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "15"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "5630bf5d-98e2-56b7-b0d1-484f6159227a",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "CREEK LIGHT:\nLIT. THE RIDGE\nPATH IS OPEN.",
+                "THE LOOP FROM\nTHE LIGHT\nRETURNS HERE.",
+                "SAVE BEFORE THE\nRIDGE."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "915dc7ca-3413-55da-9177-0aad5532d605",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "12"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "ce922e43-a855-5901-af81-133f4b624d0d",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "TURTLE STEADIES\nWAVE MARKS.\nTHREE STONES",
+                      "LEAD TO THE\nWHEELHOUSE.",
+                      "NEXT: NEAR,\nMIDDLE, FAR.\nSTAY ON THE DRY",
+                      "WALKWAY."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "2e604da3-2d73-5dd2-9d38-1bed0b8912bf",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "THE REED GATES\nFOLLOW THE\nLEAVES:",
+                      "UPSTREAM, THEN\nDOWNSTREAM.",
+                      "THE POOL BANK IS\nSAFE. CHECK A\nREFLECTION",
+                      "AGAINST LIVING\nLIGHT."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "e8725956-329e-591e-a36f-cf8beee8e351",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "0af5af07-ed5b-54b0-a691-07f4419664c1"
+      }
+    },
+    {
+      "id": "85d8089c-752e-51c3-a75b-4211bb42ad0d",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "2e1de71e-5742-52a2-a7cf-198bd32bd775",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "5e2454e9-183c-57e8-ab40-b7c218785a41",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "0af5af07-ed5b-54b0-a691-07f4419664c1"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

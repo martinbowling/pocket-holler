@@ -1,0 +1,174 @@
+{
+  "_resourceType": "script",
+  "id": "82675cba-7e02-5bcf-952e-ee07d50f0147",
+  "name": "actor R20 false door",
+  "symbol": "script_full_actor_r20_false_door",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "ddf7cb0e-dd32-5471-9f98-b9093858fed2",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "3"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "0fc7d018-7fc1-52cc-8d7d-6041cdb164e8",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "JUST AN EMPTY\nALCOVE. THE\nMORNING WIND HAS",
+                "PASSED THROUGH."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "598e48f9-59d6-5d12-b722-8ae2dbff354c",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "A PAINTED DOOR\nPROMISES AN EASY\nWAY HOME. YOUR",
+                "FRIEND REFUSES\nIT."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "1d9bd7f0-fb67-5a27-b706-02fdc25d449c",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "44",
+              "items": 2,
+              "layout": "menu",
+              "cancelOnB": true,
+              "cancelOnLastOption": false,
+              "option1": "RETURN TO CAMP",
+              "option2": "STAY HERE"
+            }
+          },
+          {
+            "id": "9a752431-2bd9-5529-8711-5e705bde3995",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "db04f81e-d3d1-5336-b211-33a13b918ba6",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "MOTH TURNS BACK\nTO THE REAL\nCAMP. NOTHING",
+                      "YOU FINISHED IS\nLOST."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "2c214656-4d65-53e1-a684-0fda3d6ef61a",
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "6bfc1c20-41ce-5c1a-abf2-cd350d53d278",
+                    "x": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 12
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "c76f5563-eb88-50a6-b9a9-0a32d9fc1966",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "50a5a83e-9e9c-5e77-aab6-8fd0de847292"
+      }
+    },
+    {
+      "id": "988e1b17-2327-5f87-aa03-c620902a986d",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "28426abd-9265-5a54-b273-a1c484703e38",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "ca0487ec-131e-5cbb-bffc-b74adac7f9ca",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "50a5a83e-9e9c-5e77-aab6-8fd0de847292"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

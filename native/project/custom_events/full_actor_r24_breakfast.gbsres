@@ -1,0 +1,110 @@
+{
+  "_resourceType": "script",
+  "id": "98140d64-c15d-54a7-a496-42698ffac0ff",
+  "name": "actor R24 breakfast",
+  "symbol": "script_full_actor_r24_breakfast",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "2607eb1b-b373-5b0f-92f0-76009038a3ec",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "21"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "6d7bf594-ef40-5c14-935b-bd9d35bec46a",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THREE EMPTY\nBOWLS. THREE\nSLEEPY",
+                "COMPANIONS.",
+                "WARM TOAST,\nAPPLE JAM, AND A\nLITTLE SUNLIGHT",
+                "ON THE TABLE."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "7a94cc3f-b20a-5935-8146-16f26d54d9af",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE TABLE IS\nREADY FOR\nMORNING. NOBODY",
+                "HAS TO EARN A\nPLACE HERE."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "46bb34a4-1814-519f-b4ce-855292f87840",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "a4ef441a-3171-5f12-a2ef-30d125af74f1"
+      }
+    },
+    {
+      "id": "8c7523e2-7c8b-5536-8ec9-d91f5c5e6fe4",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d8da05c9-cc5a-593c-bfab-0b5391029cc6",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "d7c28190-dd70-5b8c-b053-a0a391ff095c",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "a4ef441a-3171-5f12-a2ef-30d125af74f1"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

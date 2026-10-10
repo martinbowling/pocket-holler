@@ -1,0 +1,108 @@
+{
+  "_resourceType": "script",
+  "id": "086db743-4735-5d6b-8a5b-0eb99954687c",
+  "name": "actor R11 wheel brace",
+  "symbol": "script_full_actor_r11_wheel_brace",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "82eb9b8d-59ff-58fe-be44-5fc7bd78753f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "a87479a7-c6dd-544c-9a06-7a93b9985bf4",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE BRACE IS\nFIXED. TURTLE\nREMAINS FREE TO",
+                "TRAVEL."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "618ef7d9-d89c-54e7-bcbe-3b8cfd9a7118",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "WHEEL BRACE.\nMATCH THE FLOW\nDIAGRAM, THEN",
+                "USE B WITH\nTURTLE."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "591ae746-a2b1-5e92-b7e1-df265c053e50",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "fd0291bd-db5b-5dae-98b5-492f43e6c4e9"
+      }
+    },
+    {
+      "id": "7e1b7096-27ec-5588-af05-e348ca95bbb4",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d6866212-65bf-5955-8856-435823035ae8",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "b61468c1-a91e-53b5-abb0-d48c9b94d3e2",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "fd0291bd-db5b-5dae-98b5-492f43e6c4e9"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+{
+  "_resourceType": "script",
+  "id": "932c508f-76e6-5aaf-b92b-9be5d2f22fd2",
+  "name": "ability R10 near wave",
+  "symbol": "script_full_ability_r10_near_wave",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {
+    "0": {
+      "id": "0",
+      "name": "Actor 0"
+    },
+    "1": {
+      "id": "1",
+      "name": "Actor 1"
+    },
+    "2": {
+      "id": "2",
+      "name": "Actor 2"
+    }
+  },
+  "script": [
+    {
+      "id": "288f2e03-ca03-56fd-9008-5a51aa1b8bb8",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "13"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "63bddc92-4e0d-5508-9caf-47c295544402",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE CAUSEWAY IS\nFINISHED. ITS\nSTONES STAY",
+                "STEADY."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "91a02d24-bdc6-57d9-8dc6-bb8d58840407",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "12"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "aa161f28-5da1-5665-af52-635d38bcf0db",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "54"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "418d442a-6fb2-5937-a155-23a64015fc3b",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "54",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "7f9f59d7-82d5-59b6-8adc-0a4db81f02db",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "e4fca586-53e9-5475-8fa6-558102f21ac3",
+                              "command": "EVENT_ACTOR_HIDE",
+                              "args": {
+                                "actorId": "0"
+                              }
+                            },
+                            {
+                              "id": "7f2b2c5c-42c6-59bc-914f-f40cf47060a2",
+                              "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                              "args": {
+                                "actorId": "0"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "3ea9b2c9-c32d-55e6-8058-70122a5975db",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "33"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "c1df23b0-c8a1-5c18-b193-f60d963b2467",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "72"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "8882cdac-f314-5832-9a86-f659b5b540da",
+                                    "command": "EVENT_SOUND_PLAY_EFFECT",
+                                    "args": {
+                                      "type": "beep",
+                                      "pitch": 6,
+                                      "duration": 0.12,
+                                      "wait": false,
+                                      "priority": "low"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      },
+                      {
+                        "id": "aab0c83c-2279-5d20-94ea-61041a904b4c",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": "NEAR STONE\nSTEADY. MIDDLE\nIS NEXT.",
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "166626b5-f5bf-59d1-88f0-5e33f5cc664a",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "54",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "050f520c-e142-58db-b538-778776049938",
+                        "command": "EVENT_ACTOR_SHOW",
+                        "args": {
+                          "actorId": "0"
+                        }
+                      },
+                      {
+                        "id": "d5278471-ae36-56be-b7b7-aba73ea6a3e5",
+                        "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+                        "args": {
+                          "actorId": "0"
+                        }
+                      },
+                      {
+                        "id": "ed845043-50e2-500b-a98b-11a5f8383243",
+                        "command": "EVENT_ACTOR_SHOW",
+                        "args": {
+                          "actorId": "1"
+                        }
+                      },
+                      {
+                        "id": "72c2e020-afaf-56d4-9d20-6c78986cbea1",
+                        "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+                        "args": {
+                          "actorId": "1"
+                        }
+                      },
+                      {
+                        "id": "6e3dae91-e372-582c-95a9-4214b0570ec8",
+                        "command": "EVENT_ACTOR_SHOW",
+                        "args": {
+                          "actorId": "2"
+                        }
+                      },
+                      {
+                        "id": "df8258e9-e1a3-5619-be12-1edd5fa49628",
+                        "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+                        "args": {
+                          "actorId": "2"
+                        }
+                      },
+                      {
+                        "id": "175e2b17-8337-5ef5-b88e-666c75683618",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "THE CURRENT\nPULLS THE STONES\nLOOSE. TRY NEAR,",
+                            "MIDDLE, FAR.",
+                            "YOU REMAIN ON\nTHE SAFE BANK.\nTURTLE STAYS",
+                            "BESIDE YOU."
+                          ],
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "b8af38d8-78e1-55c6-826f-e22d1b50abe9",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "OPEN THE REED\nPASSAGE AND\nRECRUIT TURTLE",
+                      "FIRST."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "_resourceType": "script",
+  "id": "1173c211-bd68-529d-ae4a-fb2263a38efe",
+  "name": "actor R18 all lights notice",
+  "symbol": "script_full_actor_r18_all_lights_notice",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "cf497ca4-1184-56e8-b351-7d81bbd34699",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "17"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "6e1de182-22eb-576b-a883-700dcf6bbdbb",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "ALL THREE\nWARNING LIGHTS\nARE LIT. THE",
+                "ROOT THRESHOLD\nIS READY.",
+                "MOTH READS THE\nBELL. TURTLE\nRESTORES THE",
+                "SPRING.\nTHUNDERBIRD\nCHARGES THE",
+                "LAMPS."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "2ba3b92a-2e95-559d-8902-302d6c4b0fad",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE ROOT PATH\nNEEDS ALL THREE\nWARNING LIGHTS.",
+                "CHECK THE RIDGE\nRELAYS."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "93e8e203-974c-5b41-93c8-0489cf16c2ac",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "39e27ea6-20ed-5645-91d2-ecaf8066f783"
+      }
+    },
+    {
+      "id": "ef39a9d3-5100-5c41-8e6e-cf64390f16bf",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "ee7e5bac-454b-5ea7-b837-6e02395763f0",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "bacd1544-50a3-53af-84d5-6e43ae256cb5",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "39e27ea6-20ed-5645-91d2-ecaf8066f783"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

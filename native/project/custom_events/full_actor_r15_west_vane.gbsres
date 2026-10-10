@@ -1,0 +1,296 @@
+{
+  "_resourceType": "script",
+  "id": "7fe4a4a6-6a31-5ae4-9ce4-823d0c2a3ae8",
+  "name": "actor R15 west vane",
+  "symbol": "script_full_actor_r15_west_vane",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "d9a2accf-6080-5793-acaf-7a57ea70ef01",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "16"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "fe234ac0-5b2a-595d-a876-eedeb2090a3d",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE SHELTER VANE\nSTAYS FIXED\nTOWARD THE",
+                "PERCH."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "dfad18d8-c7cd-5c7d-b2a5-0df874057970",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "WEST SHELTER\nVANE. TURN ITS\nOPEN SIDE.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "14e4d5fe-d2fb-5d00-94ae-9f6d747c8b9a",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "44",
+              "items": 4,
+              "layout": "menu",
+              "cancelOnB": true,
+              "cancelOnLastOption": false,
+              "option1": "NORTH",
+              "option2": "EAST",
+              "option3": "SOUTH",
+              "option4": "WEST"
+            }
+          },
+          {
+            "id": "e575b45d-ccfb-551e-aa38-a3e2e55b400b",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "2f6f8c12-b3dc-5036-a84c-915b67dd762f",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "59",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "d0cc4e0d-3571-593d-8acd-296e11a2677b",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "OPEN SIDE:\nNORTH.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "d0865ae7-bd7e-58b2-bfce-4305eea65efb",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "7f829fa0-1a62-526b-ae8e-6825aeb63793",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "59",
+                    "value": {
+                      "type": "number",
+                      "value": 2
+                    }
+                  }
+                },
+                {
+                  "id": "34560dae-c78e-5ca9-bb08-2dfad326d90e",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "OPEN SIDE: EAST.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "aaf85b6c-e429-5635-a72e-9d8adb9558d2",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "c4888395-f0e2-5c3c-a53d-4b08d0375aab",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "59",
+                    "value": {
+                      "type": "number",
+                      "value": 3
+                    }
+                  }
+                },
+                {
+                  "id": "7ad7621f-5ce1-518a-b4f9-148b03a935a8",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "OPEN SIDE:\nSOUTH.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "3900438f-6c32-57f2-8347-02e6f0dbf29c",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 4
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "65eae933-d498-5417-90d8-7e68f84574e4",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "59",
+                    "value": {
+                      "type": "number",
+                      "value": 4
+                    }
+                  }
+                },
+                {
+                  "id": "d11eb61a-b466-5b10-9717-7ab92ab4b7df",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "OPEN SIDE: WEST.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "71aeaffb-97d2-564c-a95c-11b2289d85cb",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "5fdaeab2-ba76-5bd6-8154-430037488b5d"
+      }
+    },
+    {
+      "id": "202cc10f-3cef-5a89-8c0c-d8bc6739dcfa",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "c8bd8d0f-3462-5e51-a9f5-728df66f8af6",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "06f85f4a-f40e-55e4-a1bd-032e0c20abe4",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "5fdaeab2-ba76-5bd6-8154-430037488b5d"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

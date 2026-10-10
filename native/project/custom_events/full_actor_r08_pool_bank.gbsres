@@ -1,0 +1,252 @@
+{
+  "_resourceType": "script",
+  "id": "11a993dd-3516-58bc-9e59-ce588e1e3444",
+  "name": "actor R08 pool bank",
+  "symbol": "script_full_actor_r08_pool_bank",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {
+    "0": {
+      "id": "0",
+      "name": "Actor 0"
+    }
+  },
+  "script": [
+    {
+      "id": "8d2d2e6d-1e45-5fbc-baf5-cf124fae9dab",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "21"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "f7d6bedd-8f41-552d-b7cf-8af41f76d379",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "MORNING WATER\nMIRRORS THE REAL\nTRAIL. THE DRY",
+                "BANK IS SAFE."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "b0748238-b596-5014-8842-03617529adde",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "11"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "26c8f4c4-c0c0-52c6-adfb-cfda8be7422e",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "28"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "1fbb347b-bf28-5d64-a101-92e2665a8045",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "28",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "faebf473-1dce-595b-94b8-3ac25057c473",
+                        "command": "EVENT_ACTOR_SHOW",
+                        "args": {
+                          "actorId": "0"
+                        }
+                      },
+                      {
+                        "id": "870c931b-e309-5410-8f79-75aec0363283",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "32"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "e70adba3-ffc5-592e-b5ee-4cda24cc23d9",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A STILL\nREFLECTION FACES\nTHE WRONG PATH.",
+                                  "THE LIVING\nCOMPANION POINTS\nALONG THE DRY",
+                                  "BANK. TRUST THE\nLIVING ONE."
+                                ],
+                                "minHeight": 4,
+                                "maxHeight": 4,
+                                "textHeight": 3,
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "2f974dcc-3d76-5802-a79f-a45172af8035",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "YOU TURN FROM\nTHE POOL. THE\nREFLECTED SHAPE",
+                                  "SEEMS TO STAY\nBEHIND.",
+                                  "IT POINTS INTO\nWATER. YOUR\nLIVING COMPANION",
+                                  "STAYS ON THE DRY\nPATH."
+                                ],
+                                "minHeight": 4,
+                                "maxHeight": 4,
+                                "textHeight": 3,
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "160e3505-dafc-5b23-825c-37deab10c469",
+                        "command": "EVENT_ACTOR_SHOW",
+                        "args": {
+                          "actorId": "0"
+                        }
+                      },
+                      {
+                        "id": "b66361d6-ee8d-5b6e-987a-bef9031e0b8f",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A BORROWED SHAPE\nIN THE POOL.\nLIVING GLOW",
+                            "TELLS THE TRUE\nPATH."
+                          ],
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "8a65cdb4-e8d5-5e03-b624-fd2ea6f928bb",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "THE BOUNDARY\nLIGHT MUST BE\nREPAIRED BEFORE",
+                      "THE CREEK WALK."
+                    ],
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "4ffb31e8-b16c-5226-85bf-4ad8123d3b9a",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "00375210-fbca-545c-9ed5-225996c3c408"
+      }
+    },
+    {
+      "id": "b99c8c07-38b6-5dd8-8ed2-c0225da236c6",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b02b299c-faad-54d6-9e89-7a7c6cf2a8d3",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "412573fb-3934-54d4-aa25-c1ee87ffa81b",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "00375210-fbca-545c-9ed5-225996c3c408"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

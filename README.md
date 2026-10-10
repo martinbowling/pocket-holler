@@ -1,44 +1,45 @@
 # PocketHoller: After Sundown
 
-A native Game Boy Color adventure starring **Marty and Roam**, set in a mountain town with dependable creatures, lantern puzzles, and a little unease after dark.
+A complete native Game Boy Color adventure starring **Marty and Roam**: 24 playable rooms, 12 puzzles, Lantern Moth, Mossback Turtle and Thunderbird, four safe camps, six optional journal pages, and a warm dawn reunion.
 
-<img src="docs/images/title.png" width="480" alt="PocketHoller title: Marty and Roam beneath Lantern Moth in a moonlit holler">
+<img src="docs/images/title.png" width="480" alt="Marty and Roam beneath Lantern Moth in the moonlit title screen">
 
-This repository contains the editable GB Studio source, native pixel art and its editable recipes, development tools, automated checks, and one verified opening-review ROM.
+## Play
 
-## Play the opening
-
-Download [`native/dist/PocketHoller-opening.gbc`](native/dist/PocketHoller-opening.gbc) and open it in a Game Boy Color emulator. This cartridge requires color hardware. Press **Start** or **A** on the title, then choose **New Game**. **B** returns from the title menu to the artwork.
-
-The opening includes six playable rooms, both characters, Lantern Moth, two puzzles, an optional journal page, the first repaired light, dusk, and a porch save checkpoint.
+Download [the full game and continuous video](https://github.com/martinbowling/pocket-holler/releases/tag/v1.0.0), or open [the included cartridge](native/dist/PocketHoller-full.gbc) in a Game Boy Color emulator. Press **Start** or **A** at the animated title, then choose **New Game**. This cartridge requires color hardware. The private repository and release are available to the owner and authorized collaborators.
 
 | Input | Action |
 | --- | --- |
-| D-pad | Walk and move menu selection |
+| D-pad | Walk; move menu selection |
 | A | Talk, inspect, advance dialogue, confirm |
-| B | Lantern Moth Reveal on a faced marked target; cancel menus |
-| Start | Open Journal, Settings, Return to Camp, Quit, or Resume |
-| Select | Show the current objective and companion |
+| B | Use the selected companion ability; cancel menus |
+| Start | Journal, Settings, Return to Camp, Quit and Resume |
+| Select | Show the next objective |
 
-At the porch, talk to the other character and choose **Character** to switch between **Roam** and **Marty**. Roam wears green; Marty wears orange and glasses. Both share puzzle progress and companion abilities. Save/Continue retains the selected character.
+Browser keys are arrows, **Z**, **X**, **Enter** and **P** respectively. Swap Actions exchanges A/B in exploration; menus retain A confirmation and B cancellation. Select objective pages accept any button; multiple pages can require multiple presses.
 
-Save at the porch and confirm. **Return to Camp** keeps current progress but does not save. There is one save slot. Preserve the emulator's battery-save file alongside the cartridge. See [controls and saves](native/README.md) for details.
+Roam wears green and has curly hair; Marty wears orange and glasses. Choose **Character** at a safe camp to switch. Both share progress. Moth reveals ray marks, Turtle steadies wave stones and Thunderbird sparks zigzag fixtures. Face the marked actor from an adjacent tile and press the ability button. Camp menus offer recruited companions or Travel alone.
 
-<img src="docs/images/characters.png" width="672" alt="Real emulator frames showing Marty and Roam as playable characters">
+Save explicitly at the porch, creek camp, ridge camp or root threshold, then confirm. Return to Camp preserves session progress but does not save. Continue restores the character, companion, puzzles, journal and comfort settings at a safe camp; unfinished puzzle attempts reset. Keep the emulator battery file paired with its exact cartridge. Historical opening saves are a different epoch and are not portable to this release.
+
+Music and Effects have separate switches, Quiet preset silences both, Reduced Scares keeps essential clues in ordinary text, and three text speeds are available. There is no combat, death, companion harm, timer, authored flashing or screen shake.
+
+<img src="docs/images/characters.png" width="672" alt="Emulator frames showing playable Marty and Roam">
+
+<img src="docs/images/full-entered-R11-36450.png" width="320" alt="Native wheelhouse scene">
+<img src="docs/images/full-entered-R22-89193.png" width="320" alt="Native hollow bell scene">
 
 ## Edit and build
 
-In the local workspace, this Git repository lives at `/Users/martinbowling/Projects/pocket-holler/src`. Run the commands below from that folder. A normal clone uses the same repository layout directly at its clone root.
+Open [native/project.gbsproj](native/project.gbsproj) in GB Studio with its adjacent `project/`, `assets/` and `plugins/` folders. The editable native resources are authoritative. This release was built with the official **GB Studio CLI 4.3.2**; the descriptor uses schema 4.2.0/release 10.
 
-Open [`native/project.gbsproj`](native/project.gbsproj) in GB Studio. The distributed project stores scenes, actors, triggers, palettes, and variables in `native/project/`; keep that folder and `native/assets/` with the descriptor.
-
-The opening was built with the official **GB Studio CLI 4.3.2**. The descriptor uses schema 4.2.0/release 10. The included wrapper defaults to the verified macOS ModRetro toolchain installation:
+From the repository root:
 
 ```sh
 sh native/tools/build.sh
 ```
 
-For another installation, provide your Node executable and official GB Studio CLI path:
+For another installation:
 
 ```sh
 POCKETHOLLER_NODE=node \
@@ -46,62 +47,46 @@ POCKETHOLLER_CLI=/absolute/path/to/gb-studio-cli.js \
 sh native/tools/build.sh
 ```
 
-The ROM is written to `native/dist/PocketHoller-opening.gbc`. Building replaces the included review cartridge; preserve it first if you need its paired save fixtures. [Build notes](native/docs/build.md) document the verified environment and ModRetro source-debug build workflow.
+The wrapper writes `native/dist/PocketHoller-full.gbc`. Preserve the included verified ROM and matching debug directory before rebuilding. Receipt-paired emulator tests require new debug artifacts and a matching build receipt from ModRetro `rom_build`; the wrapper alone does not generate those. See [build notes](native/docs/build.md).
 
-A ModRetro browser preview uses the same project. Its keyboard controls are arrows, **Z** for A, **X** for B, **Enter** for Start, and **P** for Select.
+The local working project lives in `/Users/martinbowling/Projects/pocket-holler/native`. Completed changes are synchronized into `/Users/martinbowling/Projects/pocket-holler/src/native`, with Git operations performed from `src/`. A normal clone uses the repository root directly.
 
-## Verify changes
-
-The source check uses only Python's standard library:
+## Verification
 
 ```sh
 python3 native/tests/check_project.py
-```
-
-For emulator checks, install the tested development dependencies in a virtual environment:
-
-```sh
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install -r native/requirements-dev.txt
-python native/tests/intro_screen.py
-python native/tests/persistent_save.py
-python native/tests/character_switch.py
-python native/tests/exit_regression.py
+python native/tests/full_game.py
+python native/tests/full_playthrough.py
 ```
 
-The included cartridge, debug symbols, build receipt, and QA-only battery fixture are paired. These tests use ordinary controller inputs and private temporary emulator files. They check title motion/menus, both puzzles, Save/Continue, comfort settings, character switching, and room transitions. A rebuilt cartridge needs refreshed matching build/debug outputs and a newly generated save fixture; old fixtures are not portable between builds. Read [fixture notes](native/tests/fixtures/README.md) before updating them.
+The full regression used 175,653 genuine controller-input frames over 15 boots: all 24 rooms, all 12 puzzles, 53 directed connections, six bell-lamp orders, all optional pages, a zero-journal ending, both players, companion choices, four camp cold loads, wrong/reset/repeat actions and swapped exploration controls. No memory writes, save-state injection or initial RAM fixture sets progression. The continuous video replays a separate 107,468-frame single-boot journey with normal native game audio.
+
+The clean copied source compiles successfully. Every cartridge byte except the generated project save signature and global checksum matches the tested ROM; this is not a byte-identical build or proof of cross-build save compatibility. Exact reports and limits are in [QA](native/docs/qa-report.md). Physical Chromatic testing, human audio listening and fresh-player pacing remain pending. [Known issues](native/docs/known-issues.md) documents the remaining cosmetic simplifications.
+
+Verified full ROM SHA-256:
+
+```text
+de3ed696c6a80b5007ccc825693fabb781a661d30814fa6694864c467453b5d2
+```
 
 ## Source layout
 
 | Path | Contents |
 | --- | --- |
-| `native/project.gbsproj` | Editable project entry point |
-| `native/project/` | Native gameplay resources and scripts |
-| `native/assets/` | Backgrounds, sprites, font, UI, and asset metadata |
-| `native/art/source/` | Editable native pixel and character cell recipes |
-| `native/docs/` | Design, room/variable registers, accessibility, saves, QA, known issues |
-| `native/tests/` | Source and emulator checks with portable QA fixtures |
-| `native/tools/` | Build, development, review-package, and video helpers |
-| `native/dist/` | Verified review cartridge and matching debug symbols |
-| `docs/images/` | Actual emulator screenshots used in this README |
+| `native/project.gbsproj`, `native/project/` | Editable native game and scripts |
+| `native/assets/`, `native/art/source/` | Runtime art/music and editable recipes |
+| `native/docs/` | Design, rooms, variables, controls, saves, accessibility and QA |
+| `native/tests/`, `native/tools/` | Controller-driven verification and build helpers |
+| `native/dist/` | Full cartridge, historical opening and paired debug artifacts |
+| `native/evidence/` | Exact build and verification receipts |
+| `docs/images/` | Real emulator screenshots |
+| `release-work/` | Historical proposals; integrated implementation is under `native/` |
 
-The native resources are authoritative. Historical authoring batches are development records; replaying them can duplicate actors. Preserve resource IDs and use the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
-
-Large recordings, temporary builds, emulator sessions, review archives, and the original owner-supplied concept sheet remain local and are excluded from Git. In the local workspace, retained recordings are alongside `src/` in `../native/evidence/`; the continuous **4:43** emulator playthrough with game audio is at `../videos/PocketHoller-opening-playthrough.mp4`. The video and review-package helpers resolve these sibling folders when the repository lives in `src/`. A fresh clone needs the retained recordings separately to run those helpers.
-
-## Current status
-
-Full-game expansion is prepared in [`release-work/`](release-work/README.md): all eighteen remaining room scripts, Turtle and Thunderbird, puzzles P03–P12, the dawn reunion, native art and five original editable music loops. These are staged proposals awaiting integration and real ROM testing. The current ModRetro session rejects the relocated project path with `PATH_OUTSIDE_PROJECT`; the included cartridge is still the verified six-room opening.
-
-The opening is implemented and exercised in the emulator. The title has copper lettering, moonlit ridges, lit cabins, Marty and Roam, and gently breathing Lantern Moth light. The included ROM's SHA-256 is:
-
-```text
-511e690076d4a500a21c7f65d238a4f67b807d5a53d2f40a12115c7336b2d06a
-```
-
-Opening acceptance still needs owner review and fresh-player pacing tests. Physical Chromatic testing is pending. Eighteen further rooms, Turtle, Thunderbird, later puzzles, the finale, production music, and the dawn epilogue remain planned. [Known issues](native/docs/known-issues.md) covers current input and story limitations; [the QA report](native/docs/qa-report.md) distinguishes tested behavior from pending work. Full recording evidence is retained in the local review package.
+Local recordings, RAM, temporary builds and the owner-supplied concept sheet are excluded from Git. The release includes the full video and source ZIP. Local video is beside `src/`, in `../videos/PocketHoller-full-playthrough.mp4`; retained frame/input evidence is in `../native/evidence/`. Opening artifacts remain separately preserved. Do not replay historical actor-creation batches over the current project.
 
 ## Licensing and provenance
 
-An overall public license for new PocketHoller code, art, narrative, and audio has not been chosen. Upstream GB Studio and ModRetro MIT notices are retained in `native/licenses/` and `native/LICENSE`; those notices do not license all new game content. See [THIRD_PARTY.md](native/THIRD_PARTY.md) and [the asset inventory](native/docs/asset-inventory.csv) for provenance and current review status.
+An overall public license for new PocketHoller code, art, narrative and audio has not been chosen. Upstream MIT notices in `native/licenses/` and `native/LICENSE` do not grant a blanket license to new game content. See [THIRD_PARTY.md](native/THIRD_PARTY.md), [credits](native/docs/credits.md) and [asset inventory](native/docs/asset-inventory.csv). Family photographs and the reference sheet are not included.

@@ -1,0 +1,180 @@
+{
+  "_resourceType": "script",
+  "id": "1d868874-54be-56f9-9584-98568efcdb84",
+  "name": "actor R17 bell rhyme",
+  "symbol": "script_full_actor_r17_bell_rhyme",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "818bded7-ce00-537c-ad04-363e93f8f84d",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "25"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "a623423a-23b3-5eee-a1c0-121155484c17",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "25",
+              "value": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "b00e8d33-6a42-529a-b0fe-3b00ee281543",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "33"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "53454dd3-de4d-5dbd-b9a7-d38e50a92d56",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "72"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "fa01bd04-35be-5124-8fca-9e225512c84c",
+                        "command": "EVENT_SOUND_PLAY_EFFECT",
+                        "args": {
+                          "type": "beep",
+                          "pitch": 6,
+                          "duration": 0.12,
+                          "wait": false,
+                          "priority": "low"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "4845a914-9c07-5109-88e3-da6b774cc8b8",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "JOURNAL 4: BELL\nRHYME.",
+                "THREE LIGHTS\nABOVE. A SPRING\nBELOW. RING FOR",
+                "THE FOLKS WHO\nNEED TO GO.",
+                "THE RHYME IS A\nTOWN SONG,\nWRITTEN IN A",
+                "LAMPLIGHTER'S\nHAND."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "c00f928f-6e68-5b7d-a637-ae6e90d6f49f",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "JOURNAL 4: BELL\nRHYME.",
+                "THREE LIGHTS\nABOVE. A SPRING\nBELOW. RING FOR",
+                "THE FOLKS WHO\nNEED TO GO.",
+                "THE RHYME IS A\nTOWN SONG,\nWRITTEN IN A",
+                "LAMPLIGHTER'S\nHAND."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "9775281d-7a66-5610-81d5-1b90bc825d04",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "99246cac-d559-5c4b-b683-7721577efeda"
+      }
+    },
+    {
+      "id": "c99944ee-e499-556c-8e5a-ce9806e6effc",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "0947e75d-5ef7-52c7-a365-bb3f1a3aabfb",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "905d2b75-4eb9-51ce-ba58-5a6a58f6ede4",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "99246cac-d559-5c4b-b683-7721577efeda"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

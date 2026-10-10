@@ -1,0 +1,126 @@
+{
+  "_resourceType": "script",
+  "id": "3bc404e1-61eb-5a52-9d8b-cf0eb873cdad",
+  "name": "ability R06 inscription",
+  "symbol": "script_full_ability_r06_inscription",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "16b47b67-2b4b-5837-947f-06893b1a1da6",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "38"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "7d8c3275-7f46-59aa-a061-62279aa68b96",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "38",
+              "value": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "f637b625-67e4-5379-8b59-4f2b43095570",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "33"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "0b7713f2-bc78-5d2d-a316-e1c54572bada",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "72"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "47853f17-6e0f-52cf-88ec-bde196a1c1be",
+                        "command": "EVENT_SOUND_PLAY_EFFECT",
+                        "args": {
+                          "type": "beep",
+                          "pitch": 5,
+                          "duration": 0.12,
+                          "wait": false,
+                          "priority": "low"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "46432e6c-efbb-5e74-99cd-abb6ba699bca",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE PAINTED\nARROW FADES. THE\nINSCRIPTION",
+                "READS:",
+                "FOLLOW THE RAYS.\nTURN THE LATCH\nTO THE LEFT."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "64d5496c-e5b3-5b06-89ec-3ac15e10346d",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "FOLLOW THE RAY\nLATCH TO THE\nLEFT.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

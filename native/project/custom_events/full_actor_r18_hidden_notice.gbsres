@@ -1,0 +1,108 @@
+{
+  "_resourceType": "script",
+  "id": "6df55516-1f9c-5eaf-8b63-d51b15734ba4",
+  "name": "actor R18 hidden notice",
+  "symbol": "script_full_actor_r18_hidden_notice",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "4341b3ab-5eb9-55cf-b41f-c9ee7bfb54ff",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "26"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b707d6ef-20ff-5323-9c0d-245369cb89a9",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "THE CALLER GREW\nFROM VOICES\nCAUGHT AROUND",
+                "THE QUIET BELL."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "d1ee6110-1ad2-56ea-b126-bb9a4446818a",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "A RAY MARK ON AN\nOLD NOTICE. MOTH\nCAN REVEAL AN",
+                "OPTIONAL JOURNAL\nPAGE."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "678d4b1f-4b43-5a8c-8f2a-f76ebbabafc7",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "9f3ec121-7dae-593a-ab12-3e8bb11b0455"
+      }
+    },
+    {
+      "id": "392763b8-010d-5895-b046-ee36d56648e0",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "a4c1628f-e44e-5201-869c-404eb19d87a9",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "cdc5abb4-ad1f-5b77-84c8-c4eadfe5cb02",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "9f3ec121-7dae-593a-ab12-3e8bb11b0455"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

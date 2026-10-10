@@ -1,0 +1,412 @@
+{
+  "_resourceType": "script",
+  "id": "ba7309cf-3249-549e-940a-8d8993e046d7",
+  "name": "actor R09 downstream gate",
+  "symbol": "script_full_actor_r09_downstream_gate",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {
+    "0": {
+      "id": "0",
+      "name": "Actor 0"
+    },
+    "1": {
+      "id": "1",
+      "name": "Actor 1"
+    },
+    "2": {
+      "id": "2",
+      "name": "Actor 2"
+    }
+  },
+  "script": [
+    {
+      "id": "48348856-8e95-5bcf-95e7-426cf5b8ab8a",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "12"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "37fa89fa-4be3-5fa5-a05a-6ae13dead5f3",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "THE REED PASSAGE\nSTAYS CLEAR.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "80f5a31a-a3f5-5eb8-b6fc-d1facbe0ef60",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "11"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "2f1c5d4a-9785-57f8-8df1-94bc3058934a",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "53"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "676acc11-e255-5dfd-ae80-9573603db33b",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "12",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "7af9a6d9-1b21-5c58-9f5a-7f0491945ab4",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "53",
+                          "value": {
+                            "type": "number",
+                            "value": 2
+                          }
+                        }
+                      },
+                      {
+                        "id": "4f020253-981d-5432-973c-cc154487a68e",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "8",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "ca49297e-7155-5c8b-a882-23fa12cd65a2",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "6",
+                          "value": {
+                            "type": "number",
+                            "value": 2
+                          }
+                        }
+                      },
+                      {
+                        "id": "6652de46-82fa-5e83-b51c-72852344bd05",
+                        "command": "EVENT_ACTOR_HIDE",
+                        "args": {
+                          "actorId": "0"
+                        }
+                      },
+                      {
+                        "id": "37ee70b1-1b5f-5029-a080-38326f072d06",
+                        "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                        "args": {
+                          "actorId": "0"
+                        }
+                      },
+                      {
+                        "id": "2e9793ed-aa57-5589-91f5-a57cab5cd0fb",
+                        "command": "EVENT_ACTOR_HIDE",
+                        "args": {
+                          "actorId": "1"
+                        }
+                      },
+                      {
+                        "id": "ffdf0a3b-cc08-5976-889c-c55b11a4ec08",
+                        "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                        "args": {
+                          "actorId": "1"
+                        }
+                      },
+                      {
+                        "id": "86f5c4cd-900a-5812-b816-ffb7e131d5c1",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "6"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "5d810e8f-5f9f-503d-8ba0-3d57d0531170",
+                              "command": "EVENT_ACTOR_HIDE",
+                              "args": {
+                                "actorId": "2"
+                              }
+                            },
+                            {
+                              "id": "d8e44ece-c7d9-5a3f-9f72-e4c67581ad65",
+                              "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+                              "args": {
+                                "actorId": "2"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "8468f561-01bd-5536-a6ed-7ba6e868eb05",
+                              "command": "EVENT_ACTOR_SHOW",
+                              "args": {
+                                "actorId": "2"
+                              }
+                            },
+                            {
+                              "id": "2c8e4016-2060-5bef-93d1-292e145db047",
+                              "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+                              "args": {
+                                "actorId": "2"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "8ba30ac2-3fae-5ff3-b448-3ec3a670a76c",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "33"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "3ee39ddc-c86f-550f-b99f-df3225296d86",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "72"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "23eb54c1-d4f7-5c9b-835a-4bfb5f1119b7",
+                                    "command": "EVENT_SOUND_PLAY_EFFECT",
+                                    "args": {
+                                      "type": "beep",
+                                      "pitch": 6,
+                                      "duration": 0.12,
+                                      "wait": false,
+                                      "priority": "low"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      },
+                      {
+                        "id": "e5337c12-c9af-51ad-aac3-8013daa4305d",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "THE REEDS PART.\nMOSSBACKTURTLE\nLIFTS A MOSSY",
+                            "HEAD.",
+                            "TURTLE JOINS\nYOU. IT READS\nTHE CURRENT AND",
+                            "STEADIES WAVE\nMARKS.",
+                            "TRY B AT THE\nPRACTICE WAVE.\nTHEN FOLLOW THE",
+                            "CAUSEWAY."
+                          ],
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "2bf89660-3a05-59fc-9d70-1270f5e0b319",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "53",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "7fa7ee9e-21cf-5dfb-a25e-cf5bbaa62103",
+                        "command": "EVENT_ACTOR_SHOW",
+                        "args": {
+                          "actorId": "0"
+                        }
+                      },
+                      {
+                        "id": "da901e49-d9f3-538e-a0c8-b38be09ed695",
+                        "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+                        "args": {
+                          "actorId": "0"
+                        }
+                      },
+                      {
+                        "id": "cf7874d1-fb99-50de-aa7d-4ce2c514e0e8",
+                        "command": "EVENT_ACTOR_SHOW",
+                        "args": {
+                          "actorId": "1"
+                        }
+                      },
+                      {
+                        "id": "b7338f4c-0cd0-5f4e-bcbd-1d5005e6dadf",
+                        "command": "EVENT_ACTOR_COLLISIONS_ENABLE",
+                        "args": {
+                          "actorId": "1"
+                        }
+                      },
+                      {
+                        "id": "97e92530-a2e9-50a6-84a5-717da3b9b7f0",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "THE LEAVES CATCH\nIN THE REEDS.\nBOTH GATES",
+                            "CLOSE.",
+                            "TRY UPSTREAM,\nTHEN DOWNSTREAM.\nNOTHING ELSE WAS",
+                            "LOST."
+                          ],
+                          "minHeight": 4,
+                          "maxHeight": 4,
+                          "textHeight": 3,
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "9a65a3d7-35c2-56aa-aa1c-591cdd0d84cc",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": "REPAIR THE\nBOUNDARY LIGHT\nFIRST.",
+                    "minHeight": 4,
+                    "maxHeight": 4,
+                    "textHeight": 3,
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "1cc929e4-02f0-5240-8431-7ab3ca751acb",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "00b811de-9d8b-5700-86b4-6ca93338d5ad"
+      }
+    },
+    {
+      "id": "afbe4327-a85e-5454-90b2-4d0bae8b70fc",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "f3c7ba8a-c71f-5dbe-96ab-97cd0de52115",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "7f484e6c-bea1-5db3-8078-e6e08b4106c0",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "00b811de-9d8b-5700-86b4-6ca93338d5ad"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

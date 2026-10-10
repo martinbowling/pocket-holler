@@ -1,0 +1,72 @@
+{
+  "_resourceType": "script",
+  "id": "5be8273d-b1a3-5980-8e0e-12debc6bd2e7",
+  "name": "actor R09 turtle",
+  "symbol": "script_full_actor_r09_turtle",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "7fb3a39a-f890-5a44-92c8-ba75071aaeb1",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "TURTLE: SLOW\nWATER STILL HAS\nA DIRECTION.",
+          "THE WAVE MARK\nNAMES A SAFE\nPLACE TO BRACE.",
+          "I WILL NEVER BE\nLEFT BEHIND."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "0b57810a-f8c4-5da0-a21c-6497d321bb98",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "0d66c251-ec9e-5ddc-8708-9d2a245c567f"
+      }
+    },
+    {
+      "id": "27b1da39-aab9-5b4b-a951-a0bd3bf08068",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "5c28cf9e-936c-5ebe-8163-a29fb032aa65",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "36afb899-55bd-5fdf-a1ad-0e06912b35ed",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "0d66c251-ec9e-5ddc-8708-9d2a245c567f"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

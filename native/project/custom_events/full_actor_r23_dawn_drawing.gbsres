@@ -1,0 +1,180 @@
+{
+  "_resourceType": "script",
+  "id": "011a51cf-3021-5d86-bbf5-79ca10aa9144",
+  "name": "actor R23 dawn drawing",
+  "symbol": "script_full_actor_r23_dawn_drawing",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "9b58da5e-36ae-5396-b97e-f2cb431b3575",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "27"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "2fe61c73-3e88-52fb-a518-7e771c714930",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "27",
+              "value": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "a3945177-d5f5-5c12-94ab-8ab5169135a9",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "33"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "46465de8-bc64-5548-b8d7-3166eea64f6e",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "72"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "27485775-50e8-51d3-add2-7ee10f718fa2",
+                        "command": "EVENT_SOUND_PLAY_EFFECT",
+                        "args": {
+                          "type": "beep",
+                          "pitch": 6,
+                          "duration": 0.12,
+                          "wait": false,
+                          "priority": "low"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "d5eb6ecc-b6c7-58dc-975f-de2d4f24bd82",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "JOURNAL 6: DAWN\nDRAWING.",
+                "THREE FRIENDS\nBESIDE A BRIGHT\nWINDOW. TWO",
+                "PLACES AT THE\nBREAKFAST TABLE.",
+                "UNDER THE\nDRAWING:\nEVERYONE GETS TO",
+                "COME HOME."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "16e8642c-49c7-5d79-b09f-391aef3dadf3",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "JOURNAL 6: DAWN\nDRAWING.",
+                "THREE FRIENDS\nBESIDE A BRIGHT\nWINDOW. TWO",
+                "PLACES AT THE\nBREAKFAST TABLE.",
+                "UNDER THE\nDRAWING:\nEVERYONE GETS TO",
+                "COME HOME."
+              ],
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "c66acd30-0539-54e1-802c-f623f9bc2980",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "d5e60f13-cc5f-568f-a00e-3bf21979ae89"
+      }
+    },
+    {
+      "id": "144965e1-f9eb-5020-90ac-82716c5364f8",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "03d6f20b-17c8-5048-9724-399da967c6c6",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "b5fb5b92-44a2-5e79-899a-86d1fa2e7efc",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "d5e60f13-cc5f-568f-a00e-3bf21979ae89"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

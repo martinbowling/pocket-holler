@@ -1,0 +1,71 @@
+{
+  "_resourceType": "script",
+  "id": "d57de020-dd7e-5634-af94-88fa928b6015",
+  "name": "actor R04 warm lantern",
+  "symbol": "script_full_actor_r04_warm_lantern",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "754ece4f-57fa-54dc-837e-d45895c046fc",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "A FESTIVAL\nLANTERN. IT\nSMELLS LIKE WARM",
+          "WAX AND APPLE\nLEAVES."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "9176fe24-3194-53d5-ae2b-5906e31187a8",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-818"
+      }
+    },
+    {
+      "id": "9e566aa8-560a-5830-b754-475cc31ec0a4",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "3125472f-879c-5e02-86e5-a5d8294e4dae",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "0b955e95-6ced-586d-87a5-ddaed363650b",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-818"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "_resourceType": "script",
+  "id": "eeb8117a-ad5a-5190-bde8-62a6d5984838",
+  "name": "actor R02 directions",
+  "symbol": "script_full_actor_r02_directions",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "68a6e996-687b-5ddb-b2d2-a98dba2e53a7",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "NORTH: HOME\nPORCH. SOUTH:\nFESTIVAL GREEN.",
+          "WEST: JUNE AND\nTHE STORE.",
+          "ORCHARD IS WEST\nOF THE GREEN.\nBOUNDARY IS",
+          "EAST."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "3c5eb0e5-3519-5a9c-ba5c-ea4056e308f2",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-787"
+      }
+    },
+    {
+      "id": "0bb41cf5-fede-50fa-95a5-1f275ca092d6",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "f2dff41e-87ce-5804-a894-56b94e81727a",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "8df7c7e5-f4bb-5f2c-aeb1-23c743a35c85",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-787"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "_resourceType": "script",
+  "id": "1d895600-88f3-50c7-971f-6b864e64a468",
+  "name": "actor R21 spring diagram",
+  "symbol": "script_full_actor_r21_spring_diagram",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "361302a7-80e2-5b38-8e19-b6779a0a581b",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "WALL DIAGRAM:\nLEFT CHANNEL\nEAST. RIGHT",
+          "CHANNEL WEST.",
+          "BOTH LEAD TO THE\nBELL GLYPH. THEN\nTURTLE STEADIES",
+          "THE SPRING\nSTONE."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "cf62b0bc-dbdb-52dd-9c0e-278ed737b83d",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "5a647666-8f59-5e72-8489-3bddbf56d2aa"
+      }
+    },
+    {
+      "id": "9bdc2878-500a-5be3-ab69-0186e9987147",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "c9450a22-decb-5467-8d89-56f5d38a4b10",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "78b859e7-b803-5646-b556-5fd2291ef941",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "5a647666-8f59-5e72-8489-3bddbf56d2aa"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

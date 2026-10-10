@@ -1,0 +1,72 @@
+{
+  "_resourceType": "script",
+  "id": "5b1563da-5f72-5bb6-935a-338b7e99b1ea",
+  "name": "actor R05 weather vane",
+  "symbol": "script_full_actor_r05_weather_vane",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "bdf5fbef-f77d-51f4-963a-e8ea9e53f2a4",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "THE VANE POINTS\nEAST. THE WIND\nFOLLOWS IT.",
+          "OPEN THE\nWINDSCREEN\nTOWARD THE",
+          "SHELTERED\nLANTERN."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "498e7555-e100-5b87-a211-7ca09faa08ad",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "release-823"
+      }
+    },
+    {
+      "id": "79c843bb-7a8c-54e9-9309-54ee8d2420cb",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "4c1beaa4-2108-5ee2-8488-57da0dfd51ba",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "0c3d86f5-dc06-59af-8654-182bda930f96",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "release-823"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

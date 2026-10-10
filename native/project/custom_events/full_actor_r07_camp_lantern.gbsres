@@ -1,0 +1,71 @@
+{
+  "_resourceType": "script",
+  "id": "7a9fac90-b4a3-5a3c-8ff5-1b8bc1928e40",
+  "name": "actor R07 camp lantern",
+  "symbol": "script_full_actor_r07_camp_lantern",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "611215f5-07b6-51e9-b351-880f9a2dca76",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "A WARM CAMP\nLIGHT. FRIENDS\nREST HERE.",
+          "NOTHING FOLLOWS\nYOU INTO CAMP."
+        ],
+        "minHeight": 4,
+        "maxHeight": 4,
+        "textHeight": 3,
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "dd979dd4-059d-5f37-ad4c-8fa021cf161c",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "9a6f73d6-ec99-558f-a98f-75eba697ef1b"
+      }
+    },
+    {
+      "id": "81436b3c-2c19-5ab5-a568-d16f72e57347",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "13b51967-ba64-5dd5-a846-9942846ad5a5",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "25783e25-b24a-5a04-a66d-7e9f3849613c",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "9a6f73d6-ec99-558f-a98f-75eba697ef1b"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

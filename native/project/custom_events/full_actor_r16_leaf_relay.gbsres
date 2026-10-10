@@ -1,0 +1,102 @@
+{
+  "_resourceType": "script",
+  "id": "bb17d64a-9768-592e-a671-6eaf5e8b1d89",
+  "name": "actor R16 leaf relay",
+  "symbol": "script_full_actor_r16_leaf_relay",
+  "description": "PocketHoller banked native action.",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "a476629c-bc2a-5aff-8f17-3f9e0d3e0dc2",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "17"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "f5d3513c-613a-5321-9221-5a9b7878a8af",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "LEAF RELAY: LIT.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "8584b935-76d0-502f-b9e4-e9f36fd7eaa1",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": "LEAF RELAY. FACE\nTHE SOCKET AND\nPRESS B.",
+              "minHeight": 4,
+              "maxHeight": 4,
+              "textHeight": 3,
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "075bc403-456f-5e24-85f5-65b60e1cebf9",
+      "command": "EVENT_DEFINE_LABEL",
+      "args": {
+        "label": "40f63ce0-f885-5d98-9f15-93fd9f04d6b2"
+      }
+    },
+    {
+      "id": "3e77d8fc-9c17-5036-8824-cf59bdc3ac1d",
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "a",
+          "b",
+          "start",
+          "select",
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "5e557363-51d8-5bce-8f2d-ae41080aa885",
+            "command": "EVENT_WAIT",
+            "args": {
+              "units": "frames",
+              "frames": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "a664bddb-fb52-5652-8138-0bc168604d65",
+            "command": "EVENT_GOTO_LABEL",
+            "args": {
+              "label": "40f63ce0-f885-5d98-9f15-93fd9f04d6b2"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}
