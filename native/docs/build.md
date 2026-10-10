@@ -2,22 +2,22 @@
 
 Verified on macOS, 9 October 2026: ModRetro Chromatic plugin 1.0.33; official bundled GB Studio CLI 4.3.2; Node 26.5.0; Python 3.13; PyBoy 2.7.0; Pillow 12.3.0. The native descriptor retains schema 4.2.0/release 10. No desktop editor was installed at the configured plugin path; desktop editor opening is still a human check.
 
-Select `/Users/martinbowling/Projects/pocket-holler/native/project.gbsproj` through ModRetro. `rom_build` with `captureDebugArtifacts: true` and `outputPath: "dist/PocketHoller-opening.gbc"` was verified. It returns matching source-debug symbols and cartridge identity.
+The current project is `/Users/martinbowling/Projects/pocket-holler/src/native/project.gbsproj`. Before relocation, ModRetro `rom_build` with `captureDebugArtifacts: true` and `outputPath: "dist/PocketHoller-opening.gbc"` was verified. It returns matching source-debug symbols and cartridge identity. The current plugin session rejects selection at the relocated path with `PATH_OUTSIDE_PROJECT`; source relocation has not been verified through that session. Existing build receipts retain their original paths as historical evidence.
 
-The exact verified underlying command is:
+The underlying build command, with paths updated for the current source location, is:
 
 ```sh
 '/opt/homebrew/Cellar/node/26.5.0/bin/node' \
   '/Users/martinbowling/Library/Application Support/modretro-chromatic/toolchain/.local/vendor/gb-studio/out/cli/gb-studio-cli.js' \
-  make:rom '/Users/martinbowling/Projects/pocket-holler/native/project.gbsproj' \
-  '/Users/martinbowling/Projects/pocket-holler/native/dist/PocketHoller-opening.gbc' --verbose
+  make:rom '/Users/martinbowling/Projects/pocket-holler/src/native/project.gbsproj' \
+  '/Users/martinbowling/Projects/pocket-holler/src/native/dist/PocketHoller-opening.gbc' --verbose
 ```
 
 `sh native/tools/build.sh` resolves project paths relative to itself. Override `POCKETHOLLER_NODE` and `POCKETHOLLER_CLI` for other installations. Use the plugin setup/doctor workflow for missing dependencies. No compiler binaries are shipped in the review package.
 
 The cartridge is 128 KiB, GBC-only, MBC5 with 32 KiB battery RAM. Its mapper header advertises rumble; no rumble is authored. No proprietary boot ROM is included. `evidence/build-final.json` retains compiler output, source identity, header validation and ROM hash. The only final warning is upstream Node DEP0190. No missing-resource or authored-event warning remains.
 
-A separate copy of descriptor, project, assets, and plugins was built with the official CLI. See `evidence/clean-build-report.json` and `clean-build.log` for the result and exact binary comparison. Cross-build fixtures are not interchangeable merely because gameplay content is identical.
+A separate copy of descriptor, project, assets, and plugins was built with the official CLI. See the workspace's retained `../native/evidence/clean-build-report.json` and `clean-build.log` (relative to the repository root) for the result and exact binary comparison. Cross-build fixtures are not interchangeable merely because gameplay content is identical.
 
 Run `python3 native/tests/check_project.py` for identities, destinations and text fit. Run `native/tests/persistent_save.py` with the installed PyBoy Python to replay the controlled opening, collect genuine frames, save, cold boot, Continue, change options and cold boot again. It needs matching `.gbc.debug` files from the plugin build; the plain wrapper does not generate them. The test refuses a ROM that differs from the build receipt, creates fresh QA-only files, and never touches user saves.
 

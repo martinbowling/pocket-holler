@@ -28,6 +28,8 @@ Save at the porch and confirm. **Return to Camp** keeps current progress but doe
 
 ## Edit and build
 
+In the local workspace, this Git repository lives at `/Users/martinbowling/Projects/pocket-holler/src`. Run the commands below from that folder. A normal clone uses the same repository layout directly at its clone root.
+
 Open [`native/project.gbsproj`](native/project.gbsproj) in GB Studio. The distributed project stores scenes, actors, triggers, palettes, and variables in `native/project/`; keep that folder and `native/assets/` with the descriptor.
 
 The opening was built with the official **GB Studio CLI 4.3.2**. The descriptor uses schema 4.2.0/release 10. The included wrapper defaults to the verified macOS ModRetro toolchain installation:
@@ -86,7 +88,7 @@ The included cartridge, debug symbols, build receipt, and QA-only battery fixtur
 
 The native resources are authoritative. Historical authoring batches are development records; replaying them can duplicate actors. Preserve resource IDs and use the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Large recordings, temporary builds, emulator sessions, review archives, and the original owner-supplied concept sheet remain local and are excluded from Git. The workspace's `videos/PocketHoller-opening-playthrough.mp4` is a continuous **4:43** emulator playthrough with game audio; it is not bundled in this source repository.
+Large recordings, temporary builds, emulator sessions, review archives, and the original owner-supplied concept sheet remain local and are excluded from Git. In the local workspace, retained recordings are alongside `src/` in `../native/evidence/`; the continuous **4:43** emulator playthrough with game audio is at `../videos/PocketHoller-opening-playthrough.mp4`. The video and review-package helpers resolve these sibling folders when the repository lives in `src/`. A fresh clone needs the retained recordings separately to run those helpers.
 
 ## Current status
 

@@ -8,13 +8,16 @@ import hashlib,json,subprocess,tempfile,shutil,wave,re
 import numpy as np
 from pyboy import PyBoy
 ROOT=Path(__file__).resolve().parents[1]
+REPO=ROOT.parent
+WORKSPACE=REPO.parent if REPO.name=='src' else REPO
 RECORD=ROOT/'evidence/video-playthrough-20261009'
-OUT=ROOT.parent/'videos';OUT.mkdir(exist_ok=True)
+if not RECORD.is_dir():RECORD=WORKSPACE/'native/evidence/video-playthrough-20261009'
+OUT=WORKSPACE/'videos';OUT.mkdir(exist_ok=True)
 rows=[json.loads(x) for x in (RECORD/'events.jsonl').read_text().splitlines()]
 rom=ROOT/'dist/PocketHoller-opening.gbc'
 identity=hashlib.sha256(rom.read_bytes()).hexdigest()
 assert identity==rows[0]['rom']['sha256']
-qa=Path(tempfile.mkdtemp(prefix='video-render-',dir=ROOT/'evidence'))
+qa=Path(tempfile.mkdtemp(prefix='video-render-',dir=RECORD.parent))
 cart=qa/rom.name;shutil.copy2(rom,cart)
 fps=4194304/70224;rate=48000
 video=qa/'video-only.mp4';audio=qa/'game-audio.wav';dest=OUT/'PocketHoller-opening-playthrough.mp4'
