@@ -92,6 +92,8 @@ Large recordings, temporary builds, emulator sessions, review archives, and the 
 
 ## Current status
 
+Full-game expansion is prepared in [`release-work/`](release-work/README.md): all eighteen remaining room scripts, Turtle and Thunderbird, puzzles P03–P12, the dawn reunion, native art and five original editable music loops. These are staged proposals awaiting integration and real ROM testing. The current ModRetro session rejects the relocated project path with `PATH_OUTSIDE_PROJECT`; the included cartridge is still the verified six-room opening.
+
 The opening is implemented and exercised in the emulator. The title has copper lettering, moonlit ridges, lit cabins, Marty and Roam, and gently breathing Lantern Moth light. The included ROM's SHA-256 is:
 
 ```text

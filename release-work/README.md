@@ -1,0 +1,11 @@
+# Full-game staging
+
+This folder holds new PocketHoller chapter scripts, native art and original music prepared by subagents. The active native project remains the six-room opening until these proposals are integrated and a new ROM is built and tested. In the source repository this folder is `release-work/`, next to `native/`; the retained local staging copy sits beside `src/`.
+
+The current ModRetro server is authorized for `../native/` and rejects selection at `../src/native/project.gbsproj` with `PATH_OUTSIDE_PROJECT`. Reconnect it with `GB_STUDIO_WORKSPACE_ROOT=/Users/martinbowling/Projects/pocket-holler` before selecting the relocated project. Do not route around the refused selection or modify the server's authorization from this staging code.
+
+`full_game_support.py` defines native event helpers, preserves the 53 existing variable IDs, reserves new puzzle state, and records the 24-room graph. `creek.py` and `ridge_hollow.py` supply chapter scripts. `prepare_integration.py` combines those into a reviewable JSON proposal and adds the optional porch interior, camps, objectives, journal, save/load plan and dawn reunion. It writes only to this staging folder.
+
+Integration still requires actual native scene/asset resources, common follower and input binding updates, title save-epoch guards, build and debug artifacts, a fresh full-route input-driven emulator playthrough, wrong-action and save regressions, all exits, settings, production audio checks and a clean source build. The old opening save fixtures must not be loaded into a new cartridge. Public licensing and release visibility must be settled before any public release; physical hardware remains a separate check.
+
+Run `python3 verify_proposals.py` here for static and host-side script-contract checks. Those cover the 24-room graph, text bounds, actor approaches, wrong puzzle actions, all six bell-lamp orders, finale cancellation and a zero-journal ending. They do not simulate the engine, controller timing or persistent native save files. `proposal-checks.json` records that limit explicitly. Original music parses and round-trips through the installed official UGE reader; native playback still needs the game build. Approximate composition WAV previews remain only in the local staging copy.
